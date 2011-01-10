@@ -1,0 +1,14 @@
+<% path = h(session[:user].group.name.upcase) %>
+<% path = path + h(" / " + @user.name.upcase + " " + @user.surname.upcase) unless @user.nil? %>
+<% if @user.nil? %>
+    <% bottom_buttons = nil %>
+<% else %>
+    <% bottom_buttons = [{:content => link_to(t("group_folder"), {:action => "images_index"}, :title => t("group_folder") )}] %>
+<% end %>
+<%=
+  header_tag(:image => "uploadedimages.png",
+             :title =>"<b>#{t("images").upcase}:</b> " + path,
+             :top_buttons => [{:content => volver}],
+             :bottom_buttons => bottom_buttons
+            ) 
+%>

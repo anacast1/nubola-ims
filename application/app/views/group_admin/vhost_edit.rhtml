@@ -1,0 +1,22 @@
+<div class="menudiv">
+  <%= render :partial => 'vhost_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <%= info_tag flash[:vhost] %>
+
+  <% form_tag( {:action => 'vhost_delete', :id => @vhost.id} ) do -%>
+    <table>
+      <tr>
+        <td><%= t("if_no_apps_can_delete_vhost") %></td>
+      </tr>
+      <tr>
+        <td><%= submit_tag t("delete"), :onclick => "if(confirm('#{t("are_you_sure_to_delete")} #{@vhost.hostname}?')){return true;}else{return false;}" %></td>
+      </tr>
+    </table>
+  <% end -%>
+  </p>
+
+</div>
+

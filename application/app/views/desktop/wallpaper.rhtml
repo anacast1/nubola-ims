@@ -1,0 +1,19 @@
+<html>
+
+  <% if !@user.wallpaper.nil? %>
+    <% image_path = url_for_file_column(@user, "wallpaper", "normal") %>
+  <% else %>
+    <% image_path = "../User/wallpaper/shared/#{@user.default_wallpaper}" %>
+  <% end %>
+
+  <body style="margin: 0; padding: 0; overflow: hidden; width: 100%; height:100%; background:white;">
+    <%= image_tag image_path, :id => "background", :style => "border: 0;", :alt => "" %>
+  </body>
+
+  <script language="javascript">
+    <!--
+      document.getElementById("background").width=screen.width;
+    -->
+  </script>
+
+</html>

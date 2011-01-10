@@ -1,0 +1,22 @@
+<%= 
+  bottom_buttons = [{:content => (link_to(t("simulator"), {:action => "vhost_simulate"}, :title => t("vhost_simulate"))),
+                       :active => (params[:action] == "vhost_simulate")}]
+  if @vhost
+    if @vhost.ready?
+      bottom_buttons << {:content => (link_to(t("management"), {:action => "vhost_edit"}, :title => t("vhost_modify"))),
+                         :active  => (params[:action] == "vhost_modify")}
+    else
+      bottom_buttons << {:content => (t("management") ),
+                         :active  => false}
+    end
+    bottom_buttons << {:content => (link_to(t("start"), {:action => "vhost"}, :title => t("vhost_status"))),
+                       :active  => (params[:action] == "vhost")}
+  else
+    bottom_buttons << {:content => (link_to(t("install"), {:action => "vhost_install"}, :title => t("vhost_install"))),
+                       :active  => (params[:action] == "vhost_install")}
+  end
+  header_tag(:image => "servidor.png",
+             :title => (t("particular_server").upcase + ": <b>"+ @vhost.hostname + "</b>" rescue t("particular_server").upcase),
+             :top_buttons => [{:content => link_to(t("back"), {:action => "index"}, :title => t("back_to_control_panel"))}],
+             :bottom_buttons => bottom_buttons) 
+%>

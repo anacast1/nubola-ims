@@ -1,0 +1,67 @@
+/*oaproject.css: defines the styles for the global layout oaproject*/
+#banner {
+  background: White;
+  padding-top: 5px;
+  padding-bottom: 60px;
+  padding-left: 16px;
+  border-bottom: 5px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: rgb(184,71,0); 
+  text-align: center;
+}
+#banner img {
+  float: left;
+}
+#notice {
+  margin-top: 1em;
+  text-align: center;
+  /*border: solid 2px;*/
+  color: red;
+}
+
+#normal_field {
+  border: #00008a 1px solid;
+  /*FONT-FAMILY: Verdana; 
+  FONT-SIZE: 12px;*/ 
+}
+
+#required_field {
+  background: #bac2fa;
+  border: #00008a 1px solid; 
+  /*FONT-FAMILY: Verdana; 
+  FONT-SIZE: 12px;*/ 
+}
+
+#button {
+  background: rgb(204,204,204);
+  color: black;
+  border: 0; 
+  font-weight:600;
+  /*font-family: sans-serif;*/ 
+  /*FONT-SIZE: 12px;*/ 
+}
+
+#button:hover {
+  background: #00008a;
+  color: white;
+  border: 0;  
+  font-weight:600;
+  /*FONT-SIZE: 12px;*/ 
+}
+
+#caption {
+  color: #00008a;
+  font-size: 12px;
+}
+
+#caption-green {
+  color: green;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+#caption-red {
+  color: red;
+  font-weight: bold;
+  font-size: smaller;
+}

@@ -1,0 +1,32 @@
+    <span>&nbsp;</span>
+    <% form_tag( {:action => 'vhost_install', :id => @group.id} ) do -%>
+      <table width="100%" border="1px solid black">
+        <th></th>
+        <th><%= t("vhost_type") %></th>
+        <th><%= t("vhost_cpu")  %> (MHz)</th>
+        <th><%= t("vhost_ram")  %> (MB)</th>
+        <th><%= t("vhost_disk") %> (MB)</th>
+        <% @host_types.sort.each do |ht| -%>
+          <tr align="center">
+            <td><%= radio_button_tag("host_type_id", ht.id, (ht == @recomended_vhost)) %></td>
+            <td><%= ht.name %></td>
+            <td><%= ht.cpu %></td>
+            <td><%= ht.ram %></td>
+            <td><%= ht.disk %></td>
+          </tr>
+        <% end -%>
+        <tr align="center" style="font-weight: bold; <%= "color: red;" if @recomended_vhost.nil? %>">
+          <td><%= t("required") %>:</td>
+          <td><%= @recomended_vhost.name rescue t("no_server_type_available") -%></td>
+          <td><%=@cpu%></td>
+          <td><%=@ram%></td>
+          <td><%=@disk%></td>
+        </tr>
+        <% if @group.vhost.nil? -%>
+        <tr align="right">
+          <td colspan="5"><%= submit_tag t("simulation_end_install") %></td>
+        </tr>
+        <% end -%>
+      </table>
+    <% end -%>
+

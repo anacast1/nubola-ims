@@ -1,0 +1,231 @@
+<div id="first_view">
+
+<div class="menudiv">
+  <%= render :partial => 'app_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <%= ok_tag flash[:binding_result] %>
+
+  <table class="normaltable">
+    <tr>
+      <td>
+        <b><%= t("assign_users_to_app") + @app.name %>.</b>
+      </td>
+    </tr>
+    <% for @user in @users %>
+      <tr>
+        <td>
+
+          <div id="user<%= @user.id %>">
+            <table class="normaltable">
+
+              <% b = @user.binds.find_by_app_id(@app.id) %>
+              <% if b.nil? or b.ready? %>
+
+                <tr>
+                  <td width="5%">
+                    <% if @user.apps.include?(@app) %>
+                      <% @checked = true %>
+                    <% else %>
+                      <% @checked = false %>
+                    <% end %>
+                    <%= check_box_tag(nil,nil,@checked,{:onclick => "if(this.checked == true) {
+                                                         Element.hide('user#{@user.id}');
+                                                         Element.hide('user#{@user.id}_deluser');
+                                                         Element.show('user#{@user.id}_adduser');
+                                                         this.checked = false;
+                                                       }else{
+                                                         Element.hide('user#{@user.id}');
+                                                         Element.hide('user#{@user.id}_adduser');
+                                                         Element.show('user#{@user.id}_deluser');
+                                                         this.checked = true;
+                                                       }",
+                                                        :id => @user.id
+                                          }) %>
+                  </td>
+                  <td width="20%">
+	            <%= user_image @user %>
+                  </td>
+                  <td width="20%">
+                    <%= h(@user.send("name")+ " " + @user.send("surname")) %>
+                    <% if @user.role == "groupadmin" %>
+                      <br/>Administrador
+                    <% end %>
+                  </td>
+                  <% if @user.apps.include?(@app) %>
+                    <td width="55%" class="vtopright">
+                      <%= link_to_function "#{t("preferences_for")} #{h(@user.name)} #{h(@user.surname)} #{t("for")} #{@app.name}", "Element.hide('user#{@user.id}'); Element.show('user#{@user.id}_adduser');" %>
+                    </td>
+                  <% else %>
+                    <td width="55%"></td>
+                  <% end %>
+                </tr>
+
+              <% else %>
+
+                <tr>
+                  <td width="5%"></td>
+                  <td width="20%">
+	            <%= user_image @user %>
+                  </td>
+                  <td width="20%">
+                    <%= h(@user.send("name")+ " " + @user.send("surname")) %>
+                    <% if @user.role == "groupadmin" %>
+                      <br/>Administrador
+                    <% end %>
+                  </td>
+                  <td width="55%">
+                    <div id="flash">
+                      <%= t("user_is_being") + " " +  (["BINDING","ADDUSER_FAILED"].include?(b.status) ? t("added_to") : t("deleted_from")) + " " + t("this_app") %>.  
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+
+            </table>
+          </div>
+
+          <div id="user<%= @user.id %>_adduser" style="display: none;" class="greendiv">
+            <table class="normaltable">
+              <% form_tag :user_id => @user, :origin => 'app_bind_users' do -%>
+              <tr>
+                <td width="5%"></td>
+                <td width="20%">
+		  <%= user_image @user %>
+                </td>
+                <td width="20%">
+                  <%= h(@user.send("name")+ " " + @user.send("surname")) %>
+                  <% if @user.role == "groupadmin" %>
+                    <br/>Administrador
+                  <% end %>
+                </td>
+                <td width="55%" class="vtopright">
+                  <% @checked = @user.apps.include?(@app) %>
+                  <%= link_to_function t("hide"), "Element.hide('user#{@user.id}_adduser');Element.hide('user#{@user.id}_deluser');Element.show('user#{@user.id}');$('#{@user.id}').checked=#{@checked.to_s}" %>
+                </td>
+              </tr>
+              <% if @app.find_user_parameters.length == 0 %>
+                <tr>
+                  <td width="5%"></td>
+                  <td width="95%" colspan="3">
+                    <%= @app.name + " " + t("no_user_parameters") %>.
+                  </td>
+                </tr>
+                <% unless @user.apps.include?(@app) %>
+                  <tr>
+                    <td class="vbottomright" colspan="4">
+                      <%=submit_tag t("bind"), :name => "save_user_settings",
+                                               :onclick =>"$('javascript_filled').innerHTML = '#{t("binding")} #{h(@user.name)} #{h(@user.surname)} #{t("to")} #{@app.name}.';Element.hide('first_view'); Element.show('second_view')" %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% else %>
+                <% hidden_fields = 0 %>
+                <% for @parameter in @app.find_user_parameters %>
+                  <tr>
+                    <td width="5%"></td>
+                    <td>
+                      <%= t(@parameter.name) unless @parameter.input == 'hidden' %> 
+                    </td>
+                    <td width="60%">
+                        <% if @parameter.input == 'dropdown' %>
+                          <% 
+                            values_list = @parameter.parameter_values.map{|pv| pv.value}
+                            if @parameter.default_value && @parameter.default_value.include?("User.")
+                              values_list << @user.get_field_by_name(@parameter.default_value)
+                            end 
+                          %>
+                          <table>
+                            <% for v in values_list %>
+                              <tr><td>
+                                <% if @user.find_user_setting_value(@parameter) == v %>
+                                  <%= radio_button("user_parameters", @parameter.id, v,{:checked => "checked"}) + " " + t(v) %>
+                                <% else %>
+                                  <%= radio_button("user_parameters", @parameter.id, v) + " " + t(v) %>
+                                <% end %>
+                              </td></tr>
+                            <% end %>
+                          </table>
+                        <% elsif  @parameter.input == 'hidden' %>
+                          <% value = @parameter.default_value.include?("User.") ? @user.get_field_by_name(@parameter.default_value) : @parameter.default_value %>
+                          <%= hidden_field_tag("user_parameters[#{@parameter.id}]", value) %>
+                          <% hidden_fields = hidden_fields + 1 %>
+                        <% else %>
+                          <%= text_field("user_parameters",
+                              @parameter.id,
+                              :value => @user.find_user_setting_value(@parameter)) %>
+                        <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+                <% if @app.find_user_parameters.length == hidden_fields %>
+                  <tr>
+                    <td width="5%"></td>
+                    <td width="95%" colspan="3">
+                      <%= @app.name + " " + t("no_user_parameters") %>.
+                    </td>
+                  </tr>
+                <% end %>
+                <tr>
+                  <td class="vbottomright" colspan="4">
+                    <%=submit_tag t("bind"), :name => "save_user_settings",
+                                             :onclick =>"$('javascript_filled').innerHTML = '#{t("binding")} #{h(@user.name)} #{h(@user.surname)} #{t("to")} #{@app.name}.';Element.hide('first_view'); Element.show('second_view')" %>
+                  </td>
+                </tr>
+
+                <% end -%>
+              <% end %>
+            </table>
+          </div>
+
+          <div id="user<%= @user.id %>_deluser" style="display: none;" class="reddiv">
+            <table class="normaltable">
+              <% form_tag :user_id => @user, :origin => 'app_bind_users' do -%>
+              <tr>
+                <td width="5%"></td>
+                <td width="20%">
+		  <%= user_image @user %>
+                </td>
+                <td width="20%">
+                  <%= h(@user.send("name")+ " " + @user.send("surname")) %>
+                  <% if @user.role == "groupadmin" %>
+                    <br/>Administrador
+                  <% end %>
+                </td>
+                <td width="55%" class="vtopright">
+                  <% @checked = @user.apps.include?(@app) %>
+                  <%= link_to_function "Ocultar", "Element.hide('user#{@user.id}_adduser');Element.hide('user#{@user.id}_deluser');Element.show('user#{@user.id}');$('#{@user.id}').checked=#{@checked.to_s}" %>
+                </td>
+              </tr>
+              <tr>
+                <td class="vbottomright" colspan="4">
+                  <%=submit_tag t("unbind"), :name => "delete_user_settings",
+                                             :onclick =>"$('javascript_filled').innerHTML = '#{t("unbinding")} #{h(@user.name)} #{h(@user.surname)} #{t("from")} #{@app.name}.';Element.hide('first_view'); Element.show('second_view')" %>
+                </td>
+              </tr>
+              <% end -%>
+            </table>
+          </div>
+
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+</div>
+
+<div id="second_view" style="display: none">
+  <div class="menudiv">
+    <%= render :partial => 'app_header_inactive' %>
+  </div>
+  <br/>
+  <div id="flash">
+    <div id="javascript_filled">
+    </div>
+    <br/><br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+</div>

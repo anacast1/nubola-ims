@@ -1,0 +1,874 @@
+es:
+  start: "Inicio"
+  back: "Volver"
+  users: "Usuarios"
+  user: "Usuario"
+  back_to_users_list: "Volver al listado de usuarios"
+  assign_apps: "Asignar aplicaciones"
+  edit_user: "Editar usuario"
+  assign_apps_to_user: "Asignar aplicaciones al usuario " 
+  edit_user_info: "Editar información del usuario "
+  desktop: "Escritorio"
+  contract: "Contrato"
+  group: "Grupo"
+  group_name: "Nombre de grupo"
+  reports: "Estadísticas"
+  particular_server: "Servidor particular"
+  apps: "Aplicaciones"
+  albarans: "Albaranes"
+  edit_group_users: "Editar los usuarios de su grupo."
+  change_desktop_wallpaper: "Cambiar el fondo del escritorio."
+  edit_group_info: "Editar la información de su grupo."
+  edit_info_of_group: "Editar la información del grupo "
+  edit_group: "Editar grupo"
+  reports_title: "Estadísticas de utilización y consumos."
+  edit_group_apps: "Editar las aplicaciones de su grupo."
+  control_panel: "Panel&nbsp;de&nbsp;Control"
+  is_a_project_based_on_technology: " es un proyecto basado en tecnología "
+  group_user_list: "Listado de los usuarios de "
+  new_user: "Nuevo usuario"
+  add_new_user_to_group: "Añadir un nuevo usuario a "
+  login: Login
+  name: Nombre
+  surname: Apellidos
+  phone: Teléfono
+  mobile: Movil
+  email: Correo electrónico
+  department: Departamento
+  modify_user: "Modificar usuario"
+  modifying_user: "Modificando usuario "
+  cancel: Cancelar
+  password: Contraseña
+  password_confirmation: Confirmar contraseña
+  password_repeated: Contraseña repetida
+  mandatory_fields: Campos obligatorios
+  activate: Activar
+  deactivate: Desactivar
+  activated: Activado
+  deactivated: Desactivado
+  deactivate_user: Desactivar el usuario {{user}}
+  activate_user: Activar el usuario {{user}}
+  administrador: Administrador
+  back_to_contract: Volver a la consulta de contrato
+  back_to_control_panel: Volver al panel de control
+  NIF: NIF
+  address: Dirección
+  city: Ciudad
+  zip_code: Código postal
+  country: País
+  province: Provincia
+  modify_group: Modificar grupo
+  problems_on_the_following_fields: "Ha habido problemas con los siguientes campos:"
+  errors_on: "errores han impedido guardar los datos del"
+  back_to_app_list: "Volver al listado de aplicaciones"
+  apps: Aplicaciones
+  installed: Instaladas
+  installed_sing: Instalada
+  not_installed_sing: No instalada
+  available: Disponibles
+  installed_apps_list: Listado de aplicaciones instaladas
+  available_apps_list: Listado de aplicaciones disponibles
+  no_apps_installed_yet: "Todavía no hay ninguna aplicación instalada"
+  no_available_apps: "No hay aplicaciones disponibles"
+  management: Gestión
+  install: Instalar 
+  assign_users: "Asignar usuarios"
+  assign_users_to_app: "Asignar usuarios a "
+  group_settings: "Preferencias de grupo"
+  group_settings_for_app: "Preferencias de grupo para "
+  this_app_is_in_status:  "Esta aplicación todavía está en proceso de "
+  INSTALLING: instalación
+  UNINSTALLING: desinstalación
+  MOVING: migración
+  INSTALL_FAILED: instalación
+  UNINSTALL_FAILED: desinstalación
+  OK: Ok
+  DELETING: eliminando
+  this_app_installed_ok: "Esta aplicación está correctamente instalada"
+  remember_when_moving_app: Recuerde que al mover la aplicación perderá el acceso a la misma durante unos minutos.
+  first_uninstall_the_following_apps: "No puede desinstalar esta aplicación hasta que desinstale las siguientes"
+  shared_host: Host compartido
+  are_you_sure_to_move: "Está seguro de que desea mover"
+  are_you_sure_to_uninstall: "Está seguro de quiere desinstalar"
+  uninstall: Desinstalar
+  remember_when_uninstalling_app: "Recuerde que al desinstalar perderá la información y configuración de la aplicación."
+  uninstalling: Desinstalando
+  moving: Moviendo
+  no_description: Sin descripción
+  modify_configuration: Modificar configuración
+  language: Idioma
+  es_ES: Español
+  en_US: Inglés
+  es: Español
+  en: Inglés
+  ca: Catalán
+  role: Permisos
+  Admin: Administrador
+  NoAdmin: No Administrador
+  es_es: Español
+  en_us: Inglés
+  no_group_parameters: no tiene parámetros de grupo a configurar
+  no_user_parameters: no tiene parámetros de usuario a configurar
+  modifying_group_settings_for_app: Modificando preferencias de grupo para
+  app_not_installed: Esta aplicación no está instalada
+  install_in: Instalar en
+  installing: Instalando
+  preferences_for: "Preferencias de"
+  for: para
+  user_is_being: Este usuario esta siendo
+  added_to: añadido a
+  deleted_from: eliminado de
+  this_app: esta aplicación
+  hide: Ocultar
+  bind: Asignar
+  unbind: Desasignar
+  binding: Asignando
+  unbinding: Desasignando
+  to: a
+  from: de
+  modifyied: modificado
+  created: creado
+  depends_on: depende de las siguientes aplicaciones
+  install_deps_before: Instálelas antes
+  in_a_few_moments_the_user: En unos instantes el usuario
+  will_have_access_to_app: tendrá acceso a la aplicación
+  from_his_menu: desde su menú 
+  access_to_app_removed_for_user: Se ha suprimido el acceso del usuario
+  to_application: a la aplicación
+  the_following_apps_depend_on: Las siguientes aplicaciones dependen de
+  cannot_uninstall_until: No se puede desinstalar hasta que no las desinstale
+  group_settings_modified_for_app: Modificadas la preferencias de grupo para la aplicación 
+  once_uninstalled_will_be_available: Una vez desinstalada volverá a aparecer como aplicación disponible
+  app_moved_ok: ha sido correctamente trasladada
+  must_choose_server_type: "Debe escoger un tipo de servidor"
+  installing_particular_server: "Su servidor particular se esta instalando"
+  there_was_an_error: Ha ocurrido un error
+  chosen_host_is_smaller: "El tipo de host escogido es de menor capacidad que el actual."
+  updating_particular_server: "Su servidor particular se está actualizando"
+  before_destroy_server_must_uninstall_apps: "Antes de eliminar su servidor particular debe migrar las aplicaciones al servidor compartido o eliminarlas"
+  deleting_particular_server: "Su servidor particular se esta eliminando"
+  contract_created: Contrato creado.
+  contract_modified: Su contrato se ha modificado correctamente.
+  invalid_login: "Login incorrecto"
+  user_is_active: Este usuario esta activo
+  are_you_sure_to_deactivate_user: Está seguro de que desea desactivar el usuario
+  remember_that_when_deactivating_user: Recuerde que al desactivar el usuario puede perder toda la información y configuración de este usuario en las aplicaciones a las que tiene acceso.
+  admin_cannot_be_deactivated: No puede desactivar el usuario administrador del grupo.
+  deactivating_user: "Desactivando usuario "
+  user_is_inactive: Este usuario esta inactivo
+  activating_user: "Activando usuario "
+  add_user: Añadir usuario
+  this_group_still_has_no_apps_to_add_user: Este grupo todavía no tiene ninguna aplicación instalada a la que asignar usuarios.
+  desktop_wallpaper: Fondo de escritorio
+  select: Seleccionar
+  custom: Personalizado 
+  training: Formación
+  help: Ayuda
+  no_apps: Ninguna aplicación instalada
+  exit: Salir
+  minimize_all: Minimizar todo
+  print_layer: Imprimir pestaña
+  you_have_this_vhost: Usted dispone del siguiente servidor particular
+  you_can_see_your_vhost_stats: Puede ver las estadísticas de su servidor
+  here: aquí
+  simulator: Simulador
+  vhost_status: "Estado del servidor particular"
+  vhost_modify: "Modificar servidor particular"
+  vhost_simulate: "Simular la instalación de un servidor particular"
+  vhost_install: "Instalación de un servidor particular"
+  vhost_type: Tipo
+  vhost_cpu: CPU
+  vhost_ram: RAM
+  vhost_disk: Disco
+  vhost_state: Estado
+  as_a_client_you_may_install_a_vhost: Como cliente tiene la posibilidad de solicitar un servidor particular.
+  use_simulator_please: Antes de instalar/trasladar aplicaciones a su servidor, es recomendable que utilice el simulador para saber si la operación es factible.
+  delete: Eliminar
+  if_no_apps_can_delete_vhost: Si no tiene ninguna aplicación instalada puede eliminar su servidor
+  app: Aplicación
+  installed_now: Actualmente instalada
+  specs: Requisitos
+  required: Requerido
+  calculate_right_server: Calcular servidor adecuado
+  no_server_type_available: "No disponemos de un tipo de suficiente capacidad"
+  simulation_end_install: Fin de la simulación. Instalar
+  reports_for_group: Reportes para el grupo  
+  number_of_connected_users: Número de usuarios conectados
+  number_of_simultanously_connected_users: Número de usuarios conectados a la vez
+  space_used_for_each_application_in_shared_host: Espacio utilizado por cada aplicación en el host compartido
+  all_graphs: Todos los gráficos del grupo
+  january: Enero
+  february: Febrero
+  march: Marzo
+  april: Abril
+  may: Mayo
+  june: Junio
+  july: Julio
+  august: Agosto
+  september: Setiembre
+  october: Octubre
+  november: Noviembre
+  december: Diciembre
+  number_of_connected_users_per_day: Número de usuarios conectados por día
+  back_to_reports_index: Volver al índice de estadísticas
+  platform_usage: Utilización de la plataforma
+  connected_users: Usuarios que se conectaron 
+  number_of_connected_users_per_hour: Número de usuarios conectados por hora
+  number_of_simultanously_connected_users_per_day: Concurrencia de usuarios por día
+  number_of_simultanously_connected_users_per_hour: Concurrencia de usuarios por hora
+  space_used_by_applications: Espacio utilizado por las aplicaciones
+  all_hosts: "todos los hosts"
+  the_shared_host: "el host compartido"
+  the_particular_hosts: "máquinas virtuales" 
+  space_in_MB: Espacio en MB
+  company: "Open Alliance, Software Libre S.A."
+  confirm_exit: ¿Está seguro de que desea salir?
+  spanish: Español
+  catalan: Catalán
+  english: Inglés
+  select_language: Seleccionar idioma
+  show_online_users: Ver el estado de los usuarios del grupo
+  online: conectado
+  offline: desconectado
+  remember_password: Recordar contraseña
+  get_login_data_by_mail: Recibir datos de acceso por e-mail 
+  create_new_group_as_admin: "Crear un nuevo grupo como usuario administrador"  
+  start_session: Iniciar sesión 
+  see_another_app: Ver otra aplicación
+  what_is_the_desktop: El escritorio es un espacio desde donde podrás dar de alta y gestionar aplicaciones, así como dar de alta y administrar los permisos de más usuarios de tu empresa.
+  signup: Registrarse
+  lopd:  "En cumplimiento de lo dispuesto en la Ley Orgánica 15/1999, de Protección de Datos de carácter personal, Open Alliance le informa que los datos personales recogidos en el presente documento estarán incorporados en ficheros automatizados titularidad de esta empresa. Estos ficheros han sido comunicados a la Agencia de Protección de Datos. La finalidad de los ficheros es la gestión comercial de nuestros clientes y usuarios registrados para seguimientos comercial. Si lo desea, puede ejercitar los derechos de acceso, rectificación y cancelación, previstos en la Ley, dirigiendo un escrito a: Open Alliance Software Libre S.A., C/ Atenas, 8 – 08006 Barcelona"
+  your_account: "La cuenta de "
+  has_been_activated: " ha sido activada" 
+  an_email_has_been_sent_to: "Se ha enviado un correo de confirmación a "
+  to_verify_email: "para verificar la autenticidad de la dirección de correo"
+  follow_instructions_in_the_email: Siga las instrucciones especificadas en el mismo para activar su cuenta
+  remember_account: Recordar cuenta
+  enter_your_email_so_we_can_send_your_data: Entre su dirección de e-mail y se le enviará un correo con sus datos de acceso
+  a_user_with_email_doesnt_exist: "No existe un usuario con dirección de correo "
+  group_is_not_active: "Su grupo no está activo. Probablemente su periodo de pruebas haya expirado. Póngase en contacto con la administración de la plataforma para activar su grupo de nuevo."
+  user_is_not_active: "Este usuario no está activo. Póngase en contacto con la administración de su grupo para activar su usuario de nuevo."
+  user_is_not_confirmed: "Este usuario no está confirmado. Asegúrese de haber confirmado su cuenta mediante el correo de confirmación enviado a su dirección de e-mail."
+  max_num_users_reached: "Se ha superado el máximo de usuarios conectados." 
+  login_failed: Login fallido
+  session_closed: Sesión finalizada
+  your_password_has_been_sent_to: "Su password ha sido enviado a "
+  problem_activating_account: "Problemas activando cuenta para "
+  invalid_confirmation_link: "El enlace de confirmación no es válido"
+  was_already_active: " ya estaba activada"
+  welcome: Benvenido
+  as_admin_you_can: "<p>Como administrador usted puede:</p>
+                     <p>&nbsp;<b>1</b>. Instalar aplicaciones para su grupo y empezar a utilizarlas</p>
+                     <p>&nbsp;<b>2</b>. Dar de alta mas usuarios en su empresa</p>
+                     <p>Todas estas opciones están disponibles en el <b>Panel de Control</b>"
+  your_group_is_in_demo: "<p>El grupo <b>{{group}}</b> está en periodo de pruebas. Le queden <b>{{days}}</b> días para agotarlo.<br/></p>"
+  you_can_contract_here: "<p>Puede contratar desde la opción <b>{{contract_link}}</b> en el <b>Panel de Control</b></p>"
+  go_to_control_panel: Ir al Panel de Control
+  continue: Continuar
+  your_group_is_in_demo_user: "<p>El grupo <b>{{group}}</b> al que pertenece esta en período de pruebas. Le quedan <b>{{days}}</b> días para agotarlo.<br/></p>"
+  reset_image: Resetear imagen
+  you_must_send_contract: "<p>En este momento usted ha guardado los datos del contrato pero NO ha realizado su envío.</p>"
+  your_contract_is_active: "<p>Usted a contratado el servicio con fecha <b>{{date}}</b> y Nº Contrato <b>{{contract_number}}</b>.<br/>Sigue teniendo disponible el formulario a continuación.</p>"
+  how_to_send: "Puede enviar el contrato de las siguientes maneras:
+                  <ul style=\"padding-left: 100px; text-align: left;\">
+                    <li>Por <b>FAX</b>, enviando el contrato firmado al <b>93 212 24 60</b></li>
+                    <li>Por correo ordinario, enviando el contrato firmado a <b>Atenas, 8, bajos, 08006, Barcelona</b></li>
+                    <li>Por <b>e-mail</b>, enviando el contrato firmado a <b>administracion@nubola-saas.com</b></li>
+                  </ul>"
+  new_contract: Guardar contrato
+  modify_contract: Modificar contrato
+  contract_group_data: "Datos del grupo:"
+  contract_contact_data: "Datos de la persona de contacto:"
+  contract_limitations: "Limitaciones:"
+  concurrent_users: Usuarios concurrentes
+  whatis_concurrent_users: "El número de usuarios que podrán utilizar la plataforma a la vez."
+  contract_2_concurrent_users: La limitación es a partir de 2 usuarios, ya que los primeros 2 están incluidos en la cuota de Mantenimiento de la Plataforma.
+  blank_means_unlimited: "Especifique la cantidad con números. La casilla en blanco significa NO limitación."
+  group_must_have_installed_applications: Su grupo debe tener aplicaciones instaladas para contratar
+  group_has_already_been_taken: Su grupo ya tiene un contrato
+  ilimited: No limitado
+  pdf_version: Versión en PDF
+  contract_data: "Contrato del<br/>servicio"
+  billing_data: "Anexo: Domiciliación bancaria"
+  bank_account: "Número de cuenta:"
+  desired_action: "Marque con una <b>X</b> la acción deseada:"
+  action_signup: ALTA Servicio
+  action_signedit: Modificación datos bancarios
+  action_signdown: BAJA Servicio
+  signature: Firma
+  date_s: Fecha
+  code_s: Número de contrato
+  your_login_data: "Estos son sus datos de acceso:"
+  warning: Aviso
+  mail_warning_p1: "De acuerdo con la legislación vigente que regula el Comercio
+                    Electrónico y la Protección de Datos, este mensaje se dirige
+                    exclusivamente a su destinatario y puede contener información
+                    privilegiada o confidencial y/o datos de carácter personal. Si ha
+                    recibido este mensaje por error le rogamos nos lo comunique por esta
+                    misma vía y proceda a su eliminación."
+  mail_warning_p2: "Le informamos que sus datos forman parte de un fichero automatizado 
+                    cuyo responsable es OPEN ALLIANCE software libre, S.A., con 
+                    domicilio en C/ Atenas, 8 , 08006 Barcelona, con fines promocionales
+                    de las actividades generadas por la compañía. Puede ejercer sus derechos,
+                    de acceso, rectificación, cancelación y oposición, por escrito o 
+                    por esta misma vía."
+  mail_company: " OPEN ALLIANCE SOFTWARE LIBRE, S.A.\n
+                  Atenas, 8 08006 - Barcelona.\n
+                  http://www.nubola-saas.com\n
+                  info@nubola-saas.com\n
+                  (+34) 93 212 24 60"
+  hello: Hola
+  mail_confirmation: " TU ESCRITORIO HA SIDO CREADO CORRECTAMENTE.\n
+                      \n
+                      Desde este momento dispones de una cuenta de acceso al escritorio\n
+                      de {{platform_name}}, pero antes debes activarla.\n
+                      \n
+                      Desde el escritorio podrás:\n
+                      \n
+                         - INSTALAR las aplicaciones disponibles.\n
+                         - DAR DE ALTA a usuarios de tu empresa.\n
+                         - ACCEDER a las aplicaciones disponibles.
+                      \n
+                      \n
+                      Haga clic en el siguiente enlace (o cópielo en la barra de exploración\n
+                      del navegador) para activar su cuenta:"
+  activate_account: Activar cuenta
+  transports: Transportes
+  communications: Comunicaciones
+  commercial: Comercial
+  touristic: Turístico
+  sanitary: Sanitario
+  education: Educación
+  financial: Financiero
+  administration: Administración
+  industrial: Industrial
+  energetic: Energético
+  mines: Minero
+  construction: Construcción
+  agricola: Agrícola
+  ramadery: Ganadero
+  fishing: Pesca
+  other: Otros
+  administrative_dpt: Depto. Administrativo
+  
+  sector: Sector
+  size: Tamaño de la empresa
+  
+  0_to_9: de 0 a 9 empleados
+  10_to_19: de 10 a 19 empleados
+  20_a_29: de 20 a 29 empleados
+  30_a_39: de 30 a 39 empleados
+  40_a_49: de 40 a 49 empleados
+  50_to_x: 50 o mas empleados
+  
+  image_max_size: "Tamaño máximo de imagen superado: (2048 KB)"
+  must_be_alphanumeric: debe ser alfanumérico (usar sólo letras y números)
+  company_name: Nombre de la empresa
+  contact_person: Persona de contacte
+  other_documents: "<b>Importante</b><br/>
+                    Para que este contrato sea valido es necesario enviarlo junto con los siguientes documentos:
+                    <ul>
+                      <li>Fotocopia de NIF / DNI de la empresa o persona contratante.</li>
+                      <li>Fotocopia del DNI del representante de la empresa.</li>
+                    </ul>"
+  company_data: "Datos de la empresa"
+  contact_data: "Datos del representante"
+  additional_info_right: se reserva el derecho de solicitar documentación adicional justificativa del poder del representante.
+  signup_clause: "Acceso a la Plataforma Nubola de acuerdo con las cláusulas generales del servicio que declaro haber leído:"
+  signup_clause2: "El servicio se prestará de acuerdo con las tarifas vigentes en cada momento, publicadas en <a href=\"http://www.nubola-saas.com\">www.nubola-saas.com</a> y con la limitación de número máximo de usuarios concurrentes escogida por el usuario administrador en cada momento. En el momento de generar este documento el límite era:"
+  signdown_clause: "Si desea darse de baja del servicio marque la cruz correspondiente. La baja será efectiva al inicio del siguiente periodo de facturación siempre que la comunicación de la baja se realice con 15 días de preaviso. En caso contrario se procederá al cobro de la siguiente factura y con posterioridad se realizará la baja."
+  bank_authorization: "Autorizamos a {{company}} a cargar mensualmente el importe de su servicio en nuestra cuenta corriente cuyo número indicamos:"
+  groups: Grupos
+  admin_user: Usuario administrador
+  contracts: Contratos
+  host_types: Tipos de host
+  logs: logs
+  hosts: hosts
+  groupadmin_control_panel_help: "<p>Este es el menú principal del <b>administrador de grupo</b>.
+                                  <p>
+                                  La funcionalidad básica para empezar a trabajar consiste en:
+                                  <ul>
+                                    <li>instalar aplicaciones desde <b>Aplicaciones</b></li>
+                                    <li>añadir usuarios a su grupo desde <b>Usuarios</b></li>
+                                    <li>posteriormente decidir que usuarios tienen acceso a cada aplicación instalada.</li>
+                                  </ul>  
+                                  <p>Este último paso se puede hacer tanto desde <b>Usuarios</b> como desde <b>Aplicaciones</b>.
+                                  
+                                  <p>Ud. mismo (usuario administrador) debe auto-asignarse a las aplicaciones que desee utilizar para poder tenerlas presentes en
+                                  su menú <b>Aplicaciones</b> (a la izquierda de la barra en la parte superior de la pantalla).
+                                  
+                                  <p>Desde el menú también se pueden realizar otras acciones como gestionar su <b>Contrato</b>, editar su datos de <b>Grupo</b>, ver las
+                                  <b>estadísticas</b> de utilización de su grupo, etc...
+                                  
+                                  <p>Entrando a los diferentes apartados se puede encontrar ayuda más especializada sobre cada tema."
+  platform_admin: Administrador de plataforma
+  say_yes: "Sí"
+  say_no: "No"
+  
+  active_scaffold:
+    group: Grupo
+    concept: Concepto
+    date: Fecha
+    price: Precio
+    amount: Cantidad
+    albarans: Albaranes
+    found: encontrados
+    no_entries: Sin entradas
+    groups: Grupos
+    users: Usuarios
+    create_new: Crear nuevo
+    edit: Editar
+    delete: Borrar
+    show: Ver
+    search: Buscar
+    reset: Resetear
+
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      short: "%H:%M"
+      long: "%H:%M"
+    am: "am"
+    pm: "pm"
+
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m-%Y"
+      long: "%d-%m-%Y"
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+
+  activerecord:
+    errors: 
+      # 'attribute' and 'model' always available, 'count' where applicable
+      template:
+        header: 
+          one: "1 error ha impedido guardar el {{model}}" 
+          other: "{{count}} errores han impedido guardar el {{model}}" 
+        body: "Ha habido problemas con los siguientes campos:"
+      messages:    
+        inclusion: no esta incluido en la lista
+        exclusion: es un valor reservado reservado
+        invalid: es inválido
+        confirmation: no coincide con la confirmación
+        accepted: debe aceptarse
+        empty: no puede dejarse vacío
+        blank: no puede dejarse en blanco
+        too_long: es demasiado largo (debe tener {{count}} caracteres máximo)
+        too_short: es demasiado corto (debe tener {{count}} caracteres mínimo)
+        wrong_length: tiene longitud incorrecta (debe tener {{count}} caracteres)
+        taken: ya existe y debe ser único
+        not_a_number: no es un número
+        greater_than: debe ser mayor a {{value}}
+        greater_than_or_equal_to: debe ser mayor o igual a {{value}}
+        equal_to: debe ser igual a {{value}}
+        less_than: debe ser mas pequeño que {{value}}
+        less_than_or_equal_to: debe ser mas pequeño o igual a {{value}}
+        odd: debe ser impar
+        even: debe ser par
+    models:
+      contract: contrato
+      user: usuario
+      group: grupo
+    attributes:
+      user:
+        name: Nombre
+        surname: Apellido
+        status: Estado
+        telephone: Teléfono
+        mobile: Movil
+        password: Contraseña
+        password_confirmation: Confirmación de contraseña
+        user_image: Imagen de usuario
+        confirmed: Confirmado
+        wallpaper: Fondo de escritorio
+      contract:
+        code: Código
+        date: Fecha
+        group: Grupo
+      group:
+        name: Nombre
+        city: Ciudad
+        contract: Contrato
+        address: Direción
+        zipcode: Código Postal
+        country: Pais
+        nif: NIF
+        client: Cliente
+        numusers: Núm. máx. usuarios concurrentes
+        logo_image: Logo
+        demo_ends: Fin de demo
+        active: Activo
+        created_at: Fecha de alta
+        
+  countries:
+    afghanistan: Afganistán            
+    aland_islands: Åland                
+    albania: Albania
+    algeria: Algeria
+    american_samoa: Samoa Americana
+    andorra: Andorra
+    angola: Angola
+    anguilla: Anguila
+    antarctica: Antártida
+    antigua_and_barbuda: Antigua y Barbuda
+    argentina: Argentina
+    armenia: Armenia
+    aruba: Aruba
+    australia: Australia
+    austria: Austria
+    azerbaijan: Azerbaiyán
+    bahamas: Bahamas
+    bahrain: Bahréin
+    bangladesh: Bangladesh
+    barbados: Barbados
+    belarus: Bielorrusia
+    belgium: Bélgica
+    belize: Belice
+    benin: Benín
+    bermuda: Bermudas
+    bhutan: Bután
+    bolivia: Bolivia
+    bosnia_and_herzegowina: Bosnia y Herzegovina
+    botswana: Botsuana
+    bouvet_island: Isla Bouvet
+    brazil: Brasil
+    british_indian_ocean_territory: Territorio Británico del Océano Índico
+    brunei_darussalam: Brunéi
+    bulgaria: Bulgaria
+    burkina_faso: Burkina Faso
+    burundi: Burundi
+    cambodia: Camboya
+    cameroon: Camerún
+    canada: Canadá
+    cape_verde: Cabo Verde
+    cayman_islands: Islas Caimán
+    central_african_republic: República Centroafricana
+    chad: Chad
+    chile: Chile
+    china: China
+    christmas_island: Isla de Navidad
+    cocos_keeling_islands: Islas Cocos
+    colombia: Colombia
+    comoros: Comoras
+    congo: Congo
+    cook_islands: Islas Cook
+    costa_rica: Costa Rica
+    cote_ivoire: Costa de Marfil
+    croatia: Croacia
+    cuba: Cuba
+    cyprus: Chipre
+    czech_republic: República Checa
+    denmark: Dinamarca
+    djibouti: Yibuti
+    dominica: Dominica
+    dominican_republic: República Dominicana
+    ecuador: Ecuador
+    egypt: Egipto
+    el_salvador: El Salvador
+    equatorial_guinea: Guinea Ecuatorial
+    eritrea: Eritrea
+    estonia: Estonia
+    ethiopia: Etiopía
+    falkland_islands_malvinas: Islas Malvinas
+    faroe_islands: Islas Feroe
+    fiji: Fiyi
+    finland: Finlandia
+    france: Francia
+    french_guiana: Guayana Francesa
+    french_polynesia: Polinesia Francesa
+    french_southern_territories: Territorios Australes Franceses
+    gabon: Gabón
+    gambia: Gambia
+    georgia: Georgia
+    germany: Alemania
+    ghana: Ghana
+    gibraltar: Gibraltar
+    greece: Grecia
+    greenland: Groenlandia
+    grenada: Granada
+    guadeloupe: Guadalupe
+    guam: Guam
+    guatemala: Guatemala
+    guernsey: Guernsey
+    guinea: Guinea
+    guinea_bissau: Guinea-Bissau
+    guyana: Guyana
+    haiti: Haití
+    heard_and_mcdonald_islands: Islas Heard y McDonald
+    holy_see_vatican_city_state: Ciudad del Vaticano
+    honduras: Honduras
+    hong_kong: Hong Kong
+    hungary: Hungría
+    iceland: Islandia
+    india: India
+    indonesia: Indonesia
+    iran_islamic_republic_of: Irán
+    iraq: Iraq
+    ireland: Irlanda
+    isle_of_man: Isla de Man
+    israel: Israel
+    italy: Italia
+    jamaica: Jamaica
+    japan: Japón
+    jersey: Jersey
+    jordan: Jordania
+    kazakhstan: Kazajistán
+    kenya: Kenia
+    kiribati: Kiribati
+    korea_democratic_peoples_republic_of: Corea del Sur
+    korea_republic_of: Corea del Norte
+    kuwait: Kuwait
+    kyrgyzstan: Kazajistán
+    lao_peoples_democratic_republic: Laos
+    latvia: Letonia
+    lebanon: Líbano
+    lesotho: Lesoto 
+    liberia: Liberia
+    libyan_arab_jamahiriya: Libia
+    liechtenstein: Liechtenstein
+    lithuania: Lituania
+    luxembourg: Luxemburgo
+    macao: Macao
+    macedonia_the_former_yugoslav_republic_of: Macedonia
+    madagascar: Madagascar
+    malawi: Malaui
+    malaysia: Malasia
+    maldives: Maldivas
+    mali: Malí
+    malta: Malta
+    marshall_islands: Islas Marshall
+    martinique: Martinica
+    mauritania: Mauritania
+    mauritius: Mauricio
+    mayotte: Mayotte
+    mexico: México
+    micronesia_federated_states_of: Micronesia
+    moldova_republic_of: Moldavia
+    monaco: Mónaco
+    mongolia: Mongolia
+    montenegro: Montenegro
+    montserrat: Montserrat
+    morocco: Marruecos
+    mozambique: Mozambique
+    myanmar: Birmania
+    namibia: Namibia
+    nauru: Nauru
+    nepal: Nepal
+    netherlands: Países Bajos
+    netherlands_antilles: Antillas Neerlandesas
+    new_caledonia: Nueva Caledonia
+    new_zealand: Nueva Zelanda
+    nicaragua: Nicaragua
+    niger: Níger
+    nigeria: Nigeria
+    niue: Niue
+    norfolk_island: Norfolk
+    northern_mariana_islands: Islas Marianas del Norte
+    norway: Noruega
+    oman: Omán
+    pakistan: Pakistán
+    palau: Palaos
+    palestinian_territory_occupied: Palestina
+    panama: Panamá
+    papua_new_guinea: Papúa Nueva Guinea
+    paraguay: Paraguay
+    peru: Perú 
+    philippines: Filipinas
+    pitcairn: Islas Pitcairn
+    poland: Polonia
+    portugal: Portugal
+    puerto_rico: Puerto Rico
+    qatar: Qatar
+    reunion: Reunión
+    romania: Rumania
+    russian_federation: Rusia
+    rwanda: Ruanda
+    saint_barthelemy: San Bartolomé
+    saint_helena: Santa Helena
+    saint_kitts_and_nevis: San Cristóbal y Nieves
+    saint_lucia: Santa Lucía
+    saint_pierre_and_miquelon: San Pedro y Miquelón
+    saint_vincent_and_the_grenadines: San Vicente y las Granadinas
+    samoa: Samoa
+    san_marino: San Marino
+    sao_tome_and_principe: Santo Tomé y Príncipe
+    saudi_arabia: Arabia Saudita
+    senegal: Senegal
+    serbia: Serbia
+    seychelles: Seychelles
+    sierra_leone: Sierra Leona
+    singapore: Singapur
+    slovakia: Eslovaquia
+    slovenia: Eslovenia
+    solomon_islands: Islas Salomón
+    somalia: Somalia
+    south_africa: Sudáfrica
+    south_georgia_and_the_south_sandwich_islands: Islas Georgias del Sur y Sandwich del Sur
+    spain: España
+    sri_lanka: Sri Lanka
+    sudan: Sudán
+    suriname: Surinam
+    svalbard_and_jan_mayen: Svalbard y Jan Mayen
+    swaziland: Suazilandia
+    sweden: Suecia
+    switzerland: Suiza
+    syrian_arab_republic: Siria
+    taiwan_province_of_china: Taiwán
+    tajikistan: Tayikistán
+    tanzania_united_republic_of: Tanzania
+    thailand: Tailandia
+    timor_leste: Timor Oriental
+    togo: Togo
+    tokelau: Tokelau
+    tonga: Tonga
+    trinidad_and_tobago: Trinidad y Tobago
+    tunisia: Túnez
+    turkey: Turquía
+    turkmenistan: Turkmenistán
+    turks_and_caicos_islands: Islas Turcas y Caicos
+    tuvalu: Tuvalu
+    uganda: Uganda
+    ukraine: Ucrania
+    united_arab_emirates: Emiratos Árabes Unidos
+    united_kingdom: Reino Unido
+    united_states: Estados Unidos
+    united_states_minor_outlying_islands: Islas ultramarinas de Estados Unidos
+    uruguay: Uruguay
+    uzbekistan: Uzbekistán
+    vanuatu: Vanuatu
+    venezuela: Venezuela
+    vietnam: Vietnam
+    virgin_islands_british: Islas Vírgenes Británicas
+    virgin_islands_us: Islas Vírgenes Estadounidenses
+    wallis_and_futuna: Wallis y Futuna
+    western_sahara: Sahara Occidental
+    yemen: Yemen
+    zambia: Zambia
+    zimbabwe: Zimbabue
+    
+  groupadmin_new_contract_help: "Este es el menú de <b>contratación de servicios</b>.
+                                 <br/>
+                                 <p>CONTRATACIÓN:<br/>
+                                   &nbsp;&nbsp;Para contratar el servicio deberá:
+								 </p>
+                                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Cumplimentar los datos de este formulario y grabarlos. Podrá cambiar los datos del formulario tantas veces crea necesario, siempre que no haya hecho el envío a Open Alliance, a partir de ese momento los datos del contrato quedarán fijos.</li>
+                                   <li>Imprimir una copia del documento en PDF. Una vez los datos sean <b>GUARDADOS</b>, la plataforma generará un link con un archivo PDF.</li>
+                                   <li>Firmar la copia y adjuntar la documentación necesaria para la contratación. Las especificaciones sobre la documentación las encontrará en el documento PDF que acaba de imprimir.</li>
+                                   <li>Enviar toda la documentación a Open Alliance Software Libre, S.A. Puede enviarlo utilizando UNA de las siguientes maneras:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>por <b>FAX</b>, enviando el contrato firmado al 93 212 24 60</li>
+                                       <li>por <b>correo ordinario</b>, enviando el contrato firmado a Atenas, 8, bajos, 08006, Barcelona</li>
+                                       <li>por <b>e-mail</b>, enviando el contrato firmado a administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>
+								   &nbsp;&nbsp;Open Alliance hará efectivo el contrato en un plazo máximo de 48 horas a partir del momento de recepción de dicha documentación.</br>
+                                   &nbsp;&nbsp;A partir de este momento el servicio queda contratado con la documentación que nos facilitó (lea MODIFICACIÓN DEL CONTRATO).
+                                 </p>
+                                 <p>MODIFICACIÓN DEL CONTRATO:<br/>
+                                   &nbsp;&nbsp;A partir del momento que Open Alliance haga efectiva la contratación, los datos del contrato
+quedarán fijos y solo se podrá cambiar:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitación de usuarios: se puede cambiar en cualquier momento, pero recomendamos hacerlo el ultimo día hábil del mes.</li>
+                                   <li>Domiciliación bancaria: deberá volver a imprimir el archivo PDF del contrato y marcar MODIFICACIÓN DATOS BANCARIOS en la carátula de FAX adjunta al contrato. Recuerde que debe aportar el resto de documentación y que esta debe corresponder con los datos del formulario.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si tiene alguna duda o consulta puede ponerse en contacto con nosotros a través de e-mail a administracion@nubola-saas.com.
+                                 </p>
+                                 <p>BAJA DEL SERVICIO:<br/>
+                                   &nbsp;&nbsp;Para solicitar la baja del servicio deberá volver a imprimir el archivo PDF del contrato y marcar las casillas BAJA DE SERVICIO.</br>
+								   &nbsp;&nbsp;La baja será efectiva al inicio del siguiente periodo de facturación siempre que la comunicación de la baja se realice con 15 días de antelación.
+                                 </p>"
+                                 
+  groupadmin_contract_inactive_help: "Este es el menú de <b>contratación de servicios</b>.
+                                 <br/>
+                                 <p>CONTRATACIÓN:<br/>
+                                   &nbsp;&nbsp;Para finalizar el proceso de contratación usted debe:
+								 </p>
+                                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Verificar que los datos que ha introducido sean los correctos, en caso contrario haciendo clic en <b>Modificar Contrato</b> podrá realizar los cambios necesarios.</li>
+                                   <li>Imprimir una copia del documento en PDF. Una vez los datos sean <b>GRABADOS</b>, la plataforma generará un link con un archivo PDF.</li>
+                                   <li>Firmar la copia y adjuntar la documentación necesaria para la contratación. Las especificaciones sobre la documentación las encontrará en el documento PDF que acaba de imprimir.</li>
+                                   <li>Enviar toda la documentación a Open Alliance Software Libre, S.A. Puede enviarlo utilizando UNA de las siguientes maneras:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>por <b>FAX</b>, enviando el contrato firmado al 93 212 24 60</li>
+                                       <li>por <b>correo ordinario</b>, enviando el contrato firmado a Atenas, 8, bajos, 08006, Barcelona</li>
+                                       <li>por <b>e-mail</b>, enviando el contrato firmado a administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>
+								   &nbsp;&nbsp;Open Alliance hará efectivo el contrato en un plazo máximo de 48 horas a partir del momento de recepción de dicha documentación.</br>
+                                   &nbsp;&nbsp;A partir de este momento el servicio queda contratado con la documentación que nos facilitó (lea MODIFICACIÓN DEL CONTRATO).
+                                 </p>
+                                 <p>MODIFICACIÓN DEL CONTRATO:<br/>
+                                   &nbsp;&nbsp;A partir del momento que Open Alliance haga efectiva la contratación, los datos del contrato
+quedarán fijos y solo se podrá cambiar:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitación de usuarios: se puede cambiar en cualquier momento, pero recomendamos hacerlo el ultimo día hábil del mes.</li>
+                                   <li>Domiciliación bancaria: deberá volver a imprimir el archivo PDF del contrato y marcar MODIFICACIÓN DATOS BANCARIOS en la carátula de FAX adjunta al contrato. Recuerde que debe aportar el resto de documentación y que esta debe corresponder con los datos del formulario.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si tiene alguna duda o consulta puede ponerse en contacto con nosotros a través de e-mail a administracion@nubola-saas.com.
+                                 </p>"
+                                 
+  groupadmin_contract_active_help: "Este es el menú de <b>contratación de servicios</b>.
+                                 <br/>
+                                <p>MODIFICACIÓN DEL CONTRATO:<br/>
+                                   &nbsp;&nbsp;A partir del momento que Open Alliance haga efectiva la contratación, los datos del contrato
+quedarán fijos y solo se podrá cambiar:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitación de usuarios: se puede cambiar en cualquier momento, pero recomendamos hacerlo el ultimo día hábil del mes.</li>
+                                   <li>Domiciliación bancaria: deberá volver a imprimir el archivo PDF del contrato y marcar MODIFICACIÓN DATOS BANCARIOS en la carátula de FAX adjunta al contrato. Recuerde que debe aportar el resto de documentación y que esta debe corresponder con los datos del formulario.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si tiene alguna duda o consulta puede ponerse en contacto con nosotros a través de e-mail a administracion@nubola-saas.com.
+                                 </p>"
+  accept_service: "He leído y acepto las condiciones del servicio de DEMO"
+  service_terms: "Condiciones del servicio"
+  accept_contract: "He leído y acepto las condiciones del contrato"
+  contract_terms: "Condiciones del contrato"
+  read_terms_here: "lea las condiciones"
+  pdf_terms: "aquí"
+  more_data: "Más datos"
+  less_data: "Menos datos"
+  more_data_title: Mostrar también datos no obligatorios
+  less_data_title: Mostrar sólo datos obligatorios
+  email_is_checked: "El e-mail debe ser válido, recibirá un correo de confirmación"
+  two_or_more_concurrent: "El número de usuarios concurrentes debe ser mayor o igual que dos"
+  selected_image: "Imagen seleccionada"
+  upload_image: "Subir imagen"
+  sure_to_delete: "¿Está seguro de que desea borrarlo?"
+  images: "IMÁGENES"
+  uploadedimages_title: "Gestione sus imágenes publicas"
+  group_folder: "Carpeta de grupo"
+  academies: "ACADEMIAS"
+  academies_title: "Academias disponibles en la plataforma"
+  password_unique_in_group: "ya está siendo usada por alguien de su grupo"
+  source: "¿Dónde nos conociste?"
+  google: "Google"
+  cibernarium: "Cursos Cibernarium"
+  partner: "Partners"
+  boe: "Web \"Boletines Oficiales\""
+  fonsformacio: "Fons Formació"
+  asesoria: "Web \"Las Asesorías\""
+  blog: "Blogs o entrevistas"
+  other: "Otros"
+  MODIFYING: "modificando"
+  ADDHOST_FAILED: "instalación"
+  MODIFYHOST_FAILED: "modificando"
+  DELHOST_FAILED: "eliminando"
+
+  are_you_sure_to_delete: "¿Está seguro de que desea eliminar"
+  move: "Mover"

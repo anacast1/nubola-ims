@@ -1,0 +1,25 @@
+<li class="form-element">
+  <dl class="">
+    <dt>
+      <label for="record_academies">Academias disponibles</label>
+    </dt>
+    <dd>
+      <ul class="checkbox-list" id="<%= "record_academies_" + @record.id.to_s %>" >
+        <% i = 0 %>
+        <% available_academies.each do |academy| %>
+          <li>
+            <% app = App.find_by_unique_app_id(academy[1]) %>
+            <% if @record.academies.index(academy[1]) %>
+              <%= check_box_tag "record[academies][" + i.to_s + "][id]", app.id.to_s, true, {:id => "record_academies_" + @record.id.to_s + "_" + i.to_s + "_id"} %>
+            <% else %>
+              <%= check_box_tag "record[academies][" + i.to_s + "][id]", app.id.to_s, false, {:id => "record_academies_" + @record.id.to_s + "_" + i.to_s + "_id"} %>
+            <% end %>
+            <label for="<%= "record_academies_" + @record.id.to_s + "_" + i.to_s + "_id" %>"><%= academy[0] %></label>
+          </li>
+          <% i = i + 1 %>
+        <% end %>
+      </ul>
+    </dd>
+  </dl>
+</li>
+

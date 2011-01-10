@@ -1,0 +1,43 @@
+.register input {
+  width: 140px;
+  border: 1px solid;
+  height: 15px; 
+  font-size: 10px;
+}
+
+.register select {
+  width: 320px;
+  border: 1px solid;
+  height: 15px;
+  font-size: 10px;
+}
+
+#registertd {
+/*background-image: url(../images/register.png);*/
+  background-repeat: no-repeat;
+  width: 388px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#image_button{
+  position: absolute;
+  top: 320px;
+  left: 295px;
+}
+
+#image_button:hover {
+   border: 0;
+}
+
+
+#registerform{
+  position: absolute;
+  top: 80px;
+  left: 15px;
+}
+
+td.error{
+  font-size: 9px;
+  color: red;
+}

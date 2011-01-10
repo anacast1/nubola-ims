@@ -1,0 +1,146 @@
+<%= render :partial => 'shared/sso_left' %>
+
+<div class="sso_right">
+
+  <div class="sso_login_box" title="<%= t("signup") %>">
+  
+    <div class="bl"><div class="br"><div class="tr"><div class="tl">
+
+      <% form_tag(:action=> "new_group") do -%>
+    
+        <div class='sso_login_form'>
+          <div class="sso_pair">
+            <%= label :group, :name, "* #{t("group_name")}:", :class => "sso_login_label" %>
+            <%=text_field("group", "name", :class => "sso_login_input") %>
+            <%= error_messages_for_group :name %>
+          </div>
+                   
+          <div class="sso_pair">
+            <%= label :user, :login, "* #{t("login")}:", :class => "sso_login_label" %>
+            <%= text_field("user", "login", :class => "sso_login_input") %>
+            <%= error_messages_for_user :login %>
+          </div>
+
+          <div class="sso_pair">
+            <%= label :user, :password, "* #{t("password")}:", :class => "sso_login_label" %>
+            <%= password_field("user","password", :class => "sso_login_input") %>
+            <%= error_messages_for_user :password %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :user, :password_confirmation, "* #{t("password_repeated")}:", :class => "sso_login_label" %>
+            <%= password_field("user","password_confirmation", :class => "sso_login_input") %>
+            <%= error_messages_for_user :password_confirmation %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :user, :email, "** #{t("email")}:", :class => "sso_login_label" %>
+            <%= text_field("user","email", :class => "sso_login_input") %>
+            <%= error_messages_for_user :email %>
+          </div>
+
+          <div class="sso_pair">
+            <%= label :user, :name, "* #{t("name")}:", :class => "sso_login_label" %>
+            <%= text_field("user", "name", :class => "sso_login_input") %>
+            <%= error_messages_for_user :name %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :user, :surname, "* #{t("surname")}:", :class => "sso_login_label" %>
+            <%=text_field("user", "surname", :class => "sso_login_input") %>
+            <%= error_messages_for_user :surname %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :user, :telephone, "* #{t("phone")}:", :class => "sso_login_label" %>
+            <%=text_field("user", "telephone", :class => "sso_login_input") %>
+            <%= error_messages_for_user :telephone %>
+          </div>
+
+          <div id='more_data_link' class='sso_login_links sso_text_small' style='display: none;'>
+            <%= link_to_function(t("more_data"), 
+                                 :onclick => "Element.hide('more_data_link');Element.show('additional_data');Element.show('less_data_link');",
+                                 :title => t("more_data_title"))
+            %>
+          </div>
+          <div id='less_data_link' class='sso_login_links sso_text_small'>
+            <%= link_to_function(t("less_data"), 
+                                 :onclick => "Element.hide('less_data_link');Element.hide('additional_data');Element.show('more_data_link');",
+                                 :title => t("less_data_title")) 
+            %>
+          </div>
+          
+        </div>
+
+        <div id='additional_data' class='sso_login_form'>
+
+          <div class="sso_pair">
+            <%= label :group, :city, "#{t("city")}:", :class => "sso_login_label" %>
+            <%= text_field("group", "city", :class => "sso_login_input") %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :group, :country, "#{t("country")}:", :class => "sso_login_label" %>
+            <%= country_select :group, :country, {t("countries.spain") => "spain"}, {}, {:class => "sso_login_input"} %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :group, :sector, "#{t("sector")}:", :class => "sso_login_label" %>
+            <% sectors_array = ["transports", "communications", "commercial", "touristic", "sanitary", "education", "financial", "administration", "industrial", "energetic", "mines", "construction", "agricola", "ramadery", "fishing", "other"] %>
+            <%= select :group, :sector, sectors_array.collect{|s| [t(s), s]}, {:include_blank => true }, :class => "sso_login_input" %>
+          </div>
+          
+          <div class="sso_pair">
+            <%= label :group, :size, "#{t("size")}:", :class => "sso_login_label" %>
+            <% sizes_array = ["0_to_9", "10_to_19", "20_a_29", "30_a_39", "40_a_49", "50_to_x"] %>
+            <%= select :group, :size, sizes_array.collect{|s| [t(s), s]}, {:include_blank => true }, :class => "sso_login_input" %>
+          </div>
+
+          <div class="sso_pair">
+            <%= label :group, :source, "#{t("source")}:", :class => "sso_login_label" %>
+            <% sources_array = ["google", "cibernarium", "partner", "boe", "fonsformacio", "asesoria", "blog", "other"] %>
+            <%= select :group, :source, sources_array.collect{|src| [t(src), src]}, {:include_blank => true }, :class => "sso_login_input" %>
+          </div>
+          
+        </div>
+
+        <div class='sso_login_form' style="border-bottom: 0;">
+
+          <div class="sso_login_text sso_text_small">
+            (*) : <%= t("mandatory_fields") %>
+            <br/>
+            (**) : <%= t("email_is_checked") %>
+          </div>
+          
+          <div class='sso_login_links sso_text_centered' >
+            <%= t("accept_service") + ": " + check_box_tag("terms", "1", false, {:onclick => "if(!this.checked){document.getElementById('register').disabled = true;}else{document.getElementById('register').disabled = false;}"}) %>
+            <div class="sso_text_small">
+              (<%= t("read_terms_here") %> <b><%=link_to(t("pdf_terms"), {:action => :pdf_service_terms}, :title => t("service_terms") ) %></b>) 
+            </div>
+          </div>
+
+          <%= submit_tag(t("signup"), :id => 'register', :name => 'register', :action => 'new_group', :class => "sso_login_button") %>
+          
+        </div>
+        
+      <% end -%>
+
+    </div></div></div></div>
+
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+
+  </div>
+
+</div>
+
+<script>
+  if(!document.getElementById('terms').checked) {
+    document.getElementById('register').disabled = true;
+  }
+  else {
+    document.getElementById('register').disabled = false;
+  }
+</script>
+

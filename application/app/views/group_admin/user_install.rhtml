@@ -1,0 +1,44 @@
+<div id="first_view">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header' %>
+  </div>
+
+  <div class="normaldiv">
+
+    <%= ok_tag flash[:uninstalled] %>
+
+    <% form_tag do -%>
+      <table>
+        <tr>
+          <td>
+            <b><%= t("user_is_inactive") %>.</b>
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <%= submit_tag t("activate"), :onclick => "Element.hide('first_view'); Element.show('second_view');" %>
+        </td>
+      </tr>
+    </table>
+    <% end -%>
+  </div>
+
+</div>
+
+<div id="second_view" style="display: none">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header_inactive' %>
+  </div
+
+  <br/>
+
+  <div id="flash">
+    <%= t("activating_user") %> <%= h(@user.name) %>  <%= h(@user.surname) %>.
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>

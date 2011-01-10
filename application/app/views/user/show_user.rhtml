@@ -1,0 +1,49 @@
+<table cellspacing="0" cellpadding="20">
+  <tr>
+    <td cellpadding="20" valign="top" align="center" class="TitleSmaller">
+      <br/>
+        <% if @user.user_image %>
+          <% image_path = url_for_file_column(@user, "user_image") %>
+          <%= image_tag image_path %>
+        <% else %>
+          <%= image_tag "default_user.png" %>
+        <% end %>
+    </td>
+    <td>
+      <table>
+        <tr>
+          <td id="caption">Login:</td>
+          <td><%=@user.login%></td>
+        </tr>
+        <tr>
+          <td id="caption">Name:</td>
+          <td><%=@user.name%></td>
+        </tr>
+        <tr>
+          <td id="caption">Surname:</td>
+          <td><%=@user.surname%></td>
+        </tr>
+        <tr>
+          <td id="caption">Telephone:</td>
+          <td><%=@user.telephone%></td>
+        </tr>
+        <tr>
+          <td id="caption">Mobile:</td>
+          <td><%=@user.mobile%></td>
+        </tr>
+        <tr>
+          <td id="caption">Email:</td>
+          <td><%=@user.email%></td>
+        </tr> 
+        <tr>
+          <td id="caption">Group:</td>
+          <td><%=@user.group.name%></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <tr><td colspan="2" align="center">
+    <%= link_to 'Modify user', :action => "modify_user" %>
+  </td></tr>
+</table>

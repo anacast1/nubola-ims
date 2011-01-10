@@ -1,0 +1,119 @@
+<div id="first_view">
+
+  <div class="menudiv">
+    <%= render :partial => 'app_header' %>
+  </div>
+  
+  <div class="normaldiv">
+  
+    <% unless @install.ready? -%>
+    
+      <%= info_tag(t("this_app_is_in_status") + t(@install.status)) %>
+      
+    <% else -%>
+    
+      <%= info_tag t("this_app_installed_ok") %>
+      <table>
+        <tr>
+          <td>
+            <% if !@host.nil? && @host.ready? -%>
+              <% form_tag({ :action => 'app_move', :id => @app.id }) do -%>
+              <table class="edit">
+                <tr>
+                  <td>
+                    <%= t("remember_when_moving_app") %>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= hidden_field_tag("original_host", @install.host.hostname) %>
+                    <%= radio_button_tag("host_id", Setting.shared_host, @install.host.compartido?) %><%= t("shared_host") %><br />
+                    <%= radio_button_tag("host_id", @host.hostname, @install.host.virtual?) %><%= t("particular_server") %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= submit_tag t("move"), :onclick => "if(confirm('#{t("are_you_sure_to_move")} #{@app.name}?')){ Element.hide('first_view');Element.show('move_view');return true;}else{return false;}" %>
+                  </td>
+                </tr>
+              </table>
+              <% end -%>
+            <% end -%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <% form_tag({ :action => 'app_uninstall', :id => @app.id }) do -%>
+
+              <% if @dependent_apps.size > 0 -%>
+
+              <table class="uninstall">
+                <tr>
+                  <td>
+                    <%= t("first_uninstall_the_following_apps") %>:
+                    <%= @dependent_apps %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= submit_tag t("uninstall"), :onclick => "if(confirm('#{t("are_you_sure_to_uninstall")} #{@app.name}?')){ Element.hide('first_view');Element.show('delete_view');return true;}else{return false;}", :disabled => "disabled" %>
+                  </td>
+                </tr>
+              </table>
+
+              <% else -%>
+
+              <table class="uninstall">
+                <tr>
+                  <td>
+                    <%= t("remember_when_uninstalling_app") %>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <%= submit_tag t("uninstall"), :onclick => "if(confirm('#{t("are_you_sure_to_uninstall")} #{@app.name}?')){ Element.hide('first_view');Element.show('delete_view');return true;}else{return false;}" %>
+                  </td>
+              </table>
+
+              <% end -%>
+
+            <% end -%>
+          </td>
+        </tr>
+      </table>
+  
+    <% end -%>
+
+  </div>
+  
+</div>
+
+<div id="delete_view" style="display: none">
+
+  <div class="menudiv">
+    <%= render :partial => 'app_header_inactive', :object => @app, :locals => {:installed => @installed} %>
+  </div>
+  <br/>
+  <div id="flash">
+    <%= t("uninstalling") + " " +  @app.name %>
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>
+
+<div id="move_view" style="display: none">
+
+  <div class="menudiv">
+    <%= render :partial => 'app_header_inactive', :object => @app, :locals => {:installed => @installed} %>
+  </div>
+  <br/>
+  <div id="flash">
+    <%= t("moving") + " " + @app.name %>
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>

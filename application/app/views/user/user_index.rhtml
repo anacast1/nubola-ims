@@ -1,0 +1,31 @@
+<div class="menudiv">
+  <%= render :partial => 'user_header' %>
+</div>
+
+<div class="normaldiv" align="center">
+
+  <%= ok_tag flash[:user_modified] %>
+
+  <table class="centered">
+         
+          <%= label_tag(t("login")) %>
+          <%= value_tag(h(@user.login)) %>
+          
+          <%= label_tag(t("name")) %>
+          <%= value_tag(h(@user.name)) %>
+          
+          <%= label_tag(t("surname")) %>
+          <%= value_tag(h(@user.surname)) %>
+          
+          <%= label_tag(t("phone")) %>
+          <%= value_tag(h(@user.telephone)) %>
+          
+          <%= label_tag(t("mobile")) %>
+          <%= value_tag(h(@user.mobile)) %> 
+         
+          <%= label_tag(t("email")) %>
+          <%= value_tag(h(@user.email)) %>
+        
+  </table>
+  
+</div>

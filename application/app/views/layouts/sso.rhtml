@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><%= Setting.platform_name %></title>
+        
+      <%= stylesheet_link_tag "sso" %>
+      <%= stylesheet_link_tag "oa" %>
+      <%= stylesheet_link_tag "scaffold" %>
+      <%= stylesheet_link_tag "ims_styles" %>
+      <%= render(:partial => "shared/javascripts") %>
+      <link rel="shortcut icon" href="/favicon.ico" />
+
+      <script type="text/javascript">
+
+        function redirect_parent(){
+          if(parent.location.href.match('desktop')){
+            parent.location.href = 'sso/login';
+          }
+        }
+
+      </script>
+  </head>
+
+  <body onload="redirect_parent();">
+   
+    <div id="wrap"> 
+      <div id="main" class="clearfix">
+        <%= @content_for_layout %>
+      </div>
+    </div>
+
+    <%= render(:partial => "shared/footer") %>
+  </body>
+
+</html>

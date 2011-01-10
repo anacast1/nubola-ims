@@ -1,0 +1,39 @@
+<div class="menudiv">
+  <%= render :partial => 'vhost_header' %>
+</div>
+
+<div class="normaldiv">
+  
+  <p><%= t("use_simulator_please") %></p>
+  
+  <% form_remote_tag(:url => {:action => 'do_simulation'}, :update => "simulation_results") do -%>
+    <table class="normaltable centered" style="width: 70%;">
+      <th></th>
+      <th><%= t("app") %></th>
+      <th><%= t("installed_now") %></th>
+      <th><%= t("specs") %></th>
+      <% @apps.each do |app| -%>
+      <tr>
+        <td>
+          <%=check_box_tag("apps["+app.id.to_s+"]", 1, @selected_apps.include?(app))%>
+          <%=hidden_field_tag("apps["+app.id.to_s+"]", 0)%>
+        </td>
+        <td><%=app.name%></td>
+        <td><%=info_app(app,@group)%></td>
+        <td><%=requisitos_app(app)%></td>
+      </tr>
+      <% end -%>
+      <tr>
+        <td colspan="4">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="4" align="right"><%= submit_tag t("calculate_right_server") %></td>
+      </tr>
+    </table>
+  <% end -%>
+
+  <div id="simulation_results">
+  
+  </div>
+
+</div>

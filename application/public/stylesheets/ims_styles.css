@@ -1,0 +1,415 @@
+.foreground{ position:absolute; z-index:1; height: 100%; width: 100%; }
+.background{ position:absolute; z-index:-1; height: 100%; width: 100%; }
+.whitescreen{ position:absolute; z-index:0; background-color:white; height: 100%; width: 100%; }
+
+div.normaldiv {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-bottom: 1px solid;
+  padding: 0px 0px 20px 0px;
+}
+
+div.normaldiv p,td,h3,input{
+  padding-left: 10;
+  padding-right:10;
+}
+
+div.greendiv {
+  background: #ccffbf;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+div.greendiv p,td,h3,input{
+  padding-left: 10;
+  padding-right:10;
+}
+
+div.reddiv {
+  background: #f27072;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+div.reddiv p,td,h3,input{
+  padding-left: 10;
+  padding-right:10;
+}
+
+table.normaltable{
+  width: 100%;
+  margin: 0pt auto;
+}
+td.normaltd{
+  padding-left: 10;
+  padding-right:10;
+}
+
+.centered{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vtopright{
+  vertical-align: top;
+  text-align: right;
+  font-size: 10px;
+}
+
+.vbottomright{
+  vertical-align: bottom;
+  text-align: right;
+  font-size: 10px;
+}
+
+tr.highlighted{
+  align: center;
+}
+
+tr.highlighted img{
+  border: 0;
+}
+
+tr.highlighted:hover{
+  background-color: red;
+}
+
+div#flash{
+  text-align: center;
+  color: #FF5555;
+  margin: 5 5 5 5;
+}
+
+.green{
+  color: #008000;
+  text-align: center;
+}
+
+.red{
+  color: #f27072;
+  text-align: center;
+}
+
+hr.separador{
+  color: black; 
+  margin-left: 10px; margin-right: 10px; 
+  height: 1px;
+}
+
+.tabulated{
+  padding-left: 40px;
+}
+
+.inactive{
+  color: #808080;
+}
+
+.label{
+  font-weight: bold;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.value{
+  text-align: left;
+  padding-left: 20px;
+}
+
+/*.contr_title{
+  font-weight: bold;
+  text-align: right;
+}
+
+.contr_label{
+  text-align: left;
+}*/
+
+.contr_section{
+  background-color: #33CCDA;
+  color: white;
+}
+
+.contr_note{
+  font-size: 0.7em;
+  color: #33CCDA;
+  font-weight: normal;
+}
+
+.explicacio{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  padding-bottom: 20px;
+}
+
+/* ============= blue header ======== */
+
+div.menudiv {
+  width: 85%;
+  margin: 10px auto 10px auto;
+}
+
+.bl{
+  background: url(../images/bl.png) 0 100% no-repeat #33CCDA;
+}
+
+.br {
+  background: url(../images/br.png) 100% 100% no-repeat;
+}
+
+.tl {
+  background: url(../images/tl.png) 0 0 no-repeat;
+}
+
+.tr {
+  background: url(../images/tr.png) 100% 0 no-repeat;
+}
+
+.header{
+ color: white;
+}
+
+.header_caption{
+  white-space: nowrap;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.header_buttons{
+  float:right;
+  position: relative;
+  width: 100%;
+}
+
+.header_title{
+  padding-left: 10px;
+  vertical-align: 100%;
+}
+
+.header_top_buttons{
+  height: 40px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+  vertical-align: 140%;
+}
+
+.header_bottom_buttons{
+  height: 40px;
+  padding-right: 20px;
+  position:relative;
+  top: 6px;
+}
+
+.header_button{
+  float: right;
+  margin-left: 2px;
+}
+
+.btn_content{
+  /*padding: 3px 20px 0px 20px;*/
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: black;
+}
+
+.btn_active{
+  background-color: white;
+}
+.btn_inactive{
+  background-color: #004F66;
+}
+
+.btn_inactive a{
+  color: white
+}
+.btn_inactive a#hover{
+  text-decoration: none;
+}
+.btn_active a{
+  color: #004F66;
+}
+.btn_active a#hover{
+  text-decoration: none;
+}
+
+/* ============= errors ============= */
+
+#errorExplanation {
+  background: #f27072 url(../images/title_red.png) no-repeat left top;
+  border: none;
+  padding: 1.25em 1em 1.25em 48px;
+  margin: 1em auto 1em auto;
+  color: white;
+  width: 80%;
+}
+
+#errorExplanation ul{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#errorExplanation li{
+  margin-left: 20px;
+}
+
+#errorExplanation h2{
+  background-color: #f73134;
+  font-size: 1.1em;
+  padding-left: 10px;
+}
+
+#errorExplanation p{
+  color: white;
+}
+
+.fieldWithErrors{
+  padding: 0;
+  background-color: white;
+  display: inline;
+}
+
+.fieldWithErrors input{
+  padding: 0;
+  background-color: #f73134;
+  color: white;
+}
+
+
+/* ============= footer ============= */
+
+/*------ from: http://www.cssstickyfooter.com/ -----*/
+
+html, body, #wrap {height: 98%;}
+
+body > #wrap {height: auto; min-height: 98%;}
+
+#main {padding-bottom: 150px;}  /* must be same height as the footer */
+
+#footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+}
+
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+* .clearfix {display: block;}
+/* End hide from IE-mac */
+
+/*--------------------------------------------------*/
+
+#footer img{
+  padding-bottom: 10px;
+}
+
+#footer, .peu{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  color: white;
+}
+
+.peu{
+  background-color: #33CCDA;
+  height: 100px;
+}
+.peu a{
+  color: white;
+}
+
+.peu a:hover{
+  color: white;
+}
+
+.peu p{
+  font-size: 0.8em;
+}
+
+/* ================================== */
+
+/* ====== divs with image (help, info, errors...) =========== */
+.help {
+  background: #7589ff url(../images/title_blue.png) no-repeat left top;
+  border: none;
+  padding: 1.25em 1em 1.25em 48px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: left;
+  margin-top: 0.25em;
+  color: white;
+ }
+
+.ok {
+  background: #ccffbf url(../images/title_green.png) no-repeat left top;
+  border: none;
+  padding: 1.25em 1em 1.25em 48px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 0.25em;
+}
+
+.warn {
+  background: #f27072 url(../images/title_red.png) no-repeat left top;
+  border: none;
+  padding: 1.25em 1em 1.25em 48px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 0.25em;
+  color: white;
+  width: 80%;
+}
+
+.info {
+  background: #fffbe6 url(../images/title_yellow.png) no-repeat left top;
+  border: none;
+  padding: 1.25em 1em 1.25em 48px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  margin-top: 0.25em;
+}
+
+.info_content{
+ margin: 0pt auto; 
+ width: 60%; 
+ text-align: left;
+}
+
+#help_first{
+  padding-right: 15px;
+}
+
+#help_second{
+  margin-bottom: 20px;
+}
+
+.text_small{
+  font-size: x-small;
+}
+
+/* ========================================================== */
+

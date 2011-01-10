@@ -1,0 +1,25 @@
+<div class="menudiv">
+  <%= render :partial => 'app_header' %>
+</div>
+
+<div class="normaldiv" align="center">
+
+  <%= ok_tag flash[:app_modified] %>
+
+  <table cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td class="centered" width="20%">
+        <b><%= @app.name %></b><br/>
+        <% if @app.logo_image %>
+          <% image_path = url_for_file_column(@app, "logo_image") %>
+          <%= image_tag image_path, :border => 0, :title => @app.name %>
+        <% else %>
+          <%= image_tag "default_app_logo.png", :border => 0, :title => @app.name %>
+        <% end %>
+      </td>
+      <td width="80%">
+        <%= @app.long_description %>
+      </td>
+    </tr>
+  </table>
+</div>

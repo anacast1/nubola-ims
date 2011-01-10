@@ -1,0 +1,62 @@
+<div id="first_view">  
+
+  <%= render :partial => 'shared/sso_left' %>
+
+  <div class="sso_right">
+
+    <div class="sso_login_box" title="<%= t("start_session") %>">
+    
+      <div class="bl"><div class="br"><div class="tr"><div class="tl" style="height: 220px;">
+
+        <% form_tag(:action=> "login") do -%>
+      
+          <div class='sso_login_form'>
+            <div class="sso_pair">
+              <label for="user_login" class="sso_login_label">Login:</label>
+              <input type="text" name="user_login" id="user_login" value="<%= flash[:login] %>" class="sso_login_input" />
+            </div>
+
+            <div class="sso_pair">
+              <label for="user_password" class="sso_login_label"><%= t("password") %>:</label>
+              <input type="password" name="user_password" id="user_password" class="sso_login_input" />
+            </div>
+
+            <input type="submit" name="loginBtn" id="loginBtn" class="sso_login_button" onclick="Element.hide('first_view'); Element.show('second_view')" value="<%= t("start_session") %>" />
+          </div>
+
+          <div class='sso_login_links'>
+            <div>
+              <%= link_to t("remember_password"), {:action => "forgot_password"}, :title => t("get_login_data_by_mail") %>
+            </div>
+            <div>
+              <%= link_to t("new_user"), {:controller => :mex, :action => :new_group}, :title => t("create_new_group_as_admin") %>
+            </div>
+          </div>
+
+        <% end -%>
+
+      </div></div></div></div>
+
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+
+      <div id="notice">
+        Hemos migrado nuestra plataforma a un servidor m&aacute;s potente.
+        <br />
+        Si ud. no puede acceder a la plataforma, acceda desde <a style="font-size: large; font-weight: bold; color: red;" href="https://saas.oademand.com">aqu&iacute;</a>.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="second_view" style="display: none">
+
+  <div id="flash" style="padding-top: 200px;">
+    <%= image_tag "Throbber.gif" %>
+  </div>
+</div>

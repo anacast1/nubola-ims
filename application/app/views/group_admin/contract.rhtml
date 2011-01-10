@@ -1,0 +1,87 @@
+<% if @contract.state == 1 %>
+  <%= help_tag t("groupadmin_contract_active_help") %>
+<% else %>
+  <%= help_tag t("groupadmin_contract_inactive_help") %>
+<% end %>
+
+<div class="info">
+    <% if !session[:user].group.client? && @contract.code.blank? %>
+
+      <% date = Date.strptime(session[:user].group.demo_ends.strftime("%d-%m-%Y"), "%d-%m-%Y") %>
+      <%= t("your_group_is_in_demo", 
+        :name => h(session[:user].name),
+        :surname => h(session[:user].surname),
+        :group => h(session[:user].group.name),
+        :days => (date - Date.today) ) + t("you_must_send_contract")
+      %>
+    <% elsif @contract.state == 1 %>
+      <%= t("your_contract_is_active", 
+        :date => h(@contract.date),
+        :contract_number => h(@contract.code) ) %>
+    <% end %>
+</div>
+<br/>
+
+<table class="centered">
+
+  <tr>
+    <td colspan="2" style="text-align: right;">
+      <%= link_to t("pdf_version"), :action => :pdf_contract %>
+    </td>
+  </tr>
+  
+  <%= contr_sep(t("contract_group_data")) %>
+  
+  <%= label_tag(t("name")) %>
+  <%= value_tag(h(@contract.name)) %>
+  
+  <% if ! @contract.date.nil? %>
+    <%= label_tag(t("date_s")) %>
+    <%= value_tag(h(@contract.date)) %>
+  <% end %>
+  
+  <%= label_tag(t("NIF")) %>
+  <%= value_tag(h(@contract.co_nif)) %>
+  
+  <%= label_tag(t("address")) %>
+  <%= value_tag(h(@contract.co_street)) %>
+  
+  <%= label_tag(t("zip_code")) %>
+  <%= value_tag(h(@contract.co_cp)) %>
+  
+  <%= label_tag(t("city")) %>
+  <%= value_tag(h(@contract.co_town)) %>
+  
+  <%= label_tag(t("province")) %>
+  <%= value_tag(h(@contract.co_province)) %>
+  
+  <%= label_tag(t("country")) %>
+  <%= value_tag(@contract.co_country.blank? ? "" : t("countries.#{@contract.co_country}")) %>
+  
+  <%= contr_sep(t("contract_contact_data")) %>
+  
+  <%= label_tag(t("name")) %>
+  <%= value_tag(h(@contract.contact_name)) %>
+  
+  <%= label_tag(t("department")) %>
+  <%= value_tag(h(@contract.department)) %>
+  
+  <%= label_tag(t("email")) %>
+  <%= value_tag(h(@contract.mail)) %>
+  
+  <%= label_tag(t("phone")) %>
+  <%= value_tag(h(@contract.telf)) %>
+    
+  <%= contr_sep(t("contract_limitations")) %>
+  
+  <tr>
+    <td class="label">
+      *<%= t("concurrent_users") %>:
+    </td>
+    <td class="value"><%= @contract.concurrentusers.blank? ? t("ilimited") : @contract.concurrentusers %></td>
+  </tr>  
+  <tr>
+    <td colspan=2 style="text-align: left;"><span class="contr_note">*<%= t("whatis_concurrent_users") %></span></td>
+  </tr>  
+</table>
+</div>

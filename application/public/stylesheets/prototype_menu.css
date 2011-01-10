@@ -1,0 +1,36 @@
+ul.menu, ul.menu ul {
+        padding: 0;
+        margin: 0;
+	list-style-type:none;
+	background: #33CCDA;	
+	color: #fff; 
+        border: 1px solid;
+        border-color: #33CCDA;
+        margin: 1px;
+}
+
+ul.menu ul {
+}
+
+ul.menu li.selected_item ul {
+}
+
+ul.menu a,ul.menu a:visited {
+	text-decoration:none;
+        color: #fff;
+        font-weight:normal;
+}
+
+ul.menu a:hover  {
+	color:#fff;
+        font-weight: bold;
+}
+
+ul.menu li {
+        border-bottom: 1px solid;
+        padding: 3px;
+        white-space: nowrap;
+}
+
+ul.menu li.selected_item {
+}

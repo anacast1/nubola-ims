@@ -1,0 +1,31 @@
+<div class="menudiv">
+  <%= render :partial => "group_header" %>
+</div>
+
+<div class="normaldiv">
+
+  <%= ok_tag(flash[:group_saved]) %>
+  
+  <table class="centered">
+  
+    <%= label_tag(t("name")) %>
+    <%= value_tag(h(@group.name)) %>
+    
+    <%= label_tag(t("NIF")) %>
+    <%= value_tag(h(@group.nif)) %>
+    
+    <%= label_tag(t("address")) %>
+    <%= value_tag(h(@group.address)) %>
+    
+    <%= label_tag(t("city")) %>
+    <%= value_tag(h(@group.city)) %>
+    
+    <%= label_tag(t("zip_code")) %>
+    <%= value_tag(h(@group.zipcode)) %>
+    
+    <%= label_tag(t("country")) %>
+    <%= value_tag(@group.country.blank? ? "" : t("countries.#{@group.country}")) %>
+    
+  </table>
+  
+</div>

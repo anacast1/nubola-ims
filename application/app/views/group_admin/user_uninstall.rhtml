@@ -1,0 +1,65 @@
+<div id="first_view">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header' %>
+  </div>
+
+  <div class="normaldiv">
+
+    <%= ok_tag flash[:installed] %>
+
+    <% form_tag do -%>
+
+      <table>
+        <tr>
+          <td>
+            <b><%= t("user_is_active") %>.</b>
+          </td>
+        </tr>
+        <% if session[:user] != @user %>
+          <tr>
+            <td>
+              <%= submit_tag t("deactivate"), :onclick => "if(confirm('#{t("are_you_sure_to_deactivate_user")} #{h(@user.name)} #{h(@user.surname)}?')){Element.hide('first_view');Element.show('second_view');return true;}else{return false;}" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= t("remember_that_when_deactivating_user") %>
+            </td>
+          </tr>
+        <% else %>
+          <tr>
+            <td>
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= t("admin_cannot_be_deactivated") %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+
+    <% end -%>
+
+  </div>
+
+</div>
+
+<div id="second_view" style="display: none">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header_inactive' %>
+  </div
+
+  <br/>
+
+  <div id="flash">
+    <%= t("deactivating_user") %> <%= h(@user.name) %>  <%= h(@user.surname) %>.
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+<div class="sso_left">
+
+  <div class="sso_image_box">
+    <%
+      app_to_show = nil
+      apps = App.find_all_by_is_academy(false)
+      unless apps.empty?
+        app_to_show = apps[rand(apps.length)]
+      end
+    %>
+    <% unless app_to_show.nil? %>  
+
+      <div class="sso_image">
+        <%= image_tag "#{app_to_show.unique_app_id.downcase}.png", :border => 0 %>
+      </div>
+
+      <div class="sso_image_text">
+        <%= app_to_show.short_description %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <div class="sso_image_links">
+    <%= link_to t("see_another_app"), :action => params[:action] %>        
+  </div>
+
+</div>

@@ -1,0 +1,872 @@
+en:
+  start: "Start"
+  back: "Back"
+  users: "Users"
+  user: "User"
+  back_to_users_list: "Back to use list"
+  assign_apps: "Assign applications"
+  edit_user: "Edit user"
+  assign_apps_to_user: "Assign applications to user " 
+  edit_user_info: "Edit user info "
+  desktop: "Desktop"
+  contract: "Contract"
+  group: "Group"
+  group_name: "Group's name"
+  reports: "Statistics"
+  particular_server: "Particular server"
+  apps: "Applications"
+  albarans: "Bills"
+  edit_group_users: "Edit your users in your group."
+  change_desktop_wallpaper: "Change desktop wallpaper."
+  edit_group_info: "Edit your group info."
+  edit_info_of_group: "Edit info for group "
+  edit_group: "Edit group"
+  reports_title: "Usage statistics."
+  edit_group_apps: "Edit your group applications."
+  control_panel: "Control&nbsp;Panel"
+  is_a_project_based_on_technology: " is a project based on "
+  group_user_list: "User list for "
+  new_user: "New user"
+  add_new_user_to_group: "Add new user to "
+  login: Login
+  name: Name
+  surname: Surname
+  phone: Phone
+  mobile: Mobile
+  email: Email
+  department: Department
+  modify_user: "Modify user"
+  modifying_user: "Modifying user "
+  cancel: Cancel
+  password: Password
+  password_confirmation: Confirm password
+  password_repeated: Repeat password
+  mandatory_fields: Mandatory fields
+  activate: Activate
+  deactivate: Deactivate
+  activated: Activated
+  deactivated: Deactivated
+  deactivate_user: Deactivate user {{user}}
+  activate_user: Activate user {{user}}
+  administrador: Administrator
+  back_to_contract: Back to contract
+  back_to_control_panel: Back to control panel
+  NIF: NIF
+  address: Address
+  city: City
+  zip_code: Zip code
+  country: Country
+  province: Province
+  modify_group: Modify group
+  problems_on_the_following_fields: "There were problems with the following fields:"
+  errors_on: "errors prevented saving"
+  back_to_app_list: "Back to applications list"
+  apps: Applications
+  installed: Installed
+  installed_sing: Installed
+  not_installed_sing: Not installed
+  available: Available
+  installed_apps_list: Installed applications list
+  available_apps_list: Available applications list
+  no_apps_installed_yet: "There aren't installed application yet"
+  no_available_apps: "There aren't available applications"
+  management: Management
+  install: Install
+  assign_users: "Assign users"
+  assign_users_to_app: "Assign users to "
+  group_settings: "Group preferences"
+  group_settings_for_app: "Group preferences for "
+  this_app_is_in_status:  "This applications is still "
+  INSTALLING: installing
+  UNINSTALLING: uninstalling
+  MOVING: migrating
+  INSTALL_FAILED: installing
+  UNINSTALL_FAILED: uninstalling
+  OK: Ok
+  DELETING: deleting
+  this_app_installed_ok: "This applications is correctly installed"
+  remember_when_moving_app: Remember that when moving an application it won't be available for a few minutes"
+  first_uninstall_the_following_apps: "Can't uninstall applications until you uninstall the following ones"
+  shared_host: Shared host
+  are_you_sure_to_move: "Are you sure that you want to move"
+  are_you_sure_to_uninstall: "Are you sure that you want to uninstall"
+  uninstall: Uninstall
+  remember_when_uninstalling_app: "Remember that when you uninstall you will lose the information and configuration for this application."
+  uninstalling: Uninstalling
+  moving: Moving
+  no_description: No description
+  modify_configuration: Modify settings
+  language: Language
+  es_ES: Spanish
+  en_US: English
+  es: Spanish
+  en: English
+  ca: Catalan
+  role: Role
+  Admin: Administrator
+  NoAdmin: No Administrator
+  es_es: Spanish
+  en_us: English
+  no_group_parameters: No group parameters
+  no_user_parameters: No user parameters
+  modifying_group_settings_for_app: Modifying group preferences for
+  app_not_installed: This application is not installed
+  install_in: Install in
+  installing: Installing
+  preferences_for: "Preferences for"
+  for: for
+  user_is_being: This user is being
+  added_to: added to
+  deleted_from: deleted from
+  this_app: this application
+  hide: Hide
+  bind: Assign
+  unbind: Unassign
+  binding: Assigning
+  unbinding: Unassigning
+  to: to
+  from: from
+  modifyied: modified
+  created: created
+  depends_on: depends on the following applications
+  install_deps_before: Install these before
+  in_a_few_moments_the_user: In a few seconds the user
+  will_have_access_to_app: will be able to access 
+  from_his_menu: from his/her menu 
+  access_to_app_removed_for_user: Access removed for user
+  to_application: to application
+  the_following_apps_depend_on: The following applications depend on
+  cannot_uninstall_until: Cannot uninstall until you uninstall these
+  group_settings_modified_for_app: Modified group preferences for application 
+  once_uninstalled_will_be_available: Once removed reappears as an available application
+  app_moved_ok: has been successfully moved
+  must_choose_server_type: "You must choose a server type"
+  installing_particular_server: "Your particular server is being installed"
+  there_was_an_error: An error occurred
+  chosen_host_is_smaller: "The chosen host type has a lower capacity than the current one."
+  updating_particular_server: "Your particular server is being updated"
+  before_destroy_server_must_uninstall_apps: "Before deleting your particular server you must migrate the applications to your shared server or delete them"
+  deleting_particular_server: "Your particular server is being deleted"
+  contract_created: Contract created.
+  contract_modified: Your contract has been successfully modified.
+  invalid_login: "Incorrect login"
+  user_is_active: The user is active
+  are_you_sure_to_deactivate_user: Are you sure that you want to deactivate user
+  remember_that_when_deactivating_user: Remember that when deactivating a user that user could lost the data he/she stored his/ger applications.
+  admin_cannot_be_deactivated: The group administrator cannot be disabled.
+  deactivating_user: "Deactivating user "
+  user_is_inactive: This user is inactive
+  activating_user: "Activating user "
+  add_user: Add user
+  this_group_still_has_no_apps_to_add_user: This group still hasn't any installed application to assign users.
+  desktop_wallpaper: Desktop wallpaper.
+  select: Select
+  custom: Personalized
+  training: Training
+  help: Help
+  no_apps: No installed applications
+  exit: Exit
+  minimize_all: Minimize all
+  print_layer: Print layer
+  you_have_this_vhost: You have the following particular server
+  you_can_see_your_vhost_stats: You can see your server statistics
+  here: here
+  simulator: Simulator
+  vhost_status: "Particular server status"
+  vhost_modify: "Modify particular server"
+  vhost_simulate: "Simulate particular server installation"
+  vhost_install: "Particular server installation"
+  vhost_type: Type
+  vhost_cpu: CPU
+  vhost_ram: RAM
+  vhost_disk: Disk
+  vhost_state: Status
+  as_a_client_you_may_install_a_vhost: As a client you can enjoy your own particular server.
+  use_simulator_please: Before installing/moving applications to your server, it is recommended to use the simulator to prevent errors.
+  delete: Delete
+  if_no_apps_can_delete_vhost: If no applications are installed in it you can delete the particular server
+  app: Application
+  installed_now: Currently installed
+  specs: Requisites
+  required: Required
+  calculate_right_server: Calculate needed server
+  no_server_type_available: "There isn't a type with enough capacity"
+  simulation_end_install: End of simulation. Install
+  reports_for_group: Reports for group  
+  number_of_connected_users: Number of Connected users
+  number_of_simultanously_connected_users: Number of users connected simultaneously
+  space_used_for_each_application_in_shared_host: Space used for each application in the shared host
+  all_graphs: All graphics for the group
+  january: January
+  february: February
+  march: March
+  april: April
+  may: May
+  june: June
+  july: July
+  august: August
+  september: September
+  october: October
+  november: November
+  december: December
+  number_of_connected_users_per_day: Number of connected users per day
+  back_to_reports_index: Back to statistics index
+  platform_usage: Platform usage
+  connected_users: Connected users 
+  number_of_connected_users_per_hour: Number of connected users per hour
+  number_of_simultanously_connected_users_per_day: User concurrency per day
+  number_of_simultanously_connected_users_per_hour: User concurrency per hour
+  space_used_by_applications: Space used by the applications
+  all_hosts: "all the hosts"
+  the_shared_host: "the shared host"
+  the_particular_hosts: "virtual machines" 
+  space_in_MB: Space in MB
+  company: "Open Alliance, Free Software S.A."
+  confirm_exit: ¿Are you sure that you want to exit?
+  spanish: Spanish
+  catalan: Catalan
+  english: English
+  select_language: Select language
+  show_online_users: See group users status
+  online: connected
+  offline: not connected
+  remember_password: Remember password
+  get_login_data_by_mail: Get login data by e-mail 
+  create_new_group_as_admin: "Create a new group as administrator user"  
+  start_session: Start session 
+  see_another_app: See another application
+  what_is_the_desktop: The desktop is the site from where you will be able to install and manage applications, add more users to your group and grant them permissions.
+  signup: Signup
+  lopd:  "En cumplimiento de lo dispuesto en la Ley Orgánica 15/1999, de Protección de Datos de carácter personal, Open Alliance le informa que los datos personales recogidos en el presente documento estarán incorporados en ficheros automatizados titularidad de esta empresa. Estos ficheros han sido comunicados a la Agencia de Protección de Datos. La finalidad de los ficheros es la gestión comercial de nuestros clientes y usuarios registrados para seguimientos comercial. Si lo desea, puede ejercitar los derechos de acceso, rectificación y cancelación, previstos en la Ley, dirigiendo un escrito a: Open Alliance Software Libre S.A., C/ Atenas, 8 – 08006 Barcelona"
+  your_account: "The accounts that belongs to "
+  has_been_activated: " has been activated" 
+  an_email_has_been_sent_to: "A confirmation email has been sent to "
+  to_verify_email: "to verify the authenticity of the email address"
+  follow_instructions_in_the_email: Follow the instructions in it to activate your account
+  remember_account: Remember account
+  enter_your_email_so_we_can_send_your_data: Enter your e-mail address and an email with your login data will be sent to you
+  a_user_with_email_doesnt_exist: "There isn't a user with email address "
+  group_is_not_active: "Your group is not active. Probably your demo period has expired. Please contact platform administration to activate your group again."
+  user_is_not_active: "This user is no active. Please contact your group administrator to activate your user again."
+  user_is_not_confirmed: "This user is not confirmed. Make sure that you have confirmed your account by clicking the link in the confirmation email you should have received."
+  max_num_users_reached: "Maximum number of simultaneously connected users reached." 
+  login_failed: Login failed
+  session_closed: Session ended
+  your_password_has_been_sent_to: "Your login data has been sent to "
+  problem_activating_account: "Problems activating account for "
+  invalid_confirmation_link: "Invalid confirmation link"
+  was_already_active: " was already active"
+  welcome: Welcome
+  as_admin_you_can: "<p>As administrator you can:</p>
+                     <p>&nbsp;<b>1</b>. Install applications for your group and start using them</p>
+                     <p>&nbsp;<b>2</b>. Add more users to your company</p>
+                     <p>All these options are available in the <b>Control Panel</b>"
+  your_group_is_in_demo: "<p>The group <b>{{group}}</b> is in demo period. It has <b>{{days}}</b> days remaining.<br/></p>"
+  you_can_contract_here: "<p>You can contract from the option <b>{{contract_link}}</b> in the <b>Control Panel</b></p>"
+  go_to_control_panel: Go to Control Panel
+  continue: Continue
+  your_group_is_in_demo_user: "<p>The group <b>{{group}}</b> is in demo period. It has <b>{{days}}</b> days remaining.<br/></p>"
+  reset_image: Reset image
+  you_must_send_contract: "<p>At this moment you have stored the contract data but you haven't sent it.</p>"
+  your_contract_is_active: "<p>You have contracted the service on <b>{{date}}</b> y Contract Nº <b>{{contract_number}}</b>.<br/>The from is still available in the from below.</p>"
+  how_to_send: "You can send your contract the following ways:
+                  <ul style=\"padding-left: 100px; text-align: left;\">
+                    <li>By <b>FAX</b>, sending your signed contract to <b>0034 93 212 24 60</b></li>
+                    <li>By ordinary mail, sending your signed contract to <b>Atenas, 8, bajos, 08006, Barcelona, Spain</b></li>
+                    <li>By <b>e-mail</b>, sending your signed contract <b>administracion@nubola-saas.com</b></li>
+                  </ul>"
+  new_contract: Save contract
+  modify_contract: Modify contract
+  contract_group_data: "Group data:"
+  contract_contact_data: "Contact person data:"
+  contract_limitations: "Limitations:"
+  concurrent_users: Concurrent users
+  whatis_concurrent_users: "The number of users in your company that will be able to be logged in at the same time."
+  contract_2_concurrent_users: The limitation is from 2, because the first 2 are included in the maintenance fee.
+  blank_means_unlimited: "Type with numbers. A blank field means NO limitation."
+  group_must_have_installed_applications: Your group must have installed applications to contract
+  group_has_already_been_taken: Your group already has a contract
+  ilimited: Unlimited
+  pdf_version: PDF version
+  contract_data: "Service<br/>contract"
+  billing_data: "Annex: Billing data"
+  bank_account: "Bank account number:"
+  desired_action: "Mark with an <b>X</b> the desired action:"
+  action_signup: Service SIGN UP
+  action_signedit: Billing data modification
+  action_signdown: Service RESIGN
+  signature: Signature
+  date_s: Date
+  code_s: Contract number
+  your_login_data: "This is your login data:"
+  warning: Warning
+  mail_warning_p1: "De acuerdo con la legislación vigente que regula el Comercio
+                    Electrónico y la Protección de Datos, este mensaje se dirige
+                    exclusivamente a su destinatario y puede contener información
+                    privilegiada o confidencial y/o datos de carácter personal. Si ha
+                    recibido este mensaje por error le rogamos nos lo comunique por esta
+                    misma via y proceda a su eliminación."
+  mail_warning_p2: "Le informamos que sus datos forman parte de un fichero automatizado 
+                    cuyo responsable es OPEN ALLIANCE software libre, S.A., con 
+                    domicilio en C/ Atenas, 8 , 08006 Barcelona, con fines promocionales
+                    de las actividades generadas por la compañía. Puede ejercer sus derechos,
+                    de acceso, rectificación, cancelación y oposición, por escrito o 
+                    por esta misma vía."
+  mail_company: " OPEN ALLIANCE SOFTWARE LIBRE, S.A.\n
+                  Atenas, 8 08006 - Barcelona.\n
+                  http://www.nubola-saas.com\n
+                  info@nubola-saas.com\n
+                  (+34) 93 212 24 60"
+  hello: Hello
+  mail_confirmation: " YOUR DESKTOP HAS BEEN SUCCESSFULLY CREATED.\n
+                      \n
+                      From now you have an account to access {{platform_name}}'s\n
+                      desktop, but first you must activate it.\n
+                      \n
+                      From the desktop you will be able to:\n
+                      \n
+                         - INSTALL available applications.\n
+                         - ADD more users to your company.\n
+                         - ACCESS available applications.\n
+                      \n
+                      \n
+                      Click on the following link (or copy it in your browser navigation\n
+                      bar) to activate your account:"
+  activate_account: Activate account
+  transports: Transports
+  communications: Communications
+  commercial: Commercial
+  touristic: Tourism
+  sanitary: Sanitary
+  education: Education
+  financial: Financial
+  administration: Administration
+  industrial: Industrial
+  energetic: Energetic
+  mines: Mines
+  construction: Construction
+  agricola: Farming
+  ramadery: Ranching
+  fishing: Fishing
+  other: Other
+  administrative_dpt: Administrative Dpt.
+  
+  sector: Sector
+  size: Company size
+  
+  0_to_9: 0 to 9 employees
+  10_to_19: 10 to 19 employees
+  20_a_29: 20 to 29 employees
+  30_a_39: 30 to 39 employees
+  40_a_49: 40 to 49 employees
+  50_to_x: 50 or more employees
+  
+  image_max_size: "Maximum image size exceeded: (2048 KB)"
+  must_be_alphanumeric: must be alphanumeric (use only letters and numbers)
+  company_name: Company name
+  contact_person: Contact person
+  other_documents: "<b>Important</b><br/>
+                    To make this contract valid it must be sent with the following documentation:
+                    <ul>
+                      <li>NIF / DNI photocopy of the company or person that signs the contract.</li>
+                      <li>DNI photocopy of the contact person.</li>
+                    </ul>"
+  company_data: "Company data"
+  contact_data: "Contact person data"
+  additional_info_right: has the right to request extra documentation to justify contact person permission to contract.
+  signup_clause: "I want to access Nubola Platform and I accept the service contract that I confirm I have read:"
+  signup_clause2: "The service prices may change at any time and the prices will be available at <a href=\"http://www.nubola-saas.com\">www.nubola-saas.com</a>. The prices may also change according to the maximum number of concurrent users allowed by the group administrator. When this document was generated the limit of concurrent users was:"
+  signdown_clause: "If you want to resign mark the corresponding checkbox. Your resign will occur in the next billing period if you resign 15 days before that time. If not that period will be charged and your resign will occur in the next bill."
+  bank_authorization: "We authorize {{company}} to charge monthly its service bills to the bank account specified next:"
+  groups: Groups
+  admin_user: Administrator user
+  contracts: Contracts
+  host_types: Host types
+  logs: logs
+  hosts: hosts
+  groupadmin_control_panel_help: "<p>This is the <b>group administrator</b>main menu.
+                                  <p>
+                                  The basic steps to get started are:
+                                  <ul>
+                                    <li>install applications from <b>Applications</b></li>
+                                    <li>add users to your group from <b>Users</b></li>
+                                    <li>later, grant access to users to the installed applications.</li>
+                                  </ul>  
+                                  <p>This last step can be performed both from <b>Users</b> and <b>Applications</b>.
+                                  
+                                  <p>You (administrator user) should even auto-bind yourself to the applications you want to use. You will have these apps available in your
+                                  <b>Applications</b> menu (at the left of the bar at the top of the screen).
+                                  
+                                  <p>From this menu other actions can also be performed, like manage your <b>Contract</b>, edit your <b>Group</b> data, see your group usage
+                                  <b>statistics</b>, etc...
+                                  
+                                  <p>Clicking on the different icons you may find more information about each theme."
+  platform_admin: Platform administrator
+  say_yes: "Yes"
+  say_no: "No"
+  
+  active_scaffold:
+    group: Group
+    concept: Concept
+    date: Date
+    price: Price
+    amount: Quantity
+    albarans: Bills
+    found: found
+    no_entries: No entries
+#    groups: Grupos
+#    users: Usuarios
+#    create_new: Crear nuevo
+#    edit: Editar
+#    delete: Borrar
+#    show: Ver
+#    search: Buscar
+#    reset: Resetear
+
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      short: "%H:%M"
+      long: "%H:%M"
+    am: "am"
+    pm: "pm"
+
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m-%Y"
+      long: "%d-%m-%Y"
+#    day_names: [Sunday, Monday, Thursday, Wednesday, Tuesday, Friday, Saturday]
+#    abbr_day_names: [Sun, Mon, Thu, Wed, Tue, Fri, Sat]
+#    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+#    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+
+  activerecord:
+#    errors: 
+#      # 'attribute' and 'model' always available, 'count' where applicable
+#      template:
+#        header: 
+#          one: "1 error ha impedido guardar el {{model}}" 
+#          other: "{{count}} errores han impedido guardar el {{model}}" 
+#        body: "Ha habido problemas con los siguientes campos:"
+#      messages:    
+#        inclusion: no esta incluido en la lista
+#        exclusion: es un valor reservado reservado
+#        invalid: es inválido
+#        confirmation: no coincide con la confirmación
+#        accepted: debe aceptarse
+#        empty: no puede dejarse vacio
+#        blank: no puede dejarse en blanco
+#        too_long: es demasiado largo (debe tener {{count}} caracteres máximo)
+#        too_short: es demasiado corto (debe tener {{count}} caracteres mínimo)
+#        wrong_length: tiene longitud incorrecta (debe tener {{count}} caracteres)
+#        taken: ya existe y debe ser único
+#        not_a_number: no es un número
+#        greater_than: debe ser mayor a {{value}}
+#        greater_than_or_equal_to: debe ser mayor o igual a {{value}}
+#        equal_to: debe ser igual a {{value}}
+#        less_than: debe ser mas pequeño que {{value}}
+#        less_than_or_equal_to: debe ser mas pequeño o igual a {{value}}
+#        odd: debe ser impar
+#        even: debe ser par
+#    models:
+#      contract: contrato
+#      user: user 
+#      group: group
+    attributes:
+#      user:
+#        name: Nombre
+#        surname: Apellido
+#        status: Estado
+#        telephone: Teléfono
+#        mobile: Movil
+#        password: 
+#        password_confirmation: 
+#        user_image: Imagen de usuario
+#        confirmed: Confirmado
+#        wallpaper: Fondo de escritorio
+#      contract:
+#        code: Código
+#        date: Fecha
+#        group: Grupo
+      group:
+#        name: Name
+#        city: Ciudad
+#        contract: Contrato
+#        address: Direción
+#        zipcode: Código Postal
+#        country: Pais
+        nif: NIF
+        client: Client
+        numusers: Max. concurrent users
+#        logo_image: Logo
+        demo_ends: Demo ends
+#        active: Activo
+#        created_at: Created at
+
+  countries:
+    afghanistan: Afganistán            
+    aland_islands: Åland                
+    albania: Albania
+    algeria: Algeria
+    american_samoa: Samoa Americana
+    andorra: Andorra
+    angola: Angola
+    anguilla: Anguila
+    antarctica: Antártida
+    antigua_and_barbuda: Antigua y Barbuda
+    argentina: Argentina
+    armenia: Armenia
+    aruba: Aruba
+    australia: Australia
+    austria: Austria
+    azerbaijan: Azerbaiyán
+    bahamas: Bahamas
+    bahrain: Bahréin
+    bangladesh: Bangladesh
+    barbados: Barbados
+    belarus: Bielorrusia
+    belgium: Bélgica
+    belize: Belice
+    benin: Benín
+    bermuda: Bermudas
+    bhutan: Bután
+    bolivia: Bolivia
+    bosnia_and_herzegowina: Bosnia y Herzegovina
+    botswana: Botsuana
+    bouvet_island: Isla Bouvet
+    brazil: Brasil
+    british_indian_ocean_territory: Territorio Británico del Océano Índico
+    brunei_darussalam: Brunéi
+    bulgaria: Bulgaria
+    burkina_faso: Burkina Faso
+    burundi: Burundi
+    cambodia: Camboya
+    cameroon: Camerún
+    canada: Canadá
+    cape_verde: Cabo Verde
+    cayman_islands: Islas Caimán
+    central_african_republic: República Centroafricana
+    chad: Chad
+    chile: Chile
+    china: China
+    christmas_island: Isla de Navidad
+    cocos_keeling_islands: Islas Cocos
+    colombia: Colombia
+    comoros: Comoras
+    congo: Congo
+    cook_islands: Islas Cook
+    costa_rica: Costa Rica
+    cote_ivoire: Costa de Marfil
+    croatia: Croacia
+    cuba: Cuba
+    cyprus: Chipre
+    czech_republic: República Checa
+    denmark: Dinamarca
+    djibouti: Yibuti
+    dominica: Dominica
+    dominican_republic: República Dominicana
+    ecuador: Ecuador
+    egypt: Egipto
+    el_salvador: El Salvador
+    equatorial_guinea: Guinea Ecuatorial
+    eritrea: Eritrea
+    estonia: Estonia
+    ethiopia: Etiopía
+    falkland_islands_malvinas: Islas Malvinas
+    faroe_islands: Islas Feroe
+    fiji: Fiyi
+    finland: Finlandia
+    france: Francia
+    french_guiana: Guayana Francesa
+    french_polynesia: Polinesia Francesa
+    french_southern_territories: Territorios Australes Franceses
+    gabon: Gabón
+    gambia: Gambia
+    georgia: Georgia
+    germany: Alemania
+    ghana: Ghana
+    gibraltar: Gibraltar
+    greece: Grecia
+    greenland: Groenlandia
+    grenada: Granada
+    guadeloupe: Guadalupe
+    guam: Guam
+    guatemala: Guatemala
+    guernsey: Guernsey
+    guinea: Guinea
+    guinea_bissau: Guinea-Bissau
+    guyana: Guyana
+    haiti: Haití
+    heard_and_mcdonald_islands: Islas Heard y McDonald
+    holy_see_vatican_city_state: Ciudad del Vaticano
+    honduras: Honduras
+    hong_kong: Hong Kong
+    hungary: Hungría
+    iceland: Islandia
+    india: India
+    indonesia: Indonesia
+    iran_islamic_republic_of: Irán
+    iraq: Iraq
+    ireland: Irlanda
+    isle_of_man: Isla de Man
+    israel: Israel
+    italy: Italia
+    jamaica: Jamaica
+    japan: Japón
+    jersey: Jersey
+    jordan: Jordania
+    kazakhstan: Kazajistán
+    kenya: Kenia
+    kiribati: Kiribati
+    korea_democratic_peoples_republic_of: Corea del Sur
+    korea_republic_of: Corea del Norte
+    kuwait: Kuwait
+    kyrgyzstan: Kazajistán
+    lao_peoples_democratic_republic: Laos
+    latvia: Letonia
+    lebanon: Líbano
+    lesotho: Lesoto 
+    liberia: Liberia
+    libyan_arab_jamahiriya: Libia
+    liechtenstein: Liechtenstein
+    lithuania: Lituania
+    luxembourg: Luxemburgo
+    macao: Macao
+    macedonia_the_former_yugoslav_republic_of: Macedonia
+    madagascar: Madagascar
+    malawi: Malaui
+    malaysia: Malasia
+    maldives: Maldivas
+    mali: Malí
+    malta: Malta
+    marshall_islands: Islas Marshall
+    martinique: Martinica
+    mauritania: Mauritania
+    mauritius: Mauricio
+    mayotte: Mayotte
+    mexico: México
+    micronesia_federated_states_of: Micronesia
+    moldova_republic_of: Moldavia
+    monaco: Mónaco
+    mongolia: Mongolia
+    montenegro: Montenegro
+    montserrat: Montserrat
+    morocco: Marruecos
+    mozambique: Mozambique
+    myanmar: Birmania
+    namibia: Namibia
+    nauru: Nauru
+    nepal: Nepal
+    netherlands: Países Bajos
+    netherlands_antilles: Antillas Neerlandesas
+    new_caledonia: Nueva Caledonia
+    new_zealand: Nueva Zelanda
+    nicaragua: Nicaragua
+    niger: Níger
+    nigeria: Nigeria
+    niue: Niue
+    norfolk_island: Norfolk
+    northern_mariana_islands: Islas Marianas del Norte
+    norway: Noruega
+    oman: Omán
+    pakistan: Pakistán
+    palau: Palaos
+    palestinian_territory_occupied: Palestina
+    panama: Panamá
+    papua_new_guinea: Papúa Nueva Guinea
+    paraguay: Paraguay
+    peru: Perú 
+    philippines: Filipinas
+    pitcairn: Islas Pitcairn
+    poland: Polonia
+    portugal: Portugal
+    puerto_rico: Puerto Rico
+    qatar: Qatar
+    reunion: Reunión
+    romania: Rumania
+    russian_federation: Rusia
+    rwanda: Ruanda
+    saint_barthelemy: San Bartolomé
+    saint_helena: Santa Helena
+    saint_kitts_and_nevis: San Cristóbal y Nieves
+    saint_lucia: Santa Lucía
+    saint_pierre_and_miquelon: San Pedro y Miquelón
+    saint_vincent_and_the_grenadines: San Vicente y las Granadinas
+    samoa: Samoa
+    san_marino: San Marino
+    sao_tome_and_principe: Santo Tomé y Príncipe
+    saudi_arabia: Arabia Saudita
+    senegal: Senegal
+    serbia: Serbia
+    seychelles: Seychelles
+    sierra_leone: Sierra Leona
+    singapore: Singapur
+    slovakia: Eslovaquia
+    slovenia: Eslovenia
+    solomon_islands: Islas Salomón
+    somalia: Somalia
+    south_africa: Sudáfrica
+    south_georgia_and_the_south_sandwich_islands: Islas Georgias del Sur y Sandwich del Sur
+    spain: España
+    sri_lanka: Sri Lanka
+    sudan: Sudán
+    suriname: Surinam
+    svalbard_and_jan_mayen: Svalbard y Jan Mayen
+    swaziland: Suazilandia
+    sweden: Suecia
+    switzerland: Suiza
+    syrian_arab_republic: Siria
+    taiwan_province_of_china: Taiwán
+    tajikistan: Tayikistán
+    tanzania_united_republic_of: Tanzania
+    thailand: Tailandia
+    timor_leste: Timor Oriental
+    togo: Togo
+    tokelau: Tokelau
+    tonga: Tonga
+    trinidad_and_tobago: Trinidad y Tobago
+    tunisia: Túnez
+    turkey: Turquía
+    turkmenistan: Turkmenistán
+    turks_and_caicos_islands: Islas Turcas y Caicos
+    tuvalu: Tuvalu
+    uganda: Uganda
+    ukraine: Ucrania
+    united_arab_emirates: Emiratos Árabes Unidos
+    united_kingdom: Reino Unido
+    united_states: Estados Unidos
+    united_states_minor_outlying_islands: Islas ultramarinas de Estados Unidos
+    uruguay: Uruguay
+    uzbekistan: Uzbekistán
+    vanuatu: Vanuatu
+    venezuela: Venezuela
+    vietnam: Vietnam
+    virgin_islands_british: Islas Vírgenes Británicas
+    virgin_islands_us: Islas Vírgenes Estadounidenses
+    wallis_and_futuna: Wallis y Futuna
+    western_sahara: Sahara Occidental
+    yemen: Yemen
+    zambia: Zambia
+    zimbabwe: Zimbabue
+    
+  groupadmin_new_contract_help: "This is the <b>service contract</b> menu.
+                                 <br/>
+                                 <p>TO CONTRACT:<br/>
+                                   &nbsp;&nbsp;To contract a service you have to do:
+								 </p>
+                                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Fill the form and save it. You can change this info as many times as you need it before you sent it to Open Alliance. From then, the contract data will be fixed.</li>
+                                   <li>Print a copy of the PDF document. Since the data has been <b>SAVED</b>, the platform will generate a link to the PDF file.</li>
+                                   <li>Sign the copy and attach the necessary documentation for contracting. You will find the documentation's explanation in the PDF document you just print.</li>
+                                   <li> Send all the documentation to Open Alliance Free Software, S.A. You can send it by ONE of the following methods:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>by <b>FAX</b>, sending a signed contract at 93 212 24 60</li>
+                                       <li>by <b>postal mail</b>, sending a signed contract to Atenas, 8, bajos, 08006, Barcelona</li>
+                                       <li>by <b>e-mail</b>, sending a signed contract to administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>
+								   &nbsp;&nbsp;Open Alliance will activate your contract during the next 48 hours since the reception of such documentation.</br>
+                                   &nbsp;&nbsp;From this moment the  service is contracted with the documentation you sent (read CONTRACT MODIFICATIONS).
+                                 </p>
+                                 <p>CONTRACT MODIFICATIONS:<br/>
+                                   &nbsp;&nbsp;From that the moment on Open Alliance activates the contract, the form data will be fixed and you only will change:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Users limitation: it is possible to change it at any time but we encourage to do on the last working day of the current month.</li>
+                                   <li>Billing data: you have to print again the PDF document and check BILLING DATA MODIFICATION in the FAX header. Remember that you have to attach the rest of documentation, and it will match with the form data.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;If you have any question, you can contact with us by email at administracion@nubola-saas.com.
+                                 </p>
+                                 <p>SERVICE RESIGNATION:<br/>
+                                   &nbsp;&nbsp;You can request the resign of our services. Please, print the PDF document and check the SERVICE RESIGN boxes.</br>
+								   &nbsp;&nbsp;The resignation will be effective at the beginning of the following billing period, in case you communicate the resignation to us with 15 days of advance.
+                                 </p>"
+                                 
+  groupadmin_contract_inactive_help: "This is the <b>service contract</b> menu.
+                                 <br/>
+                                 <p>TO CONTRACT:<br/>
+                                   &nbsp;&nbsp;In order to finalize the contracting process you have to:
+								 </p>
+                                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Verify the data you have introduced is correct. If it is incorrect, click on <b>Modify Contract</b> to make the needed changes.</li>
+                                   <li>Print a copy of the PDF document. Since the data has been <b>SAVED</b>, the platform will generate a link to the PDF file.</li>
+                                   <li>Sign the copy and attach the necessary documentation for contracting. You will find the documentation's explanation in the PDF document you just print.</li>
+                                   <li> Send all the documentation to Open Alliance Free Software, S.A. You can send it by ONE of the following methods:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>by <b>FAX</b>, sending a signed contract at 93 212 24 60</li>
+                                       <li>by <b>postal mail</b>, sending a signed contract to Atenas, 8, bajos, 08006, Barcelona</li>
+                                       <li>by <b>e-mail</b>, sending a signed contract to administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>
+								   &nbsp;&nbsp;Open Alliance will activate your contract during the next 48 hours since the reception of such documentation.</br>
+                                   &nbsp;&nbsp;From this moment the  service is contracted with the documentation you sent (read CONTRACT MODIFICATIONS).
+                                 </p>
+                                 <p>CONTRACT MODIFICATIONS:<br/>
+                                   &nbsp;&nbsp;When Open Alliance activates the contract, the form data will be fixed and you only will change:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Users limitation: it is possible to change it at any time but we encourage to do on the last working day of the current month.</li>
+                                   <li>Billing data: you have to print again the PDF document and check BILLING DATA MODIFICATION in the FAX header. Remember that you have to attach the rest of documentation, and it will match with the form data.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;If you have any question, you can contact with us by email at administracion@nubola-saas.com.
+                                 </p>"
+                                 
+  groupadmin_contract_active_help: "This is the <b>service contract</b> menu.
+                                 <br/>
+                                 <p>CONTRACT MODIFICATIONS:<br/>
+                                   &nbsp;&nbsp;When Open Alliance activates the contract, the form data will be fixed and you only will be able to change:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Users limitation: it is posible to change it at any time but we encourage to do so on the last working day of the current month.</li>
+                                   <li>Billing data: you have to print again the PDF document and check BILLING DATA MODIFICATION in the FAX header. Remember that you have to attach the rest of documentation, and it will match with the form data.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;If you have any question, you can contact with us by email at administracion@nubola-saas.com.
+                                 </p>"
+  accept_service: "I have read and accepted the DEMO service terms"
+  service_terms: "Terms of service"
+  accept_contract: "I have read and accepted the contract terms"
+  contract_terms: "Contract terms"
+  read_terms_here: "read the terms"
+  pdf_terms: "here"
+  more_data: "More data"
+  less_data: "Less data"
+  more_data_title: Show non mandatory fields too
+  less_data_title: Show only mandatory fields
+  email_is_checked: "E-mail must be valid to receive a confirmation mail"
+  two_or_more_concurrent: "The number of concurrent users must be greater or equal than two"
+  selected_image: "Selected image"
+  upload_image: "Upload image"
+  sure_to_delete: "Are you sure of deleting it?"
+  images: "IMAGES"
+  uploadedimages_title: "Manage your public images"
+  group_folder: "Group folder"
+  academies: "ACADEMIES"
+  academies_title: "Available academies on the platform"
+  password_unique_in_group: "is already being used by someone in your group"
+
+  source: "Where you met us?"
+  google: "Google"
+  cibernarium: "Cibernarium Courses"
+  partner: "Partners"
+  boe: "\"Boletines Oficiales\" page"
+  fonsformacio: "Fons Formació"
+  asesoria: "\"Las Asesorías\" page"
+  blog: "Blogs or interviews"
+  other: "Other"
+  MODIFYING: "modifying"
+  ADDHOST_FAILED: "installing"
+  MODIFYHOST_FAILED: "modifying"
+  DELHOST_FAILED: "deleting"
+
+  are_you_sure_to_delete: "Are you sure you want to remove"
+  move: "Move"

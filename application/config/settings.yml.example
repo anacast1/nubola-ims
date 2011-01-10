@@ -1,0 +1,164 @@
+standalone: false
+
+shared_host: shared.example.com
+
+platform_name: Nubola
+
+oappublish: /usr/share/oaproject/subscriber/script/publish MOM=xmlblaster
+
+help_url: https://help.example.com
+
+unchecked_mail_address: system@example.com
+admin_email_address: system@example.com
+
+## PRICES ##
+fee_price: 5
+users_price: 5
+space_price: 5
+bw_price: 4.5
+
+included_space: 1024.0
+included_users: 2.0
+included_bw: 1024.0
+
+particular_hosts: disabled
+
+admin_control_panel_menu:
+  - name: users
+    url: group_admin/user_list
+    image: user.png
+    title: edit_group_users
+  - name: desktop
+    url: desktop/set_wallpaper
+    image: desktop.png
+    title: change_desktop_wallpaper
+  - name: contract
+    url: group_admin/contract
+    image: contrato.png
+    title: contract
+  - name: group
+    url: group_admin/group_index
+    image: group.png
+    title: edit_group_info
+  - name: images
+    url: uploadedimage/user_images
+    image: uploadedimages.png
+    title: uploadedimages_title
+  - name: particular_server
+    url: group_admin/vhost
+    image: servidor.png
+    title: particular_server
+  - name: apps 
+    url: group_admin/app_list?apps=installed
+    image: apps.png
+    title: edit_group_apps
+  - name: albarans
+    url: albaranes
+    image: albara.png
+    title: albarans
+  - name: reports
+    url: reports/user_reports
+    image: estadistica.png
+    title: reports_title
+
+privileged_user_control_panel_menu:
+  - name: user
+    url: privileged_user/user_index
+    image: default_user.png
+    title: Editar su perfil de usuario.
+  - name: desktop
+    url: desktop/set_wallpaper
+    image: desktop.png
+    title: Cambiar el fondo del escritorio.
+  - name: groups
+    url: groups
+    image: group.png
+    title: Configurar grupos y usuarios de la plataforma.
+  - name: users
+    url: users
+    image: user.png
+    title: Usuarios.
+  - name: contracts
+    url: contracts
+    image: contrato.png
+    title: Contratos. 
+  - name: reports
+    url: reports
+    image: estadistica.png
+    title: Estadísticas de utilización y consumos.
+  - name: albarans
+    url: charges
+    image: albara.png
+    title: Albaranes.
+  - name: hosts
+    url: hosts
+    image: servidor.png
+    title: Máquinas virtuales instaladas.
+  - name: logs
+    url: registre
+    image: explotacion.png
+    title: 
+
+user_control_panel_menu:
+  - name: user
+    url: user/user_index
+    image: default_user.png
+    title: Editar su perfil de usuario.
+  - name: desktop
+    url: desktop/set_wallpaper
+    image: desktop.png
+    title: Cambiar el fondo del escritorio.
+  - name: images
+    url: uploadedimage/user_images
+    image: uploadedimages.png
+    title: uploadedimages_title
+
+root_control_panel_menu:
+  - name: groups
+    url: groups
+    image: group.png
+    title: Configurar grupos y usuarios de la plataforma.
+  - name: users
+    url: users
+    image: user.png
+    title: Usuarios.
+  - name: apps
+    url: apps
+    image: apps.png
+    title: Configurar las aplicaciones disponibles en la plataforma.
+  - name: admin_user
+    url: root_admin/root_settings
+    image: default_user.png
+    title: Configurar los parámetros del usuario administrador de plataforma.
+  - name: desktop
+    url: desktop/set_wallpaper
+    image: desktop.png
+    title: Cambiar el fondo del escritorio.
+  - name: academies
+    url: academies
+    image: academies.png
+    title: academies_title
+  - name: contracts
+    url: contracts
+    image: contrato.png
+    title: Contratos.
+  - name: reports
+    url: reports
+    image: estadistica.png
+    title: Estadísticas de utilización y consumos.
+  - name: host_types
+    url: host_types
+    image: servidor.png
+    title: Administrar los tipos de máquina virtual disponibles.
+  - name: logs
+    url: registre
+    image: explotacion.png
+    title: 
+  - name: hosts
+    url: hosts
+    image: servidor.png
+    title: Máquinas virtuales instaladas.
+  - name: albarans
+    url: charges
+    image: albara.png
+    title: Albaranes.

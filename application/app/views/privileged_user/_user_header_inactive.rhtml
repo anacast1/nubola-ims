@@ -1,0 +1,5 @@
+<%= header_tag(:image => user_image(@user),
+               :title => (@user.name + " " + @user.surname).upcase,
+               :top_buttons => [{:content => t("back")}],
+               :bottom_buttons => [{:content => t("edit_user")}, 
+                                   {:content => t("start")}] ) %>

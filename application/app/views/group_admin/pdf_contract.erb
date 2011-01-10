@@ -1,0 +1,481 @@
+<table width="100%" border=1 cellspacing=0 cellpadding=0>
+  <tr>
+    <td>
+      <h1>CARATULA DE FAX</h4>
+    </td>
+  </tr>
+  <tr>    
+    <td>
+      <b><%= t("company") %></b>
+    </td>
+  </tr>
+  <tr>  
+    <td>  
+      <b><%= t("administrative_dpt") %></b>
+    </td>
+  </tr>
+  <tr>
+    <td>  
+      <b>FAX: 93 212 24 60</b>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table width="100%" border=1 cellpadding=5%>
+  <tr>
+    <td colspan=2 color="grey">
+      <h4><%= t("from").upcase %>:</h4>
+    </td>
+  </tr>
+  <tr>
+    <td width="30%"><b><%= iso(t("company_name")) %>:</b></td>
+    <td width="70%"><%= iso(@contract.name) %></td>
+  </tr>
+  <tr>
+    <td><b><%= iso(t("name")) %>:</b></td>
+    <td><%= iso(@contract.contact_name) %></td>
+  </tr>
+  <tr>
+    <td><b><%= iso(t("phone")) %>:</b></td>
+    <td><%= @contract.telf %></td>
+  </tr>
+</table>
+
+<br/>
+
+<table width="100%" border=1 bgcolor="#D0D0CC">
+  <tr>
+    <td colspan=2 color="grey">
+      <b><%= iso(t("desired_action")) %></b>
+    </td>
+  </tr>
+</table>
+
+<table width="100%"%>
+  <tr>
+    <td width="10%" align="center">
+      <%= pdf_image_tag "pdf/square.jpg" %>
+    </td>
+    <td align="left">
+      <%= iso(t("action_signup")) %>
+    </td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">
+      <%= pdf_image_tag "pdf/square.jpg" %>
+    </td>
+    <td align="left">
+      <%= iso(t("action_signedit")) %>
+    </td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">
+      <%= pdf_image_tag "pdf/square.jpg" %>
+    </td>
+    <td align="left">
+      <%= iso(t("action_signdown")) %>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<%= iso(t("other_documents")) %>
+
+<br/>
+
+<%= iso(t("how_to_send")) %>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table width="100%" border=1 cellpadding=5% bgcolor="#D0D0CC">
+  <tr>
+    <% if ! @contract.date.nil? %>
+      <td valign="middle" align="center">
+        <%= iso(t("date_s")) %>: <%= @contract.date %>
+      </td>
+    <% end %>
+    <% if ! @contract.code.blank? %>
+      <td valign="middle" align="center">
+        <%= iso(t("code_s")) %>: <%= @contract.code %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+
+<!-- PAGE BREAK -->
+
+
+<table width="100%">
+  <tr>
+    <td width="30%" height="150px" bgcolor="#33CCDA" align="center">
+      <h1><font color="white"><%= iso(t("contract_data")) %></font></h1>
+    </td>
+    <td width="70%" align="right" valign="bottom">
+      <%= pdf_image_tag "logo_nubola_big.jpg" %>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<b><%= iso(t("company_data")).upcase %></b>
+<hr/>
+<table width="100%">
+  <tr>
+    <td><%= iso(t("name")) %></td>
+    <td><%= iso(@contract.name) %></td>
+  </tr>
+  <% if ! @contract.date.nil? %>
+    <tr>
+      <td><%= iso(t("date_s")) %>:</td>
+      <td><%= @contract.date %></td>
+      <td></td><td></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><%= t("NIF") %>:</td>
+    <td><%= @contract.co_nif %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("address")) %>:</td>
+    <td><%= iso(@contract.co_street) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("city")) %>:</td>
+    <td><%= iso(@contract.co_town) %></td>
+    <td><%= iso(t("zip_code")) %>:</td>
+    <td><%= @contract.co_cp %></td>
+  </tr>
+  <tr>
+   <td><%= iso(t("country")) %>:</td>
+   <td><%= iso(@contract.co_country.blank? ? "" : t("countries.#{@contract.co_country}")) %></td>
+   <td><%= iso(t("province")) %>:</td>
+   <td><%= iso(@contract.co_province) %></td>
+  </tr>
+</table>
+
+<br/>
+
+<b><%= iso(t("contact_data")).upcase %> (*)</b>
+<hr/>
+<table width="100%">
+  <tr>
+    <td><%= iso(t("name")) %>:</td>
+    <td><%= iso(@contract.contact_name) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("department")) %>:</td>
+    <td><%= iso(@contract.department) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("phone")) %>:</td>
+    <td><%= @contract.telf %></td>
+    <td><%= iso(t("email")) %>:</td>
+    <td><%= @contract.mail %></td>
+  </tr> 
+</table>
+<br/>
+<font size=1><b>(*)</b>: <%= iso(t("company")) %> <%= iso(t("additional_info_right")) %></font>
+
+<br/>
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <b><%= iso(t("action_signup")).upcase %></b>
+    </td>
+    <td>
+      <%= pdf_image_tag("pdf/square.jpg") %>
+    </td>
+  </tr>
+</table>
+<hr/>
+<table>
+  <tr>
+    <td>
+      <font size="2"><%= iso(t("signup_clause")) %></font>
+    </td>
+    <td>
+      <%= pdf_image_tag("pdf/square.jpg") %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <font size="2">
+        <%= iso(t("signup_clause2")) %> <%= @contract.concurrentusers.blank? ? t("ilimited") : @contract.concurrentusers %>
+      </font>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+
+<table>
+  <tr>
+    <td>
+      <b><%= iso(t("action_signdown")).upcase %></b>
+    </td>
+    <td>
+      <%= pdf_image_tag("pdf/square.jpg") %>
+    </td>
+  </tr>
+</table>
+<hr/>
+<table>
+  <tr>
+    <td>
+      <font size="2"><%= iso(t("signdown_clause")) %></font>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table width="100%" border=1 cellpadding=5% bgcolor="#D0D0CC">
+  <tr>
+    <% if ! @contract.date.nil? %>
+      <td valign="middle" align="center">
+        <%= iso(t("date_s")) %>: <%= @contract.date %>
+      </td>
+    <% end %>
+    <% if ! @contract.code.blank? %>
+      <td valign="middle" align="center">
+        <%= iso(t("code_s")) %>: <%= @contract.code %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+
+<!-- PAGE BREAK -->
+
+<b><%= iso(t("signature")).upcase %></b>
+<hr/>
+<table width="100%" border=1 >
+  <tr>
+    <td width="50%">
+     &nbsp;
+    </td>
+    <td width="50%" valign="bottom" align="center">
+      <%= pdf_image_tag "pdf/firma.jpg" %>
+      <br/>
+      <%= iso("Sr. Pedro Rosés Amat") %>
+      <br/>
+      <b>Director</b>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td><b><%= iso(t("date_s")) %>:</b></td>
+    <td> .. / .. / ....</td>
+  </tr>
+</table>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table width="100%" border=1 cellpadding=5% bgcolor="#D0D0CC">
+  <tr>
+    <% if ! @contract.date.nil? %>
+      <td valign="middle" align="center">
+        <%= iso(t("date_s")) %>: <%= @contract.date %>
+      </td>
+    <% end %>
+    <% if ! @contract.code.blank? %>
+      <td valign="middle" align="center">
+        <%= iso(t("code_s")) %>: <%= @contract.code %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+
+<!-- PAGE BREAK -->
+
+<table width="100%">
+  <tr>
+    <td width="30%" height="150px" bgcolor="#33CCDA" align="center">
+      <h1><font color="white"><%= iso(t("billing_data")) %></font></h1>
+    </td>
+    <td width="70%" align="right" valign="bottom">
+      <%= pdf_image_tag "logo_nubola_big.jpg" %>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<b><%= iso(t("company_data")).upcase %></b>
+<hr/>
+<table width="100%">
+  <tr>
+    <td><%= iso(t("name")) %></td>
+    <td><%= iso(@contract.name) %></td>
+  </tr>
+  <% if ! @contract.date.nil? %>
+    <tr>
+      <td><%= iso(t("date_s")) %>:</td>
+      <td><%= @contract.date %></td>
+      <td></td><td></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><%= t("NIF") %>:</td>
+    <td><%= @contract.co_nif %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("address")) %>:</td>
+    <td><%= iso(@contract.co_street) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("city")) %>:</td>
+    <td><%= iso(@contract.co_town) %></td>
+    <td><%= iso(t("zip_code")) %>:</td>
+    <td><%= @contract.co_cp %></td>
+  </tr>
+  <tr>
+   <td><%= iso(t("country")) %>:</td>
+   <td><%= iso(@contract.co_country.blank? ? "" : t("countries.#{@contract.co_country}")) %></td>
+   <td><%= iso(t("province")) %>:</td>
+   <td><%= iso(@contract.co_province) %></td>
+  </tr>
+</table>
+
+<br/>
+
+<b><%= iso(t("contact_data")).upcase %> (*)</b>
+<hr/>
+<table width="100%">
+  <%= contr_sep(t("contact_data")) %>
+  <tr>
+    <td><%= iso(t("name")) %>:</td>
+    <td><%= iso(@contract.contact_name) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("department")) %>:</td>
+    <td><%= iso(@contract.department) %></td>
+    <td></td><td></td>
+  </tr>
+  <tr>
+    <td><%= iso(t("phone")) %>:</td>
+    <td><%= @contract.telf %></td>
+    <td><%= iso(t("email")) %>:</td>
+    <td><%= @contract.mail %></td>
+  </tr> 
+</table>
+<br/>
+<font size=1><b>(*)</b>: <%= iso(t("company")) %> <%= iso(t("additional_info_right")) %></font>
+<br/>
+<%= iso(t("bank_authorization", :company => t("company"))) %> 
+<br/>
+<center>..............................................................................................................................</center>
+<b><%= iso(t("signature")).upcase %></b>
+<hr/>
+<table width="100%" border=1 >
+  <tr>
+    <td width="50%">
+     &nbsp;
+    </td>
+    <td width="50%" valign="bottom" align="center">
+      <%= pdf_image_tag "pdf/firma.jpg" %>
+      <br/>
+      <%= iso("Sr. Pedro Rosés Amat") %>
+      <br/>
+      <b>Director</b>
+    </td>
+  </tr>
+</table>
+
+<br/>
+
+<table>
+  <tr>
+    <td><b><%= iso(t("date_s")) %>:</b></td>
+    <td> .. / .. / ....</td>
+  </tr>
+</table>
+
+<br/>
+
+<table width="100%" border=1 cellpadding=5% bgcolor="#D0D0CC">
+  <tr>
+    <% if ! @contract.date.nil? %>
+      <td valign="middle" align="center">
+        <%= iso(t("date_s")) %>: <%= @contract.date %>
+      </td>
+    <% end %>
+    <% if ! @contract.code.blank? %>
+      <td valign="middle" align="center">
+        <%= iso(t("code_s")) %>: <%= @contract.code %>
+      </td>
+    <% end %>
+  </tr>
+</table>
+

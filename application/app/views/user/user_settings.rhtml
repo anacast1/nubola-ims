@@ -1,0 +1,45 @@
+<div id="first_view">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header' %>
+  </div>
+
+  <div class="normaldiv">
+    <% form_tag( {:id => @user.id}, :multipart => true) do -%>
+      <table class="normaltable">
+        <tr>
+          <td>
+            <%= render :partial => 'shared/user', :locals => {:origin => "modify"} %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right">
+            <%= submit_tag t("cancel"), :name => 'cancel', :id => 'button' %>
+            <%= submit_tag t("modify_user"), :name => 'modify', :id => 'button',
+                                                :onclick => "Element.hide('first_view'); Element.show('second_view');" %>
+          </td>
+        </tr>
+      </table>
+    <% end-%>
+    
+    <%= error_messages_for 'user' %>
+    
+  </div>
+
+</div>
+
+<div id="second_view" style="display: none;" >
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header_inactive' %>
+  </div>
+  <br/>
+
+  <div id="flash">
+    <%= t("modifying_user") + h(@user.name) + " " + h(@user.surname) %>
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>

@@ -1,0 +1,92 @@
+<div class="menudiv">
+  <%=
+    app_kind = (params[:apps] == "installed" ? t("installed").upcase : t("available").upcase)
+    header_tag(:image => "apps.png",
+               :title => h(session[:user].group.name).upcase + ": <b>#{t("apps").upcase} #{app_kind}</b>",
+               :top_buttons    => [{:content => volver}],
+               :bottom_buttons => [{:content => link_to(t("apps") + " " + t("available"), {:action => "app_list", :apps => "available"}, :title => t("available_apps_list")),
+                                    :active => (params[:apps] == "available")},
+                                   {:content => link_to(t("apps") + " " + t("installed"), {:action => "app_list", :apps => "installed"}, :title => t("installed_apps_list")),
+                                    :active => (params[:apps] == "installed")}
+                                  ]
+              ) 
+  %>
+</div>
+
+<div class="normaldiv">
+
+  <% if @apps.length == 0 %>
+    <% if params[:apps] == "installed" %>
+      <div class="info">
+        <%= t("no_apps_installed_yet") %>
+      </div>
+    <% else %>
+      <div class="info">
+        <%= t("no_available_apps") %> 
+      </div>
+    <% end %>
+  <% end %>
+
+  <table class="normaltable">
+
+    <% rows = @apps.length / 3
+       last_row_apps = @apps.length % 3
+       if last_row_apps != 0
+         rows = rows + 1
+       end
+       row = 0   %>
+
+    <% rows.times do  %>
+
+      <%
+        if row != (rows - 1)
+          row_apps = @apps[(3*row)..((3*row) + 2)]
+          row = row + 1
+        else
+          if last_row_apps == 0
+            row_apps = @apps[(3*row)..((3*row) + 2)]
+          else
+            row_apps = @apps[(@apps.length - last_row_apps)..(@apps.length - 1)]
+          end
+        end
+      %>
+     
+      <tr>
+        <% for app in row_apps %>
+          <td>
+            <table class="normaltable">
+              <tr>
+                <td class="centered">
+                  <% if app.logo_image %>
+                    <% image_path = url_for_file_column(app, "logo_image") %>
+                    <%= link_to image_tag(image_path, :border => 0, :title => app.name), :action => :app_index, :id => app %>
+                  <% else %>
+                    <%= link_to image_tag("default_app_logo.png", :border => 0, :title => app.name), :action => :app_index, :id => app %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td class="centered">
+                  <%= app.name %>
+                </td>
+              </tr>
+              <tr>
+                <% if Group.find(session[:user].group_id).apps.include?(app) %>
+                  <td class="centered">
+                    <b class="green"><%= t("installed_sing") %></b>
+                  </td> 
+                <% else %>
+                  <td class="centered" class="red">
+                    <b class="red"><%= t("not_installed_sing") %></b>
+                  </td>
+                <% end %>
+              </tr>
+            </table>
+          </td>
+        <% end %>
+      </tr>
+
+    <% end %>
+
+  </table>
+</div>

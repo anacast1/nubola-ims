@@ -1,0 +1,7 @@
+production:
+  :address: mail.example.com
+  :domain: example.com
+  :port: 25
+  :authentication: login
+  :user_name: user@example.com
+  :password: password

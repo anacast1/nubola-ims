@@ -1,0 +1,5 @@
+development:
+  application: IMS
+  domain: example.com
+  oappublish: /usr/share/oaproject/subscriber/script/publish MOM=xmlblaster
+

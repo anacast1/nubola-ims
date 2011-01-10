@@ -1,0 +1,528 @@
+<script language="JavaScript" type="text/javascript">
+    function showApp(id)
+    {
+        try
+        {
+            var apps = getUserApps();
+            if (document.getElementById("taskbar").childNodes.length > 0)
+            {
+                document.getElementById(id).style.zIndex = 1;
+                if(apps != null){
+                  for (var i = 0; i < apps.length; ++i)
+                  {
+                      if (id != apps[i])
+                      {
+                          hideApp(apps[i]);
+                          if (apps[i] != "desktop")
+                          {
+                              deactivateButton( apps[i], getUserAppNameById(apps[i]) );
+                              resizeButtons();
+                          }
+                      }
+                  }
+                }
+                if (id != null)
+                {
+                    setCookie("OApcurrent", id);
+                    if (id != "desktop")
+                    {
+                        activateButton( id, getUserAppNameById(id) );
+                        resizeButtons();
+                    }
+                }
+            }
+        }
+        catch (error)
+        {
+          //alert('error showApp' + error.message);
+        }
+    }
+
+    function hideApp(id)
+    {
+        try
+        {
+            document.getElementById(id).style.zIndex = -1;
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function changeAppState(id)
+    {
+        try
+        {
+            if (getCookie("OApcurrent") != id)
+            {
+                showApp(id);
+            }
+            else
+            {
+                showApp("desktop");
+            }
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function closeApp(id)
+    {
+        try
+        {
+            showApp("desktop");
+            delButton(id);
+            resizeButtons();
+            delLayer(id);
+            delCookie("OAp" + id);
+            if (document.getElementById("taskbar").childNodes.length == 0)
+            {
+                delCookie("OApcurrent");
+            }
+        }
+        catch (error)
+        {
+        }
+    }
+  
+    function addButton(value, id)
+    {
+        try
+        {
+            var buttonId = "button" + id;
+
+            if (document.getElementById(buttonId) == null)
+            {
+                var button  = "<div id=\"" + buttonId + "\"></div>";
+                document.getElementById("taskbar").innerHTML += button;
+            }
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function delButton(id)
+    {
+        try
+        {
+            document.getElementById("taskbar").removeChild( document.getElementById("button" + id) );
+        }
+        catch (error)
+        {
+        }
+    } 
+
+    function activateButton(id, value)
+    {
+        try
+        {
+            var buttonId      = "button" + id;
+            var button        = document.getElementById(buttonId);
+            var buttonTitle   = "<div id=\"" + buttonId + "title\" class=\"button_element\" style=\"width:108px; float:left; text-align:left;\" onClick=\"changeAppState('" + id + "');\">";
+                buttonTitle  +=      "&nbsp;" + value;
+                buttonTitle  += "</div>";
+            var buttonX       = "<div id=\"" + buttonId + "X\" class=\"button_element\" style=\"float:right; text-align:right;\" onClick=\"closeApp('" + id + "');\">";
+                buttonX      +=      "&nbsp;" + <%= "'" + image_tag("close_selected.png", {:title => "Cerrar"}) + "'" %> + "&nbsp;";
+                buttonX      += "</div>";
+
+            button.innerHTML  = buttonTitle;
+            button.innerHTML += buttonX;
+            button.className  = "menu_element menu_element_button_selected";
+        }
+        catch (error)
+        {
+          //alert('error activateButton: ' + error.message);
+        }
+    }
+
+    function deactivateButton(id, value)
+    {
+        try
+        {
+            var buttonId      = "button" + id;
+            var button        = document.getElementById(buttonId);
+            var buttonTitle   = "<div id=\"" + buttonId + "title\" class=\"button_element\" style=\"width:108px; float:left; text-align:left;\" onClick=\"changeAppState('" + id + "');\">";
+                buttonTitle  +=      "&nbsp;" + value;
+                buttonTitle  += "</div>";
+            var buttonX       = "<div id=\"" + buttonId + "X\" class=\"button_element\" style=\"float:right; text-align:right;\" onClick=\"closeApp('" + id + "');\">";
+                buttonX      +=      "&nbsp;" + <%= "'" + image_tag("close.png", {:title => "Cerrar"}) + "'" %> + "&nbsp;";
+                buttonX      += "</div>";
+
+            button.innerHTML  = buttonTitle;
+            button.innerHTML += buttonX;
+            button.className  = "menu_element menu_element_button_unselected";
+        }
+        catch (error)
+        {
+        }
+    }
+ 
+    function addLayer(src, id)
+    {
+        try
+        {
+            if (document.getElementById(id) == null)
+            {
+                if (src.match(/locale=[a-z][a-z]/))
+                {
+                    src = src.replace(/locale=[a-z][a-z]/, 'locale=<%= I18n.locale %>');
+                }else
+                {
+                    src = src + '?locale=<%= I18n.locale %>';
+                }
+                
+                var layer  = "<div id=\"" + id + "\" class=\"background\">";
+                    layer += "  <iframe id=\"iframe" + id + "\" name=\"iframe" + id + "\" src=\"" + src + "\" scrolling=\"auto\" style=\"width:100%; height:100%; border:0%;\">";
+                    layer += "  </iframe>";
+                    layer += "</div>";
+                document.getElementById("layers").innerHTML += layer;
+            }
+        }
+        catch (error)
+        {
+          //alert('error addLayer: ' + error.message);
+        }
+    }
+
+    function delLayer(id)
+    {
+        try
+        {
+            document.getElementById("layers").removeChild( document.getElementById(id) );
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function storeUrls()
+    {
+        try
+        {
+            var apps = getUserApps();
+            for (var i = 0; i < apps.length; ++i)
+            {
+                var buttonName = "button" + apps[i];
+
+                if (document.getElementById(buttonName) != null)
+                {
+                    var iframeName  = "iframe" + apps[i];
+                    var cookieValue = document.getElementById(iframeName).contentWindow.location
+                    var cookieName  = "OAp" + apps[i];
+
+                    if (cookieValue.match("ims/sso/login") == null)
+                    {
+                        setCookie(cookieName, cookieValue);
+                    }
+                }
+            }
+            var value = <%= "\"" + session[:user].login + "\"" %>;
+
+            setCookie("OApLastUser", value);
+            setTimeout("storeUrls();", 1000);
+        }
+        catch (error)
+        {
+            setTimeout("storeUrls();", 1000);
+        }
+    }
+
+    function loadUrls()
+    {
+        try
+        {
+            var apps        = getUserApps();
+            var lastUser    = getCookie("OApLastUser");
+            var currentUser = <%= "\"" + session[:user].login + "\"" %>;
+            var current     = getCookie("OApcurrent");
+            var imsValue    = getCookie("OApims");
+
+            if (lastUser != null && lastUser != currentUser)
+            {
+                for (var i = 0; i < apps.length; ++i)
+                {
+                    var cookieName = "OAp" + apps[i];
+
+                    if (cookieName != "OApims")
+                    {
+                        delCookie(cookieName);
+                        getCookie(cookieName);
+                    }
+                }
+                if (current != null && imsValue != null && current == "ims" && imsValue.match("welcome_page") == "welcome_page")
+                {
+                    <% if (session[:user].role == "groupadmin") %>
+                        addButton("<%= t("control_panel") %>", "ims");
+                        addLayer("group_admin/welcome", "ims");
+                    <% elsif (session[:user].role == "user") %>
+                        addButton("<%= t("control_panel") %>", "ims");
+                        addLayer("user/welcome", "ims");
+                    <% end %>
+                    showApp(current);
+                    delCookie("OApims");
+                    getCookie("OApims");
+                }
+                else
+                {
+                    delCookie("OApcurrent");
+                    getCookie("OApcurrent");
+                    delCookie("OApims");
+                    getCookie("OApims");
+                }
+            }
+            else
+            {
+                if (current != null && imsValue != null && current == "ims" && imsValue.match("welcome_page") == "welcome_page")
+                {
+                    <% if (session[:user].role == "groupadmin") %>
+                        addButton("<%= t("control_panel") %>", "ims");
+                        addLayer("group_admin/welcome", "ims");
+                    <% elsif (session[:user].role == "user") %>
+                        addButton("<%= t("control_panel") %>", "ims");
+                        addLayer("user/welcome", "ims");
+                    <% end %>
+                    for (var i = 0; i < apps.length; ++i)
+                    {
+                        var cookieName = "OAp" + apps[i];
+
+                        delCookie(cookieName);
+                        getCookie(cookieName);
+                    }
+                }
+                else
+                {
+                    var appsNames = getUserAppsNames();
+
+                    for (var i = 0; i < apps.length; ++i)
+                    {
+                        var cookieName  = "OAp" + apps[i];
+                        var cookieValue = getCookie(cookieName);
+
+                        if (cookieValue != null)
+                        {
+                            addButton(appsNames[i], apps[i]);
+                            addLayer(cookieValue, apps[i]);
+                        }
+                    }
+                }
+                if(current != null)
+                {
+                    showApp(current);
+                }
+            }
+        }
+        catch (error)
+        {
+            //alert('error loadUrls:' + error.message);
+        }
+    }
+
+    function setCookie(cookieName, cookieValue)
+    {
+        try
+        {
+            document.cookie = cookieName + "=" + cookieValue + "; path=/";
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function getCookie(cookieName)
+    {
+        try
+        {
+            var cookieNameEquals = cookieName + "=";
+            var cookiesArray     = document.cookie.split(";");
+
+            for (var i = 0; i < cookiesArray.length; ++i)
+            {
+                var cookie = cookiesArray[i];
+
+                while (cookie.charAt(0) == ' ')
+                {
+                    cookie = cookie.substring(1, cookie.length);
+                }
+                if (cookie.indexOf(cookieNameEquals) == 0)
+                {
+                    return cookie.substring(cookieNameEquals.length, cookie.length);
+                }
+            }
+
+            return null;
+        }
+        catch (error)
+        {
+            return null;
+        }
+    }
+
+    function delCookie(cookieName)
+    {
+        try
+        {
+            document.cookie = cookieName + "=;path=/;expires=Thu, 01-Jan-1970 00:00:01 GMT";
+        }
+        catch (error)
+        {
+            //alert('error delCookie:' + error.message);
+        }
+    }
+
+    function getUserApps()
+    {
+        try
+        {
+            var apps = ["desktop", "ims"];
+            var ul = $('applications_menu');
+
+            if (ul != null)
+            {
+              for (var li = 0; li < ul.childNodes.length; ++li)
+              {
+                if (ul.childNodes[li].tagName == 'LI')
+                {
+                  var a = ul.childNodes[li].firstChild;
+
+                  if  (a.tagName == 'A')
+                  {
+                    apps.push(a.id.replace('_link','') );
+                  }
+                }
+              }
+            }
+
+            return apps;
+        }
+        catch (error)
+        {
+            return null;
+        }
+    }
+
+    function getUserAppsNames()
+    {
+        try
+        {
+            var appsNames = ["<%= t("desktop") %>", "<%= t("control_panel") %>"];
+            var ul = $('applications_menu');
+
+            if (ul != null)
+            {
+              for (var li = 0; li < ul.childNodes.length; ++li)
+              {
+                if (ul.childNodes[li].tagName == 'LI')
+                {
+                  var a = ul.childNodes[li].firstChild;
+
+                  if  (a.tagName == 'A')
+                  {
+                    appsNames.push(a.innerHTML);
+                  }
+                }
+              }
+            }
+
+            return appsNames;
+        }
+        catch (error)
+        {
+            return null;
+        }
+    }
+
+    function getUserAppNameById(id)
+    {
+        try
+        {
+            var apps       = getUserApps();
+            var appsNames  = getUserAppsNames();
+
+            for (var i = 0; i < apps.length; ++i)
+            {
+                if (apps[i] == id)
+                {
+                     return appsNames[i];
+                }
+            }
+        }
+        catch (error)
+        {
+            //alert('error getUserAppNameById:' + error.message);
+            return null;
+        }
+    }
+
+    function resizeButtons()
+    {
+        try
+        {
+            var taskbar       = document.getElementById("taskbar");
+            var buttonsNumber = taskbar.childNodes.length;
+            var buttonsWidth  = 128 * buttonsNumber;
+            var newWidth      = 145;
+
+            if (buttonsWidth > taskbar.offsetWidth - 12)
+            {
+                newWidth = parseInt( (taskbar.offsetWidth - 12) / buttonsNumber);
+            }
+            for (var i = 0; i < buttonsNumber; ++i)
+            {
+                var closeAreaWidth = taskbar.childNodes[i].childNodes[1].offsetWidth;
+
+                if (closeAreaWidth > 25)
+                {
+                    closeAreaWidth = 16;
+                }
+                taskbar.childNodes[i].style.width               = newWidth                    + "px";
+                taskbar.childNodes[i].childNodes[0].style.width = (newWidth - closeAreaWidth) + "px";
+            }
+        }
+        catch (error)
+        {
+        }
+    }
+
+    function printActiveLayer()
+    {
+        try
+        {
+            var cookieValue = getCookie("OApcurrent");
+            var buttonName  = "button" + cookieValue;
+
+            if (document.getElementById(buttonName) != null)
+            {
+                var iframeName = "iframe" + cookieValue;
+                // var iFrame     = document.getElementById(iframeName);
+                var iFrame     = window.frames[iframeName];
+
+                if (iFrame != null)
+                {
+                    iFrame.focus();
+                    iFrame.print();
+                }
+            }
+
+        }
+        catch (error)
+        {
+            //alert('error printActiveLayer:' + error.message);
+        }
+    }
+
+    function confirmExit()
+    {
+        try
+        {
+            return confirm("<%= t("confirm_exit") %>");
+        }
+        catch (error)
+        {
+            return true;
+        }
+    }
+
+    setTimeout("storeUrls();", 1000);
+</script>

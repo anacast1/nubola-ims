@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+ADAPTOR_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(ADAPTOR_ROOT)
+require 'rubygems'
+require 'adaptation'
+require 'adaptation/version'
+
+require 'commands/console'
+

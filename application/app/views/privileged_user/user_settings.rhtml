@@ -1,0 +1,43 @@
+<div id="first_view">
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header' %>
+  </div>
+
+  <div class="normaldiv">
+    <h3>Preferencias del usuario privilegiado</h3>
+    <% form_tag( {:id => @user.id}, :multipart => true) do -%>
+      <table class="normaltable">
+        <tr>
+          <td>
+            <%= render :partial => 'user', :locals => {:origin => "modify"} %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right">
+            <%= submit_tag 'Cancelar', :name => 'cancel', :id => 'button' %>
+            <%= submit_tag 'Modificar usuario', :name => 'modify', :id => 'button',
+                                                :onclick => "Element.hide('first_view'); Element.show('second_view');" %>
+          </td>
+        </tr>
+      </table>
+    <% end -%>
+  </div>
+
+</div>
+
+<div id="second_view" style="display: none;" >
+
+  <div class="menudiv">
+    <%= render :partial => 'user_header_inactive' %>
+  </div>
+  <br/>
+
+  <div id="flash">
+    Modificando usuario <%= h(@user.name) %>  <%= h(@user.surname) %>
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+
+</div>

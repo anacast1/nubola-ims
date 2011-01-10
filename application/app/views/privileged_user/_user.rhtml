@@ -1,0 +1,96 @@
+<table class="normaltable" cellspacing="0" cellpadding="5">
+<tr>
+  <td >
+    <table class="normaltable">
+      <% if origin == "new" %>
+        <tr>
+          <td id="caption">Login: *</td>
+          <td><%=text_field("user", "login", :id => "required_field")%></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td id="caption">Contraseña: *</td>
+        <% if (request.env_table["HTTP_USER_AGENT"] =~ /MSIE/) != nil %>
+          <% if origin == "new" %>
+            <td><%=password_field("user","password", :id => "required_field", :size => "32")%></td>
+          <% else %>
+            <td><%=password_field("user","password", :id => "normal_field", :size => "32")%></td>
+          <% end %>
+        <% else %>
+          <% if origin == "new" %>
+            <td><%=password_field("user","password", :id => "required_field")%></td>
+          <% else %>
+            <td><%=password_field("user","password", :id => "normal_field")%></td>
+          <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td id="caption">Confirmar: *</td>
+        <% if (request.env_table["HTTP_USER_AGENT"] =~ /MSIE/) != nil %>
+          <% if origin == "new" %>
+            <td><%=password_field("user","password_confirmation", :id => "required_field", :size => "32")%></td>
+          <% else %>
+            <td><%=password_field("user","password_confirmation", :id => "normal_field", :size => "32")%></td>
+          <% end %>
+        <% else %>
+          <% if origin == "new" %>
+            <td><%=password_field("user","password_confirmation", :id => "required_field")%></td>
+          <% else %>
+            <td><%=password_field("user","password_confirmation", :id => "normal_field")%></td>
+          <% end %>
+        <% end %>
+      </tr>
+      <tr>
+        <td id="caption">Nombre: *</td>
+        <td><%=text_field("user","name", :id => "required_field")%></td>
+      </tr>
+      <tr>
+        <td id="caption">Apellido: *</td>
+        <td><%=text_field("user","surname", :id => "required_field")%></td>
+      </tr>
+      <tr>
+        <td id="caption">Teléfono:</td>
+        <td><%=text_field("user","telephone", :id => "normal_field")%></td>
+      </tr>
+      <tr>
+        <td id="caption">Movil:</td>
+        <td><%=text_field("user","mobile", :id => "normal_field")%></td>
+      </tr>
+      <tr>
+        <td id="caption">Correo electrónico: *</td>
+        <td><%=text_field("user","email", :id => "required_field")%></td>
+      </tr>
+      <tr>
+        <td id="caption">(*): Campos obligatorios</td>
+      </tr>
+    </table>
+  </td>
+  <td valign="top">
+    <table>
+      <tr>
+
+      </tr>
+      <tr>
+         <td>
+	   <%= user_image @user %>
+        </td>
+        <td style="padding: 5">
+          <%= file_column_field "user", "user_image", :size => "11" %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right">
+          <%= submit_tag "Resetear imagen", :name => "default_image" %>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td cellpadding="10" valign="top" align="center" colspan="2">
+    <%= error_messages_for 'user' %>
+  </td>
+</tr>
+</table>
+
+

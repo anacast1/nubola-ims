@@ -1,0 +1,118 @@
+<div id="first_view">
+
+<div class="menudiv">
+  <%= render :partial => 'app_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <% form_tag do -%>
+
+    <table class="normaltable">
+      <% if @app.find_group_parameters.length == 0 || @app.find_group_parameters.reject{|param| param.input == 'hidden' }.length == 0 %>
+        <tr>
+          <td>
+            <%= info_tag(@app.name + " " + t("no_group_parameters")) %>
+          </td>
+        </tr>
+      <% else %>
+        <tr>
+          <td>
+            <table>
+              <% for @parameter in @app.find_group_parameters %>
+                <tr>
+                  <td>
+                    <%= t(@parameter.name) unless @parameter.input == 'hidden' %>
+                  </td>
+                  <td>
+                  <% if gs = session[:user].group.group_settings.find_by_parameter_id(@parameter.id) %>
+                    <% if @parameter.input == 'dropdown' %>
+                      <% 
+                        values_list = @parameter.parameter_values.map{|pv| pv.value}
+                        if @parameter.default_value.include?("Group.")
+                          values_list << session[:user].group.get_field_by_name(@parameter.default_value)
+                        end
+                      %>
+                      <% for v in values_list %>
+                        <table>
+                          <% if gs.value == v %>
+                            <tr><td>
+                              <%= radio_button("group_parameters", @parameter.id, v, {:checked => "checked"}) + " " + t(v) %>
+                            </tr></td>
+                          <% else %>
+                            <tr><td>
+                              <%= radio_button("group_parameters", @parameter.id, v) + " " + t(v) %>
+                            </tr></td>
+                          <% end %>
+                        </table>
+                      <% end %>
+                    <% elsif @parameter.input == 'hidden' %>
+                      <%= hidden_field_tag("group_parameters[#{@parameter.id}]", gs.value) %>
+                    <% else %>
+                        <%= text_field("group_parameters",
+                                        @parameter.id,
+                                        :value => gs.value) %>
+                    <% end %>
+                  <% else %>
+                    <% if @parameter.input == 'dropdown' %>
+                      <% 
+                        values_list = @parameter.parameter_values.map{|pv| pv.value}
+                        if @parameter.default_value.include?("Group.")
+                          values_list << session[:user].group.get_field_by_name(@parameter.default_value)
+                        end
+                      %>
+                      <% for v in values_list %>
+                        <table>
+                        <% if @parameter.default_value == v %>
+                          <tr><td>
+                            <%= radio_button("group_parameters", @parameter.id, v,{:checked => "checked"}) + " " + t(v) %>
+                          <tr></td>
+                        <% else %>
+                          <tr><td>
+                            <%= radio_button("group_parameters", @parameter.id, v) + " " + t(v) %>
+                          </tr></td>
+                        <% end %>
+                        </table>
+                      <% end %>
+                    <% elsif @parameter.input == 'hidden' %>
+                      <% value = @parameter.default_value.include?("Group.") ? session[:user].group.get_field_by_name(@parameter.default_value) : @parameter.default_value %>
+                      <%= hidden_field_tag("group_parameters[#{@parameter.id}]", value) %>
+                    <% else %>
+                      <%= text_field("group_parameters",
+                                      @parameter.id,
+                                      :value => @parameter.default_value) %>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+              <% end %>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" class="vbottomright">
+            <%=submit_tag t("cancel"), :name => "cancel"%>
+            <%=submit_tag t("modify_configuration"), :name => "save_group_settings",
+                                                     :onclick => "Element.hide('first_view'); Element.show('second_view');" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end -%>
+</div>
+
+
+</div>
+
+<div id="second_view" style="display: none">
+  <div class="menudiv">
+    <%= render :partial => 'app_header_inactive' %>
+  </div>
+  <br/>
+  <div id="flash">
+    <%= t("modifying_group_settings_for_app") + " " + @app.name %>
+    <br/>
+    <br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%= stylesheet_link_tag "ims_styles" %>
+    <%= stylesheet_link_tag "scaffold" %>
+    <%= render(:partial => "shared/javascripts") %>
+  </head>
+
+    <% if @user.errors.empty?  %>
+      <% # reloads parent (desktop) to show modified wallpaper %>
+      <body onunload="parent.location.reload(unescape(parent.location.pathname));">
+    <% else %>
+      <body>
+    <% end %>
+
+
+  <div class="menudiv">
+  
+    <%= header_tag(:image => "desktop.png",
+                   :title => t("desktop_wallpaper").upcase,   
+                   :top_buttons => [{:content => link_to(t("back"), {:controller => :ims}, :title => t("back_to_control_panel"))}]) %>
+  </div>
+
+  <div class="normaldiv">
+
+    <%= error_messages_for 'user' %>
+    
+    <table class="normaltable" style="padding-top: 2%"><% form_tag({ :action => 'set_wallpaper' }, :multipart => true) do -%>
+
+      <% names = ["Tentacles", "Bear", "Wolf", "Naptime"] %>
+      <% 4.times do |t| %>
+        <% image_path = "../User/wallpaper/shared/wallpaper_#{t + 1}-thumb.jpg" %>
+        <tr>
+          <td width="10%">&nbsp;</td>
+          <td width="10%" >
+            <% [@user.wallpaper, @user.default_wallpaper].include?("wallpaper_#{t + 1}.jpg") ? checked = true : checked = false %>
+            <%= image_tag image_path %></td><td width="20%"><%= radio_button_tag("fondo", t + 1, checked, {:onclick => "$('user_wallpaper').disabled=true;"}) + "  " + names[t]  %>
+          </td>
+          <td width="30%">&nbsp;</td>
+        </tr>
+      <% end %>
+
+      <tr>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">
+          <% if !@user.wallpaper.nil?  %>
+            <%= image_tag url_for_file_column(@user, "wallpaper", "thumb") %></td><td width="20%"><%= radio_button_tag("fondo", 5 , true) %> <%= t("custom") %>:&nbsp;<%= file_column_field("user", "wallpaper", {:disabled => false})%>
+          <% else %>
+            </td><td width="20%"><%= radio_button_tag("fondo", 5, false, {:onclick => "$('user_wallpaper').disabled=false;"}) %> <%= t("custom") %>:&nbsp;<%= file_column_field("user", "wallpaper", {:disabled => true}) %>
+          <% end %>
+        </td>
+         <td width="30%">&nbsp;</td>
+      </tr>
+
+        <tr>
+        <td width="10%" colspan=3>
+          <td width="20%" align="right">
+             <%= submit_tag t("cancel"), :name => 'cancel', :id => 'button' %>
+             <%= submit_tag t("select"), :name => 'set_wallpaper', :id => 'button' %>
+          </td>
+        
+        </tr>
+	<% end -%>
+    </table>
+  
+  </div>
+
+  </body>
+
+</html>

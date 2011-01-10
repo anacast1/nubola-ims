@@ -1,0 +1,45 @@
+<%= help_tag t("groupadmin_new_contract_help") %>
+
+<div class="info">
+    <% if !session[:user].group.client? %>
+      <% date = Date.strptime(session[:user].group.demo_ends.strftime("%d-%m-%Y"), "%d-%m-%Y") %>
+      <%= t("your_group_is_in_demo", 
+        :name => h(session[:user].name),
+        :surname => h(session[:user].surname),
+        :group => h(session[:user].group.name),
+        :days => (date - Date.today) )
+      %>
+    <% end %>
+</div>
+<br/>
+
+<div class="centered">
+  <% form_for(:contract, @contract, :url => {:action => "new_contract"}, :html => { :class => "centered"}) do |f| %>
+  
+    <%= render :partial => f %>
+
+    <div>
+      <%= t("accept_contract") + ": " + check_box_tag("terms", "1", false, {:onclick => "if(!this.checked){document.getElementById('contract_submit').disabled = true;}else{document.getElementById('contract_submit').disabled = false;}"}) %>
+      <div class="text_small">
+        (<%= t("read_terms_here") %> <b><%=link_to(t("pdf_terms"), {:action => :pdf_contract_terms}, :title => t("contract_terms") ) %></b>) 
+      </div>
+      
+    </div>
+
+    <p> <%= f.submit t("new_contract") %> </p>
+
+    <%= f.error_messages %>
+
+  <% end %>
+
+</div>
+
+<script>
+  if(!document.getElementById('terms').checked) {
+    document.getElementById('contract_submit').disabled = true;
+  }
+  else {
+    document.getElementById('contract_submit').disabled = false;
+  }
+</script>
+

@@ -1,0 +1,2 @@
+class ImsError < StandardError 
+end

@@ -1,0 +1,106 @@
+<div style="margin-left: auto; margin-right: auto; width: 50%;">
+
+<h3><%= t("reports_for_group")  + " " + @group.name %></h3>
+
+<form name="usage_reports_g" method="post" action="usage_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        <%= t("number_of_connected_users") %>
+      </td>
+      <td>
+        <input type="hidden" name="id" value="<%= @group.id %>" />
+        <input type="hidden" name="locale" value="<%= I18n.locale %>" />
+        <select name="day" onchange="javascript: if (document.usage_reports_g.day.value != '') { document.usage_reports_g.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="concurrency_reports_g" method="post" action="concurrency_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        <%= t("number_of_simultanously_connected_users") %>
+      </td>
+      <td>
+        <input type="hidden" name="id" value="<%= @group.id %>" />
+        <input type="hidden" name="locale" value="<%= I18n.locale %>" />
+        <select name="day" onchange="javascript: if (document.concurrency_reports_g.day.value != '') { document.concurrency_reports_g.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="usedspace_reports_g" method="post" action="usedspace_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        <%= t("space_used_for_each_application_in_shared_host") %>
+      </td>
+      <td>
+        <input type="hidden" name="id" value="<%= @group.id %>" />
+        <input type="hidden" name="locale" value="<%= I18n.locale %>" />
+        <select name="day" onchange="javascript: if (document.usedspace_reports_g.day.value != '') { document.usedspace_reports_g.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="all_graphs_reports_g" method="post" action="all_graphs">
+  <table>
+    <tr>
+      <td width="500px">
+        <%= t("all_graphs") %>
+      </td>
+      <td>
+        <input type="hidden" name="id" value="<%= @group.id %>" />
+        <input type="hidden" name="locale" value="<%= I18n.locale %>" />
+        <select name="day" onchange="javascript: if (document.all_graphs_reports_g.day.value != '') { document.all_graphs_reports_g.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<% unless @group.vhost.nil? -%>
+<div style="border: 1px solid; width: 500; margin:20">
+<h3><%= t("particular_server") %></h3>
+<table width="100%">
+  <th><%= t("vhost_type")  %></th>
+  <th><%= t("vhost_cpu")   %></th>
+  <th><%= t("vhost_ram")   %></th>
+  <th><%= t("vhost_disk")  %></th>
+  <th><%= t("vhost_state") %></th>
+  <tr align="center">
+    <td><%= @group.vhost.host_type.name %></td>
+    <td><%= @group.vhost.host_type.cpu %> MHz</td>
+    <td><%= @group.vhost.host_type.ram %> MB</td>
+    <td><%= @group.vhost.host_type.disk %> GB</td>
+    <td><%= t(@group.vhost.status) %></td>
+  </tr>
+</table>
+<br />
+</div>
+<% end -%>
+
+</div>

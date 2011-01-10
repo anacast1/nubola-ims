@@ -1,0 +1,21 @@
+<%
+if @graphs
+  @graphs.each do |graph|
+-%>
+
+<div style="text-align: center; padding: 50px;">
+  <%= graph %>
+</div>
+
+<%
+  end
+else
+-%>
+
+<div style="text-align: center; padding: 50px;">
+  <%= @graph %>
+</div>
+
+<%
+end
+-%>

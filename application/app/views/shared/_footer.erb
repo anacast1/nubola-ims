@@ -1,0 +1,15 @@
+<div id="footer">
+  <%= image_tag "logo_nubola.jpg" %>
+  <div class="peu">
+    Copyright &copy; 2010 - <%= link_to t("company"), "http://www.open-alliance.com", :popup => true %>
+    <p>
+      <%= link_to "Nubola", "http://www.nubola-saas.com", :popup => true %><%= t("is_a_project_based_on_technology") %><%= link_to "OAproject", "http://www.oaproject.net", :popup => true %>
+    </p>
+    
+    <% if ["sso", "mex"].include?(params[:controller]) %>
+        <% locales = [[t("catalan"), "locale=ca"], [t("spanish"), "locale=es"], [t("english"), "locale=en"]] %>
+        <%= select nil,nil, locales, {:selected => "locale=#{I18n.locale}"}, :onchange => "if(window.location.href.match(/locale=[a-z][a-z]/)){window.location = window.location.href.replace(/locale=[a-z][a-z]/,options[selectedIndex].value);}else{window.location = window.location.href + '?' + options[selectedIndex].value;}", :style => "border: none; font-size: 0.8em; margin-bottom: 5px;" %>
+    <% end %>
+
+  </div>
+</div>

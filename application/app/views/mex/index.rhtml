@@ -1,0 +1,22 @@
+<table align="center"/>
+<tr>
+  <td>
+    <% if flash[:mex] %>
+      <%= flash[:mex] %>
+    <% else %>
+      <h3>Bienvenido a <%= Setting.platform_name %>.</h3>
+    <% end %>
+    <br/>
+  <td>
+</tr>
+<tr>
+  <td style="padding: 10;">
+    <%= link_to "Registar un nuevo grupo/empresa", :action => "new_group" %>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 10;">
+    <%= link_to "Entrar a #{Setting.platform_name}", :controller => "sso", :action => "login" %>
+  </td>
+</tr>
+</table>

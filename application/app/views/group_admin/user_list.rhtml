@@ -1,0 +1,63 @@
+<div class="menudiv">
+  <%= header_tag(:image => "group.png",
+                 :title => h(session[:user].group.name).upcase + ": <b>#{t("users").upcase}</b>",
+                 :top_buttons    => [{:content => volver, :active => true}],
+                 :bottom_buttons => [{:content => link_to(t("new_user"), {:action => "user_new"}, :title => "#{t("add_new_user_to_group")} #{h(session[:user].group.name)}"),
+                                      :active => (params[:action] == "user_new")},
+                                     {:content => link_to(t("users"), {:action => "user_list"}, :title => "#{t("group_user_list")} #{h(session[:user].group.name)}"),
+                                      :active => (params[:action] == "user_list")}]
+                ) %>
+</div>
+
+<div class="normaldiv">
+
+  <%= ok_tag flash[:user_created] %>
+  
+  <table class="normaltable">
+
+    <% rows = @users.length / 3
+       last_row_users = @users.length % 3
+       if last_row_users != 0
+         rows = rows + 1
+       end
+       row = 0   %>
+
+    <% rows.times do  %>
+
+      <%
+        if row != (rows - 1)
+          row_users = @users[(3*row)..((3*row) + 2)]
+          row = row + 1
+        else
+          if last_row_users == 0
+            row_users = @users[(3*row)..((3*row) + 2)]
+          else
+            row_users = @users[(@users.length - last_row_users)..(@users.length - 1)]
+          end
+        end
+      %>
+ 
+      <tr>
+        <% for @user in row_users %>
+          <td>
+            <table class="normaltable">
+              <tr>
+                <td class="centered">
+                  <%= link_to user_image(@user), :action => 'user_index', :id => @user %>
+                 
+                </td>
+              </tr>
+              <tr>
+                <td class="centered">
+                  <%= h(@user.send("name")+ " " + @user.send("surname")) %>
+                </td>
+              </tr>
+            </table>
+          </td>
+        <% end %>
+      </tr>
+
+    <% end %>
+
+  </table>
+</div>

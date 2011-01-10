@@ -1,0 +1,76 @@
+<div class="menudiv">
+  <%= render :partial => "group_header" %>
+</div>
+
+<div class="normaldiv">
+
+  <% form_tag({:id => @group.id}, :multipart => true) do %>
+
+  <table class="normaltable" cellspacing="0" cellpadding="5">
+    <tr>
+      <td>
+        <table class="centered">
+        
+          <%= label_tag('* ' + t("name")) %>
+          <%= value_tag(text_field("group", "name")) %>
+          
+          <%= label_tag(t("NIF")) %>
+          <%= value_tag(text_field("group", "nif", :size => "9" )) %>
+           
+          <%= label_tag(t("address")) %>
+          <%= value_tag(text_field("group","address")) %>
+          
+          <%= label_tag(t("city")) %>
+          <%= value_tag(text_field("group","city")) %>
+          
+          <%= label_tag(t("zip_code")) %>
+          <%= value_tag(text_field("group","zipcode", :size => "5")) %>
+          
+          <%= label_tag(t("country")) %>
+          <%= value_tag(country_select :group, :country, {t("countries.spain") => "spain"}) %>
+          
+          <tr>
+            <td><b>(*): <%= t("mandatory_fields") %></b></td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top">
+        <table>
+          <tr>
+
+          </tr>
+          <tr>
+            <td>
+	          <% if @group.logo_image %>
+                <% image_path = url_for_file_column(@group, "logo_image") %>
+              <% else %>
+                <% image_path = "group.png" %>
+              <% end %>
+              <%= image_tag image_path %>
+            </td>
+            <td style="padding: 5">
+              <%= file_column_field "group", "logo_image", :size => "11" %>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td colspan="2" class="vbottomright">
+        <%= submit_tag t("cancel"), :name => "cancel" %>
+        <%= submit_tag t("modify_group"), :name => "modify" %>
+      </td>
+    </tr>
+
+  </table>
+
+  <% end %>
+
+  <%= error_messages_for 'group' %>
+
+</div>
+
+
+</div>

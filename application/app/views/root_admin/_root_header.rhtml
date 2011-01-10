@@ -1,0 +1,5 @@
+<%= header_tag(:image => user_image(session[:user]),
+               :title => h(session[:user].send("name").upcase + " " + session[:user].send("surname").upcase) + " (<b>#{t("platform_admin")}</b>)",
+               :top_buttons => [{:content => volver}]
+              )
+%>

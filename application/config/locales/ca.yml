@@ -1,0 +1,874 @@
+ca:
+  start: "Inici"
+  back: "Tornar"
+  users: "Usuaris"
+  user: "Usuari"
+  back_to_users_list: "Tornar al llistat d'usuaris"
+  assign_apps: "Assignar aplicacions"
+  edit_user: "Editar usuari"
+  assign_apps_to_user: "Assignar aplicacions a l'usuari "
+  edit_user_info: "Editar informació de l'usuari " 
+  desktop: "Escriptori"
+  contract: "Contracte"
+  group: "Grup"
+  group_name: "Nom de grup"
+  reports: "Estadístiques"
+  particular_server: "Servidor particular"
+  apps: "Aplicacions"
+  albarans: "Albarans"
+  edit_group_users: "Editar els usuaris del seu grup."
+  change_desktop_wallpaper: "Canviar el fons de l'escriptori."
+  edit_group_info: "Editar la informació del seu grup."
+  edit_info_of_group: "Editar la informació del grup "
+  edit_group: "Editar grup"
+  reports_title: "Estadístiques d'utilització i consums."
+  edit_group_apps: "Editar les aplicacions del seu grup."
+  control_panel: "Panell&nbsp;de&nbsp;Control"
+  is_a_project_based_on_technology: " és un projecte basat en tecnologia "
+  group_user_list: "Llistat dels usuaris de "
+  new_user: "Nou usuari"
+  add_new_user_to_group: "Afegir un nou usuari a "
+  login: Login
+  name: Nom
+  surname: Cognoms
+  phone: Telèfon
+  mobile: Mòbil
+  email: Correu electrònic
+  department: Departament
+  modify_user: "Modificar usuari"
+  modifying_user: "Modificant usuari "
+  cancel: Cancel.lar
+  password: Contrasenya
+  password_confirmation: Confirmar contrasenya
+  password_repeated: Contrasenya repetida
+  mandatory_fields: Camps obligatoris
+  activate: Activar
+  deactivate: Desactivar
+  activated: Activat
+  deactivated: Desactivat
+  deactivate_user: "Desactivar l'usuari {{user}}"
+  activate_user: "Activar l'usuari {{user}}"
+  administrador: Administrador
+  back_to_contract: Tornar a la consulta del contracte
+  back_to_control_panel: Tornar al panell de control
+  NIF: NIF
+  address: Adreça
+  city: Ciutat
+  zip_code: Codi postal
+  country: País
+  province: Província
+  modify_group: Modificar grup
+  problems_on_the_following_fields: "Hi ha hagut problemes en els següents camps:"
+  errors_on: "errors han impedit desar les dades del"
+  back_to_app_list: "Tornar al llistat d'aplicacions"
+  apps: Aplicacions
+  installed: Instal·lades
+  installed_sing: Instal·lada
+  not_installed_sing: No instal·lada
+  available: Disponibles
+  installed_apps_list: "Llistat d'aplicacions instal·lades"
+  available_apps_list: "Llistat d'aplicacions disponibles"
+  no_apps_installed_yet: "Encara no hi ha cap aplicació instal·lada"
+  no_available_apps: "No hi ha aplicacions disponibles"
+  management: Gestió
+  install: Instal.lar
+  assign_users: "Assignar usuaris"
+  assign_users_to_app: "Assignar usuaris a "
+  group_settings: "Preferències de grup"
+  group_settings_for_app: "Preferències de grup per a "
+  this_app_is_in_status:  "Aquesta aplicació encara està en procés de " 
+  INSTALLING: "instal·lació"
+  UNINSTALLING: "desinstal·lació"
+  MOVING: "migració"
+  INSTALL_FAILED: "instal·lació"
+  UNINSTALL_FAILED: "desinstal·lació"
+  OK: Ok
+  DELETING: eliminant
+  this_app_installed_ok: "Aquesta aplicació està correctament instal·lada"
+  remember_when_moving_app: "Recordi que al moure l'aplicació hi perdrà l'accés durant uns minuts."
+  first_uninstall_the_following_apps: "No pot desinstal·lar aquesta aplicació fins que no desinstal·li les següents"
+  shared_host: Host compartit
+  are_you_sure_to_move: "Està segur de que vol moure"
+  are_you_sure_to_uninstall: "Està segur de que vol desinstal·lar"
+  uninstall: Desinstal.lar
+  remember_when_uninstalling_app: "Recordi que al desinstal·lar perdrà la informació i configuració de l'aplicació."
+  uninstalling: "Desinstal·lant"
+  moving: Movent
+  no_description: Sense descripció
+  modify_configuration: Modificar configuració
+  language: Idioma
+  es_ES: Espanyol
+  en_US: Anglès
+  es: Espanyol
+  en: Anglès
+  ca: Català
+  role: Permisos
+  Admin: Administrador
+  NoAdmin: No Administrador
+  es_es: Espanyol
+  en_us: Anglès
+  no_group_parameters: no té paràmetres de grup a configurar
+  no_user_parameters: "no té paràmetres d'usuari a configurar"
+  modifying_group_settings_for_app: Modificant preferències de grup per a
+  app_not_installed: Aquesta aplicació no està instal·lada
+  install_in: Instal·lar a
+  installing: Instal·lant
+  preferences_for: "Preferències de"
+  for: per a
+  user_is_being: Aquest usuari està sent
+  added_to: afegit a
+  deleted_from: eliminat de
+  this_app: aquesta aplicació
+  hide: Ocultar
+  bind: Assignar
+  unbind: Desassignar
+  binding: Assignant
+  unbinding: Desassignant
+  to: a
+  from: de
+  modifyied: modificat
+  created: creat
+  depends_on: depen de les següents aplicacions
+  install_deps_before: "S'han d'instal.lar abans"
+  in_a_few_moments_the_user: "En uns instants l'usuari"
+  will_have_access_to_app: "tindrà accés a l'aplicació"
+  from_his_menu: des del seu menú 
+  access_to_app_removed_for_user: "S'ha suprimit l'accés de l'usuari"
+  to_application: "a l'aplicació"
+  the_following_apps_depend_on: Les següents aplicacions depenen de
+  cannot_uninstall_until: No es pot desinstal·lar fins que no les desinstal·li
+  group_settings_modified_for_app: "Modificades les preferències de grup per a l'aplicació"
+  once_uninstalled_will_be_available: Un cop desinstal·lada tornarà a aparèixer com a aplicació disponible
+  app_moved_ok: ha estat desplaçada correctament.
+  must_choose_server_type: "Ha d'escollir un tipus de servidor"
+  installing_particular_server: "El seu servidor particular s'està instal·lant"
+  there_was_an_error: Hi ha hagut un error
+  chosen_host_is_smaller: "El tipus de host escollit es de menor capacitat que l'actual."
+  updating_particular_server: "El seu servidor particular s'està actualitzant"
+  before_destroy_server_must_uninstall_apps: "Abans d'eliminar els seu servidor particular ha de moure les aplicacions al servidor compartit o eliminarles"
+  deleting_particular_server: "El seu servidor particular s'està eliminant"
+  contract_created: Contracte creat. 
+  contract_modified: "El seu contracte s'ha modificat correctament."
+  invalid_login: "Login incorrecte"
+  user_is_active: Aquest usuari està actiu
+  are_you_sure_to_deactivate_user: "Esteu segur de que voleu desactivar l\'usuari"
+  remember_that_when_deactivating_user: Recordi que al desactivar l'usuari pot perdre tota la informació i configuració d'aquest usuari a les aplicacions a las que té accés.
+  admin_cannot_be_deactivated: No es pot desactivar l'usuari administrador de grup.
+  deactivating_user: "Desactivant usuari "
+  user_is_inactive: Aquest usuari està inactiu
+  activating_user: "Activant usuari "
+  add_user: Afegir usuari
+  this_group_still_has_no_apps_to_add_user: Aquest grup encara no té cap aplicació instal·lada a la que assignar usuaris.
+  desktop_wallpaper: "Fons de l'escriptori"
+  select: Seleccionar 
+  custom: Personalitzat
+  training: Formació
+  help: Ajuda
+  no_apps: Cap aplicació instal·lada
+  exit: Sortir
+  minimize_all: Minimitzar-ho tot
+  print_layer: Imprimir pestanya
+  you_have_this_vhost: Vostè disposa del següent servidor particular
+  you_can_see_your_vhost_stats: Pot veure les estadístiques del seu servidor
+  here: aquí
+  simulator: Simulador
+  vhost_status: "Estat del servidor particular"
+  vhost_modify: "Modificar servidor particular"
+  vhost_simulate: "Simular la instal·lació d'un servidor particular"
+  vhost_install: "Instal·lació d'un servidor particular"
+  vhost_type: Tipus
+  vhost_cpu: CPU
+  vhost_ram: RAM
+  vhost_disk: Disc
+  vhost_state: Estat
+  as_a_client_you_may_install_a_vhost: Com a client té la possibilitat de sol.licitar un servidor particular.
+  use_simulator_please: Abans d'instal.lar/moure aplicacions al seu servidor, és recomanable que utilitzi el simulador para saber si l'operació és factible.
+  delete: Eliminar
+  if_no_apps_can_delete_vhost: Si no té cap aplicació instal·lada pot eliminar el seu servidor
+  app: Aplicació
+  installed_now: Actualment instal·lada
+  specs: Requisits
+  required: Requerit
+  calculate_right_server: Calcular servidor adequat
+  no_server_type_available: No disposem d'un servidor amb els requisits demanats
+  simulation_end_install: Fi de la simulació. Instal.lar
+  reports_for_group: Informes de
+  number_of_connected_users: Nombre d'usuaris connectats
+  number_of_simultanously_connected_users: Nombre d'usuaris connectats a la vegada
+  space_used_for_each_application_in_shared_host: Espai utilitzat per cada aplicació al host compartit
+  all_graphs: Tots els gràfics del grup
+  january: Gener
+  february: Febrer
+  march: Març
+  april: Abril
+  may: Maig
+  june: Juny
+  july: Juliol
+  august: Agost
+  september: Setembre
+  october: Octubre
+  november: Novembre
+  december: Desembre
+  number_of_connected_users_per_day: Nombre d'usuaris connectats per dia
+  back_to_reports_index: Tornar a l'índex d'estadístiques
+  platform_usage: Utilització de la plataforma
+  connected_users: Usuaris que es van connectar
+  number_of_connected_users_per_hour: Nombre d'usuaris connectats per hora
+  number_of_simultanously_connected_users_per_day: Concurrència d'usuaris per dia
+  number_of_simultanously_connected_users_per_hour: Concurrència d'usuaris por hora
+  space_used_by_applications: Espai utilitzat per les aplicacions
+  all_hosts: "tots els hosts"
+  the_shared_host: "el host compartit"
+  the_particular_hosts: "màquines virtuals" 
+  space_in_MB: Espai en MB
+  company: "Open Alliance, Software Lliure S.A."
+  confirm_exit: ¿Esteu segur de voler sortir?
+  spanish: Espanyol
+  catalan: Català
+  english: Anglès
+  select_language: Seleccionar idioma
+  show_online_users: Veure estat dels usuaris del grup
+  online: connectat
+  offline: desconnectat
+  remember_password: Recordar contrasenya
+  get_login_data_by_mail: "Rebre dades d'accés per e-mail"
+  create_new_group_as_admin: "Crear un nou grup com a usuari administrador" 
+  start_session: Iniciar sessió 
+  see_another_app: Veure una altra aplicació
+  what_is_the_desktop: L'escriptori és un espai des d'on podràs donar d'alta i gestionar aplicacions, així com donar d'alta i administrar els permisos de més usuaris de la teva empresa.
+  signup: Registrar-se
+  lopd:  "En compliment de la Llei Orgànica 15/1999, de Protecció de Dades de caràcter personal, Open Alliance l'informa que les dades personals recollides en el present document estaran incorporades en fitxers automatitzats sota la tutel.la d'aquesta empresa. Aquests fitxers han estat comunicats a la Agencia de Protección de Datos. La finalitat dels fitxers és la gestió comercial dels nostres clientes i usuaris registrats. Si ho desitja, pot exercir els drets d'accés, rectificació i cancel·lació, previstos a la Llei, dirigint un escrit a: Open Alliance Software Lliure S.A., C/ Atenes, 8 – 08006 Barcelona"
+  your_account: "El compte de "
+  has_been_activated: " s'ha activat" 
+  an_email_has_been_sent_to: "S'ha enviat un correu de confirmació a "
+  to_verify_email: "per a verificar l'autenticitat de la direcció de correu"
+  follow_instructions_in_the_email: Segueixi les instruccions especificades al correu per activar el seu compte
+  remember_account: Recordar compte
+  enter_your_email_so_we_can_send_your_data: "Entri la seva direcció de e-mail i rebrà un correu amb les seves dades d'accés"
+  a_user_with_email_doesnt_exist: "No existeix un usuari amb direcció de correu "
+  group_is_not_active: "El seu grup no està actiu. Probablement el seu període de proves hagi expirat. Posis en contacte amb l'administració de la plataforma para activar els seu grup una altra vegada."
+  user_is_not_active: "Aquest usuari no està actiu. Posis en contacte amb l'administració del seu grup per activar el seu usuari de nou."
+  user_is_not_confirmed: "Aquest usuari no està confirmat. Asseguris d'haver confirmat el seu compte mitjançant el correu de confirmació enviat a la seva direcció de correu."
+  max_num_users_reached: "S'ha superat el màxim d'usuaris connectats." 
+  login_failed: Login fallit
+  session_closed: Sessió finalitzada
+  your_password_has_been_sent_to: "La seva contrasenya s'ha enviat a "
+  problem_activating_account: "Problemes activant compte de "
+  invalid_confirmation_link: "L'enllaç de confirmació no és vàlid"
+  was_already_active: " ja estava activat"
+  welcome: Benvingut
+  as_admin_you_can: "<p>Com a administrador vostè pot:</p>
+                     <p>&nbsp;<b>1</b>. Instal·lar aplicacions per al seu grup i començar a utilitzar-les</p>
+                     <p>&nbsp;<b>2</b>. Donar d'alta més usuaris a la seva empresa</p>
+                     <p>Totes aquestes opcions estan disponibles al <b>Panell de Control</b>"
+  your_group_is_in_demo: "<p>El grup <b>{{group}}</b> està en període de proves. Li queden <b>{{days}}</b> dies per acabar-lo.<br/></p>"
+  you_can_contract_here: "<p>Pot contractar des de l'opció <b>{{contract_link}}</b> al <b>Panell de Control</b></p>"
+  go_to_control_panel: Anar al Panell de Control
+  continue: Continuar
+  your_group_is_in_demo_user: "<p>El grup <b>{{group}}</b> al que pertany està en període de proves. Li queden <b>{{days}}</b> dies per acabarlo.<br/></p>"
+  reset_image: Tornar a la imatge per defecte
+  you_must_send_contract: "<p>Ha desat les dades del contracte però encara NO l'ha enviat.</p>"
+  your_contract_is_active: "<p>Vostè ha contractat el servei amb data <b>{{date}}</b> i Nº de Contracte <b>{{contract_number}}</b>.<br/>Segueix tenint disponible el formulari a continuació.</p>"
+  how_to_send: "Pot enviar el contracte de les següents maneres:
+                 <ul style=\"padding-left: 60px; text-align: left;\">
+                   <li>Per <b>FAX</b>, enviant el contracte firmat al <b>93 212 24 60</b></li>
+                   <li>Per correu ordinari, enviant el contracte firmat a <b>Atenes, 8, baixos, 08006, Barcelona</b></li>
+                   <li>Per <b>e-mail</b>, enviant el contracte firmat a <b>administracion@nubola-saas.com</b></li>
+                 </ul>"
+  new_contract: Desar contracte
+  modify_contract: Modificar contracte
+  contract_group_data: "Dades del grup:"
+  contract_contact_data: "Dades de la persona de contacte:"
+  contract_limitations: "Limitacions:"
+  concurrent_users: Usuaris concurrents
+  whatis_concurrent_users: "El nombre d'usuaris que podran utilitzar a la vegada la plataforma."
+  contract_2_concurrent_users: La limitació és a partir de 2, ja que els primers 2 estan inclosos en la quota de Manteniment de la Plataforma.
+  blank_means_unlimited: "Especifique la quantitat amb nombres. La casella en blanc significa NO limitat."
+  group_must_have_installed_applications: Els seu grup ha de tenir aplicacions instal·lades per a contractar
+  group_has_already_been_taken: El seu grup ja té un contracte
+  ilimited: No limitat
+  pdf_version: Versió en PDF
+  contract_data: "Contracte del<br/>servei"
+  billing_data: "Annexe: Domiciliació bancària"
+  bank_account: "Nombre de compte:"
+  desired_action: "Marqui amb una <b>X</b> l'acció desitjada:"
+  action_signup: ALTA Servei
+  action_signedit: Modificació dades bancàries
+  action_signdown: BAIXA Servei
+  signature: Firma
+  date_s: Data
+  code_s: Nombre de contracte
+  your_login_data: "Aquestes són les seves dades d'accés"
+  warning: Avís
+  mail_warning_p1: "D'acord amb la legislació vigent que regula el Comerç
+                    Electrònic i la Protecció de Dades, aquest missatge es dirigeix
+                    exclusivament al seu destinatari i pot contenir informació
+                    privilegiada o confidencial i/o dades de caràcter personal. Si ha
+                    rebut aquest missatge per error li preguem que ens ho comuniqui per
+                    aquesta mateixa via i procedeixi a eliminar-lo."
+  mail_warning_p2: "L'informem que les seves dades formen part d'un fitxer automatitzat 
+                    el responsable del qual és OPEN ALLIANCE software lliure, S.A., amb 
+                    domicili a C/ Atenes, 8 , 08006 Barcelona, amb finalitats promocionals
+                    de les activitats generades por l'empresa. Pot exercir els seus drets,
+                    d'accés, rectificació, cancel·lació i oposició, per escrit o 
+                    per aquesta mateixa via."
+  mail_company: " OPEN ALLIANCE SOFTWARE LLIURE, S.A.        www.nubola-saas.com\n
+                Atenes, 8 08006 - Barcelona.              info@nubola-saas.com\n
+                (+34) 93 212 24 60"
+  hello: Hola
+  mail_confirmation: " EL TEU ESCRIPTORI S'HA CREAT CORRECTAMENT.\n
+                      \n
+                      Des d'ara disposes d'un compte d'accés a l'escriptori\n
+                      de {{platform_name}}, però abans l'has d'activar.\n
+                      \n
+                      Des de l'escriptori podràs:\n
+                      \n
+                         - INSTAL.LAR les aplicacions disponibles.\n
+                         - DONAR D'ALTA altres usuaris a la teva empresa.\n
+                         - ACCEDIR a les aplicacions disponibles.
+                      \n
+                      \n
+                      Fes clic al següent enllaç (o copia'l a la barra d'adreces\n
+                      del navegador) per a activar el teu compte:"
+  activate_account: Activar compte
+  transports: Transports
+  communications: Comunicacions
+  commercial: Comercial
+  touristic: Turístic
+  sanitary: Sanitari
+  education: Educació
+  financial: Financer
+  administration: Administració
+  industrial: Industrial
+  energetic: Energètic
+  mines: Miner
+  construction: Construcció
+  agricola: Agrícola
+  ramadery: Ramader
+  fishing: Pesca
+  other: Altres
+  administrative_dpt: Dept. Administratiu
+ 
+  sector: Sector
+  size: Mida de l'empresa
+  
+  0_to_9: de 0 a 9 empleats
+  10_to_19: de 10 a 19 empleats
+  20_a_29: de 20 a 29 empleats
+  30_a_39: de 30 a 39 empleats
+  40_a_49: de 40 a 49 empleats
+  50_to_x: 50 o més empleats
+  
+  image_max_size: "Mida màxim d'imatge superada: (2048 KB)"
+  must_be_alphanumeric: ha de ser alfanumèric (utilitzar només lletres i nombres)
+  company_name: Nom de l'empresa
+  contact_person: Persona de contacte
+  other_documents: "<b>Important</b><br/>
+                    Per a que aquest contracte sigui vàlid és necessari enviar-lo amb els següents documents:
+                    <ul>
+                      <li>Fotocòpia de NIF / DNI de l'empresa o persona que contracta.</li>
+                      <li>Fotocòpia del DNI del representant de l'empresa.</li>
+                    </ul>"
+  company_data: "Dades de l'empresa"
+  contact_data: "Dades del representant"
+  additional_info_right: es reserva el dret de sol.licitar documentació addicional justificativa del poder del representant.
+  signup_clause: "Accés a la Plataforma Nubola d'acord amb les clàusules generals del servei que declaro haver llegit:"
+  signup_clause2: "El servei es proveirà d'acord amb els preus vigents a cada moment, publicats a <a href=\"http://www.nubola-saas.com\">www.nubola-saas.com</a> i amb la limitació de nombre màxim d'usuaris concurrents escollida pel usuari administrador en cada moment. En el moment de generar aquest documento el límit era:"
+  signdown_clause: "Si desitja donar-se de baixa del servei marqui la creu corresponent. La baixa serà efectiva a l'inici del següent període de facturació sempre que la comunicació de la baixa es realitzi amb 15 dies de preavís. En cas contrari es procedirà a cobrar de la següent factura i amb posteritat es realitzarà la baixa."
+  bank_authorization: "Autoritzem a {{company}} a carregar mensualment l'import del seu servei al nostre compte corrent el nombre del qual indiquem:"
+  groups: Grups
+  admin_user: Usuari administrador
+  contracts: Contractes
+  host_types: Tipus de hosts
+  logs: logs
+  hosts: hosts
+  groupadmin_control_panel_help: "<p>Aquest és el menú principal de <b>l'administrador de grup</b>.
+                                  <p>
+                                  La funcionalitat bàsica per a començar a treballar consisteix en:
+                                  <ul>
+                                    <li>instal.lar aplicacions des de <b>Aplicacions</b></li>
+                                    <li>afegir usuaris al seu grup des de <b>Usuaris</b></li>
+                                    <li>i posteriorment decidir quins usuaris tenen accés a cada aplicació instal·lada.</li>
+                                  </ul>  
+                                  <p>Aquest últim pas es pot fer tant des de <b>Usuaris</b> com des de <b>Aplicacions</b>.
+                                  
+                                  <p>Vostè mateix (usuari administrador) s'ha d'assignar les aplicacions que vol utilitzar per a poder tenir-les presents en
+                                  els seu menú <b>Aplicacions</b> (a l'esquerra de la barra a la part superior de la pantalla).
+                                  
+                                  <p>Des del menú també es poden realitzar altres accions com gestionar el seu <b>Contracte</b>, editar les seves dades de <b>Grup</b>, veure les
+                                  <b>estadístiques</b> d'utilització del seu grup, etc...
+                                  
+                                  <p>Entrant als diferents apartats pot trobar ajuda més especialitzada sobre cada tema."
+  platform_admin: Administrador de plataforma                                
+  say_yes: "Sí"
+  say_no: "No"
+                    
+  active_scaffold:
+    group: Grup
+    concept: Concepte
+    date: Data
+    price: Preu
+    amount: Quantitat
+    albarans: Albarans
+    found: trobats
+    no_entries: Sense entrades
+    groups: Grups
+    users: Usuaris
+    create_new: Crear nou
+    edit: Editar
+    delete: Borrar
+    show: Veure
+    search: Cercar
+    reset: Ressetejar
+
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      short: "%H:%M"
+      long: "%H:%M"
+    am: "am"
+    pm: "pm"
+
+  date:
+    formats:
+      default: "%d-%m-%Y"
+      short: "%d-%m-%Y"
+      long: "%d-%m-%Y"
+    day_names: [Diumenge, Dilluns, Dimarts, Dimecres, Dijous, Divendres, Dissabte]
+    abbr_day_names: [Diu, Dil, Dmt, Dmc, Dij, Div, Dis]
+    month_names: [~, Gener, Febrer, Març, Abril, Maig, Juny, Juliol, Agost, Setembre, Octubre, Novembre, Desembre]
+    abbr_month_names: [~, Gen, Feb, Mar, Abr, Mai, Jun, Jul, Ago, Set, Oct, Nov, Des]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+    
+  activerecord:
+    errors: 
+      # 'attribute' and 'model' always available, 'count' where applicable
+      template:
+        header: 
+          one: "1 error ha impedit desar el {{model}}" 
+          other: "{{count}} errors han impedit desar el {{model}}" 
+        body: "Hi ha hagut problemes amb els següents camps:"
+      messages:    
+        inclusion: no està inclòs a la llista
+        exclusion: és un valor reservat
+        invalid: és invàlid
+        confirmation: no coincideix amb la confirmació
+        accepted: "ha d'acceptar-se"
+        empty: no es pot deixar buit
+        blank: no es pot deixar en blanc
+        too_long: és massa llarg (ha de tenir {{count}} caràcters com a màxim)
+        too_short: és massa curt (ha de tenir {{count}} caràcters com a mínim)
+        wrong_length: té una longitud incorrecta (ha de tenir {{count}} caràcters)
+        taken: ja existeix i ha de ser únic
+        not_a_number: no és un nombre
+        greater_than: ha de ser més gran que {{value}}
+        greater_than_or_equal_to: ha de ser més gran o igual que {{value}}
+        equal_to: ha de ser igual a {{value}}
+        less_than: ha de ser més petit que {{value}}
+        less_than_or_equal_to: ha de ser més petit o igual que {{value}}
+        odd: ha de ser senar
+        even: ha de ser parell
+    models:
+      contract: contracte
+      user: usuari
+      group: grup 
+    attributes:
+      user:
+        name: Nom
+        surname: Cognom
+        status: Estat
+        telephone: Telèfon
+        mobile: Mòbil
+        password: Contrasenya
+        password_confirmation: Confirmació de contrasenya
+        user_image: Imatge d'usuari
+        confirmed: Confirmat
+        wallpaper: "Fons d'escriptori"
+      contract:
+        code: Codi
+        date: Data
+        group: Grup
+      group:
+        name: Nom
+        city: Ciutat
+        contract: Contracte
+        address: Adreça
+        zipcode: Codi Postal
+        country: País
+        nif: NIF
+        client: Client
+        numusers: Núm. màx. usuaris concurrents
+        logo_image: Logo
+        demo_ends: Fi de demo
+        active: Actiu
+        created_at: "Data d'alta"
+
+  countries:
+    afghanistan: Afganistan            
+    aland_islands: Åland                
+    albania: Albania
+    algeria: Algèria
+    american_samoa: Samoa Americana
+    andorra: Andorra
+    angola: Angola
+    anguilla: Anguila
+    antarctica: Antàrtida
+    antigua_and_barbuda: Antigua i Barbuda
+    argentina: Argentina
+    armenia: Armènia
+    aruba: Aruba
+    australia: Australia
+    austria: Austria
+    azerbaijan: Azerbaiyán
+    bahamas: Bahamas
+    bahrain: Bahréin
+    bangladesh: Bangladesh
+    barbados: Barbados
+    belarus: Bielorrusia
+    belgium: Bélgica
+    belize: Belice
+    benin: Benín
+    bermuda: Bermudas
+    bhutan: Bután
+    bolivia: Bolivia
+    bosnia_and_herzegowina: Bosnia i Herzegovina
+    botswana: Botsuana
+    bouvet_island: Isla Bouvet
+    brazil: Brasil
+    british_indian_ocean_territory: Territorio Británico del Océano Índico
+    brunei_darussalam: Brunéi
+    bulgaria: Bulgaria
+    burkina_faso: Burkina Faso
+    burundi: Burundi
+    cambodia: Camboya
+    cameroon: Camerún
+    canada: Canadá
+    cape_verde: Cabo Verde
+    cayman_islands: Islas Caimán
+    central_african_republic: República Centroafricana
+    chad: Chad
+    chile: Chile
+    china: China
+    christmas_island: Isla de Navidad
+    cocos_keeling_islands: Islas Cocos
+    colombia: Colombia
+    comoros: Comoras
+    congo: Congo
+    cook_islands: Islas Cook
+    costa_rica: Costa Rica
+    cote_ivoire: Costa de Marfil
+    croatia: Croacia
+    cuba: Cuba
+    cyprus: Chipre
+    czech_republic: República Checa
+    denmark: Dinamarca
+    djibouti: Yibuti
+    dominica: Dominica
+    dominican_republic: República Dominicana
+    ecuador: Ecuador
+    egypt: Egipto
+    el_salvador: El Salvador
+    equatorial_guinea: Guinea Ecuatorial
+    eritrea: Eritrea
+    estonia: Estonia
+    ethiopia: Etiopía
+    falkland_islands_malvinas: Islas Malvinas
+    faroe_islands: Islas Feroe
+    fiji: Fiyi
+    finland: Finlandia
+    france: Francia
+    french_guiana: Guayana Francesa
+    french_polynesia: Polinesia Francesa
+    french_southern_territories: Territorios Australes Franceses
+    gabon: Gabón
+    gambia: Gambia
+    georgia: Georgia
+    germany: Alemania
+    ghana: Ghana
+    gibraltar: Gibraltar
+    greece: Grecia
+    greenland: Groenlandia
+    grenada: Granada
+    guadeloupe: Guadalupe
+    guam: Guam
+    guatemala: Guatemala
+    guernsey: Guernsey
+    guinea: Guinea
+    guinea_bissau: Guinea-Bissau
+    guyana: Guyana
+    haiti: Haití
+    heard_and_mcdonald_islands: Islas Heard i McDonald
+    holy_see_vatican_city_state: Ciudad del Vaticano
+    honduras: Honduras
+    hong_kong: Hong Kong
+    hungary: Hungría
+    iceland: Islandia
+    india: India
+    indonesia: Indonesia
+    iran_islamic_republic_of: Irán
+    iraq: Iraq
+    ireland: Irlanda
+    isle_of_man: Isla de Man
+    israel: Israel
+    italy: Italia
+    jamaica: Jamaica
+    japan: Japón
+    jersey: Jersey
+    jordan: Jordania
+    kazakhstan: Kazajistán
+    kenya: Kenia
+    kiribati: Kiribati
+    korea_democratic_peoples_republic_of: Corea del Sur
+    korea_republic_of: Corea del Norte
+    kuwait: Kuwait
+    kyrgyzstan: Kazajistán
+    lao_peoples_democratic_republic: Laos
+    latvia: Letonia
+    lebanon: Líbano
+    lesotho: Lesoto 
+    liberia: Liberia
+    libyan_arab_jamahiriya: Libia
+    liechtenstein: Liechtenstein
+    lithuania: Lituania
+    luxembourg: Luxemburgo
+    macao: Macao
+    macedonia_the_former_yugoslav_republic_of: Macedonia
+    madagascar: Madagascar
+    malawi: Malaui
+    malaysia: Malasia
+    maldives: Maldivas
+    mali: Malí
+    malta: Malta
+    marshall_islands: Islas Marshall
+    martinique: Martinica
+    mauritania: Mauritania
+    mauritius: Mauricio
+    mayotte: Mayotte
+    mexico: México
+    micronesia_federated_states_of: Micronesia
+    moldova_republic_of: Moldavia
+    monaco: Mónaco
+    mongolia: Mongolia
+    montenegro: Montenegro
+    montserrat: Montserrat
+    morocco: Marruecos
+    mozambique: Mozambique
+    myanmar: Birmania
+    namibia: Namibia
+    nauru: Nauru
+    nepal: Nepal
+    netherlands: Países Bajos
+    netherlands_antilles: Antillas Neerlandesas
+    new_caledonia: Nueva Caledonia
+    new_zealand: Nueva Zelanda
+    nicaragua: Nicaragua
+    niger: Níger
+    nigeria: Nigeria
+    niue: Niue
+    norfolk_island: Norfolk
+    northern_mariana_islands: Islas Marianas del Norte
+    norway: Noruega
+    oman: Omán
+    pakistan: Pakistán
+    palau: Palaos
+    palestinian_territory_occupied: Palestina
+    panama: Panamá
+    papua_new_guinea: Papúa Nueva Guinea
+    paraguay: Paraguay
+    peru: Perú 
+    philippines: Filipinas
+    pitcairn: Islas Pitcairn
+    poland: Polonia
+    portugal: Portugal
+    puerto_rico: Puerto Rico
+    qatar: Qatar
+    reunion: Reunión
+    romania: Rumania
+    russian_federation: Rusia
+    rwanda: Ruanda
+    saint_barthelemy: San Bartolomé
+    saint_helena: Santa Helena
+    saint_kitts_and_nevis: San Cristóbal i Nieves
+    saint_lucia: Santa Lucía
+    saint_pierre_and_miquelon: San Pedro i Miquelón
+    saint_vincent_and_the_grenadines: San Vicente i las Granadinas
+    samoa: Samoa
+    san_marino: San Marino
+    sao_tome_and_principe: Santo Tomé i Príncipe
+    saudi_arabia: Arabia Saudita
+    senegal: Senegal
+    serbia: Serbia
+    seychelles: Seychelles
+    sierra_leone: Sierra Leona
+    singapore: Singapur
+    slovakia: Eslovaquia
+    slovenia: Eslovenia
+    solomon_islands: Islas Salomón
+    somalia: Somalia
+    south_africa: Sudáfrica
+    south_georgia_and_the_south_sandwich_islands: Islas Georgias del Sur i Sandwich del Sur
+    spain: Espanya
+    sri_lanka: Sri Lanka
+    sudan: Sudán
+    suriname: Surinam
+    svalbard_and_jan_mayen: Svalbard i Jan Mayen
+    swaziland: Suazilandia
+    sweden: Suecia
+    switzerland: Suiza
+    syrian_arab_republic: Siria
+    taiwan_province_of_china: Taiwán
+    tajikistan: Tayikistán
+    tanzania_united_republic_of: Tanzania
+    thailand: Tailandia
+    timor_leste: Timor Oriental
+    togo: Togo
+    tokelau: Tokelau
+    tonga: Tonga
+    trinidad_and_tobago: Trinidad i Tobago
+    tunisia: Túnez
+    turkey: Turquía
+    turkmenistan: Turkmenistán
+    turks_and_caicos_islands: Islas Turcas i Caicos
+    tuvalu: Tuvalu
+    uganda: Uganda
+    ukraine: Ucrania
+    united_arab_emirates: Emiratos Árabes Unidos
+    united_kingdom: Reino Unido
+    united_states: Estados Unidos
+    united_states_minor_outlying_islands: Islas ultramarinas de Estados Unidos
+    uruguay: Uruguay
+    uzbekistan: Uzbekistán
+    vanuatu: Vanuatu
+    venezuela: Venezuela
+    vietnam: Vietnam
+    virgin_islands_british: Islas Vírgenes Británicas
+    virgin_islands_us: Islas Vírgenes Estadounidenses
+    wallis_and_futuna: Wallis i Futuna
+    western_sahara: Sahara Occidental
+    yemen: Yemen
+    zambia: Zambia
+    zimbabwe: Zimbabue
+    
+  groupadmin_new_contract_help: "Aquest és el menú de <b>contractació de serveis</b>.
+                                 <br/>
+                                 <p>CONTRACTACIÓ:<br/>
+                                   &nbsp;&nbsp;Per a contractar el servei haurà de:
+								 </p>
+                                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Omplir les dades d'aquest formulari i desar-lo. Podrà canviar los dades del formulari tantes vegades com vulgui, sempre que no hagi fet l'enviament a Open Alliance; un cop enviat les dades del contracte quedaran fixes.</li>
+                                   <li>Imprimir una còpia del document en PDF. Una cop hagi <b>DESAT</b> el formulari, la plataforma li oferirà un enllaç amb l'arxiu PDF corresponent.</li>
+                                   <li>Firmar la còpia i adjuntar la documentació necessària per a la contractació. Las especificacions sobre la documentació les trobarà al document PDF que acaba d'imprimir.</li>
+                                   <li>Enviar tota la documentació a Open Alliance Software Lliure, S.A. Pot enviar-ho utilitzant UNA de las següents maneres:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>per <b>FAX</b>, enviant el contracte firmat al 93 212 24 60</li>
+                                       <li>per <b>correu ordinari</b>, enviant el contracte firmat a Atenas, 8, baixos, 08006, Barcelona</li>
+                                       <li>per <b>e-mail</b>, enviant el contracte firmat a administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>
+								                   &nbsp;&nbsp;Open Alliance farà efectiu el contracte en un plaç màxim de 48 hores a partir del moment de recepció de la documentació.</br>
+                                   &nbsp;&nbsp;A partir d'aquest moment el servei queda contractat amb la documentació que ens haurà facilitat (llegeixi MODIFICACIÓ DEL CONTRACTE).
+                                 </p>
+                                 <p>MODIFICACIÓ DEL CONTRACTE:<br/>
+                                   &nbsp;&nbsp;A partir del moment en que Open Alliance faci efectiva la contractació, les dades del contracte
+quedaran fixes i només es podrà canviar:</br>
+                                 </p>
+								 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitació d'usuaris: es pot canviar en qualsevol moment, però recomanem fer-ho l'últim dia hàbil del mes.</li>
+                                   <li>Domiciliació bancària: haurà de tornar a imprimir l'arxiu PDF del contracte i marcar la casella MODIFICACIÓ DADES BANCÀRIES. Recordi que ha d'adjuntar la resta de la documentació i que aquesta s'ha de correspondre amb les dades del formulari.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si té algun dubte o consulta pot posar-se en contacte amb nosaltres a administracion@nubola-saas.com.
+                                 </p>
+                                 <p>BAIXA DEL SERVEI:<br/>
+                                   &nbsp;&nbsp;Per a sol·licitar la baixa del servei haurà de tornar a imprimir l'arxiu PDF del contracte i marcar la casella BAIXA DEL SERVEI.</br>
+								   &nbsp;&nbsp;La baixa serà efectiva al inici del següent període de facturació sempre que la comunicació de la baixa es realitzi amb 15 dies d'antelació.
+                                 </p>"
+                                 
+  groupadmin_contract_inactive_help: "Aquest és el menú de <b>contractació de serveis</b>.
+                                 <br/>
+                                 <p>CONTRACTACIÓ:<br/>
+                                   &nbsp;&nbsp;Per a finalitzar el procés de contractació ha de:
+								                 </p>
+								                 
+								                 <ul style=\"padding-left: 100px; text-align: left;\">
+								                   <li>Verificar que les dades que ha introduït siguin correctes; en cas contrari clicant a <b>Modificar Contracte</b> podrà realitzar els canvis necessaris.</li>
+                                   <li>Imprimir una còpia del document en PDF. Una cop hagi <b>DESAT</b> el formulari, la plataforma li oferirà un enllaç amb un arxiu PDF.</li>
+                                   <li>Firmar la còpia i adjuntar la documentació necessària per a la contractació. Las especificacions sobre la documentació les trobarà al document PDF que acaba d'imprimir.</li>
+                                   <li>Enviar tota la documentació a Open Alliance Software Lliure, S.A. Pot enviar-ho utilitzant UNA de las següents maneres:
+                                     <ul style=\"padding-left: 100px; text-align: left;\">
+                                       <li>per <b>FAX</b>, enviant el contracte firmat al 93 212 24 60</li>
+                                       <li>per <b>correu ordinari</b>, enviant el contracte firmat a Atenas, 8, baixos, 08006, Barcelona</li>
+                                       <li>per <b>e-mail</b>, enviant el contracte firmat a administracion@nubola-saas.com</li>
+                                     </ul>
+                                   </li>
+                                 </ul>
+                                 <p>  
+								                   &nbsp;&nbsp;Open Alliance farà efectiu el contracte en un plaç màxim de 48 hores a partir del moment de recepció de la documentació.</br>
+                                   &nbsp;&nbsp;A partir d'aquest moment el servei queda contractat amb la documentació que ens faciliti (llegeixi MODIFICACIÓ DEL CONTRACTE).
+                                 </p>
+                                 <p>MODIFICACIÓ DEL CONTRACTE:<br/>
+                                   &nbsp;&nbsp;A partir del moment en que Open Alliance faci efectiva la contractació, les dades del contracte
+quedaran fixes i només es podrà canviar:</br>
+                                 </p>
+								                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitació d'usuaris: es pot canviar en qualsevol moment, però recomanem fer-ho l'últim dia hàbil del mes.</li>
+                                   <li>Domiciliació bancària: haurà de tornar a imprimir l'arxiu PDF del contracte i marcar la casella MODIFICACIÓ DADES BANCÀRIES. Recordi que ha d'adjuntar la resta de la documentació i que aquesta ha de correspondre amb les dades del formulari.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si té algun dubte o consulta pot posar-se en contacte amb nosaltres a administracion@nubola-saas.com.
+                                 </p>"
+                                
+  groupadmin_contract_active_help: "Aquest és el menú de <b>contractació de serveis</b>.
+                                 <br/>
+                                <p>MODIFICACIÓ DEL CONTRACTE:<br/>
+                                   &nbsp;&nbsp;A partir del moment en que Open Alliance faci efectiva la contractació, les dades del contracte
+quedaran fixes i només es podrà canviar:</br>
+                                 </p>
+								                 <ul style=\"padding-left: 100px; text-align: left;\">
+                                   <li>Limitació d'usuaris: es pot canviar en qualsevol moment, però recomanem fer-ho l'últim dia hàbil del mes.</li>
+                                   <li>Domiciliació bancària: haurà de tornar a imprimir l'arxiu PDF del contracte i marcar la casella MODIFICACIÓ DADES BANCÀRIES. Recordi que ha d'adjuntar la resta de la documentació i que aquesta ha de correspondre amb les dades del formulari.</li>
+                                 </ul>
+                                 <p>
+                                   &nbsp;&nbsp;Si té algun dubte o consulta pot posar-se en contacte amb nosaltres a administracion@nubola-saas.com.
+                                 </p>"
+  accept_service: "He llegit i accepto les condicions del servei de DEMO"
+  service_terms: "Condicions del servei"
+  accept_contract: "He llegit i accepto les condicions del contracte"
+  contract_terms: "Condicions del contracte"
+  read_terms_here: "llegeixi les condicions"
+  pdf_terms: "aquí"
+  more_data: "Més dades"
+  less_data: "Menys dades"
+  more_data_title: Mostrar també dades no obligatòries
+  less_data_title: Mostrar només dades no obligatòries
+  email_is_checked: "L'adreça de correu ha de ser vàlida ja que rebrà un correu de confirmació"
+  two_or_more_concurrent: "El nombre d'usuaris concurrents ha de ser més gran o igual que dos"
+  selected_image: "Imatge seleccionada"
+  upload_image: "Pujar imatge"
+  sure_to_delete: "¿Esteu segur que voleu esborrar-lo?"
+  images: "IMATGES"
+  uploadedimages_title: "Gestioni les seves imatges públiques"
+  group_folder: "Carpeta de grup"
+  academies: "ACADÈMIES"
+  academies_title: "Acadèmies disponibles a la plataforma"
+  password_unique_in_group: "ja està sent utilitzada per algú del seu grup"
+
+  source: "On ens vas conèixer?"
+  google: "Google"
+  cibernarium: "Cursos Cibernarium"
+  partner: "Partners"
+  boe: "Web \"Boletines Oficiales\""
+  fonsformacio: "Fons Formació"
+  asesoria: "Web \"Las Asesorías\""
+  blog: "Blogs o entrevistes"
+  other: "Altres"
+  MODIFYING: "modificant"
+  ADDHOST_FAILED: "instal·lació"
+  MODIFYHOST_FAILED: "modificant"
+  DELHOST_FAILED: "eliminant"
+
+  are_you_sure_to_delete: "Esteu segur que voleu eliminar"
+  move: "Moure"

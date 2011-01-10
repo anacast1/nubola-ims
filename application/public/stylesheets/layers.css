@@ -1,0 +1,8 @@
+.foreground{  position:absolute; z-index:1;  top: 23px; height: 96%; width: 100%;}
+.background{  position:absolute; z-index:-1; top: 23px; height: 96%; width: 100%;}
+.whitescreen{ position:absolute; z-index:0;  top: 23px; height: 96%; width: 100%; background-color:white;}
+.whitescreen img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

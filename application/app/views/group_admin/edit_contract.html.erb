@@ -1,0 +1,15 @@
+<div class="centered">
+
+  <% form_for(:contract, @contract, :url => {:action => "edit_contract"}) do |f| %>
+
+    <%= render :partial => f %>
+  
+    <p class="centered">
+      <%= f.submit t("modify_contract") %>
+    </p>
+
+    <%= f.error_messages %>
+
+  <% end %>
+
+</div>

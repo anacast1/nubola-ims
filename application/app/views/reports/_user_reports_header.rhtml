@@ -1,0 +1,4 @@
+<%= header_tag(:image => "estadistica.png",
+               :title => h(session[:user].group.name.upcase) + ": <b>#{t("reports").upcase}</b>",
+               :top_buttons => [{:content => volver}]
+            )  %>

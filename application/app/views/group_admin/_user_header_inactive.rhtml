@@ -1,0 +1,12 @@
+<%= 
+  title = h(@user.send("name").upcase + " " + @user.send("surname").upcase)
+  title << " (<b>#{t("administrador")}</b>)" if @user.role == "groupadmin"
+        
+  header_tag(:image => user_image(@user), 
+             :title => title,
+             :top_buttons    => [{:content => t("back")}],
+             :bottom_buttons => [{:content => t("edit_user")},
+                                 {:content => t("assign_apps")},
+                                 {:content => (@user.status == "active" ? t("deactivate") : t("activate"))},
+                                 {:content => t("start")}])
+%>

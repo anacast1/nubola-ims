@@ -1,0 +1,114 @@
+<h3>Reportes disponibles</h3>
+
+
+<form name="usage_reports" method="post" action="usage_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        Número de usuarios que se conectaron
+      </td>
+      <td>
+        <input type="hidden" name="id" value="-1" />
+        <select name="day" onchange="javascript: if (document.usage_reports.day.value != '') { document.usage_reports.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="concurrency_reports" method="post" action="concurrency_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        Número de usuarios que se conectaron simultaneamente
+      </td>
+      <td>
+        <input type="hidden" name="id" value="-1" />
+        <select name="day" onchange="javascript: if (document.concurrency_reports.day.value != '') { document.concurrency_reports.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="usedspace_reports" method="post" action="usedspace_per_day">
+  <table>
+    <tr>
+      <td width="500px">
+        Espacio usado por las aplicaciones
+      </td>
+      <td>
+        <input type="hidden" name="id" value="-1" />
+        <select name="day" onchange="javascript: if (document.usedspace_reports.day.value != '') { document.usedspace_reports.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="installed_apps_reports" method="post" action="installed_apps">
+  <table>
+    <tr>
+      <td width="500px">
+        Aplicaciones instaladas
+      </td>
+      <td>
+        <select name="host" onchange="javascript: if (document.installed_apps_reports.host.value != '') { document.installed_apps_reports.submit(); }">
+          <option value="" selected="selected"></option>
+          <option value="shared">En el host compartido</option>
+          <option value="virtual">En máquinas virtuales</option>
+          <option value="all">En qualquier máquina</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<form name="all_graphs_reports" method="post" action="all_graphs">
+  <table>
+    <tr>
+      <td width="500px">
+        Todos los gráficos
+      </td>
+      <td>
+        <input type="hidden" name="id" value="-1" />
+        <select name="day" onchange="javascript: if (document.all_graphs_reports.day.value != '') { document.all_graphs_reports.submit(); }">
+          <option value="" selected="selected"></option>
+          <% @dates.each do |date| -%>
+            <option value="<%= date.to_i %>"><%= mes_i_any(date) %></option>
+          <% end -%>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+
+<table>
+  <tr>
+    <td width="500px">
+      Reportes del grupo
+    </td>
+    <td>
+      <select name="id" onchange="<%=remote_function(:update => "group_form", :with => "'group='+value", :url => { :action => :group_reports })%>">
+        <option value="" <%= 'selected="selected"' unless @group %>></option>
+        <%= options_for_select(@groups.collect {|g| [ g.name, g.id ] }) %>
+      </select>
+    </td>
+  </tr>
+</table>
+
+<div id="group_form">
+</div>
+

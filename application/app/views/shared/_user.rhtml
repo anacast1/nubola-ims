@@ -1,0 +1,52 @@
+<table class="normaltable" cellspacing="0" cellpadding="5">
+<tr>
+  <td >
+    <table class="centered">
+      <% if origin == "new" %>
+        <%= label_tag('* ' + t("login")) %>
+        <%= value_tag(text_field("user", "login")) %>
+      <% end %>
+      
+      <%= label_tag('* ' + t("password")) %>
+      <%= value_tag(password_field("user", "password")) %>
+      
+      <%= label_tag('* ' + t("password_confirmation")) %>
+      <%= value_tag(password_field("user", "password_confirmation")) %>
+      
+      <%= label_tag('* ' + t("name")) %>
+      <%= value_tag(text_field("user", "name")) %>
+      
+      <%= label_tag('* ' + t("surname")) %>
+      <%= value_tag(text_field("user", "surname")) %>
+      
+      <%= label_tag('* ' + t("phone")) %>
+      <%= value_tag(text_field("user", "telephone")) %>
+      
+      <%= label_tag(t("mobile")) %>
+      <%= value_tag(text_field("user", "mobile")) %>
+      
+      <%= label_tag('* ' + t("email")) %>
+      <%= value_tag(text_field("user", "email")) %>
+      
+      <tr>
+        <td><b>(*): <%= t("mandatory_fields") %></b></td>
+      </tr>
+    </table>
+  </td>
+  <td valign="top">
+    <table>
+      <tr>
+
+      </tr>
+      <tr>
+         <td>
+	   <%= user_image @user %>
+        </td>
+        <td style="padding: 5">
+          <%= file_column_field "user", "user_image", :size => "11" %>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>

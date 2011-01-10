@@ -1,0 +1,70 @@
+<table class="centered" cellspacing="5">
+
+  <%= contr_sep(t("contract_group_data")) %>
+  <tr>
+    <td class="label"><%= t("name") %>:</td>
+    <%= edit_unless_client(@contract, :name) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("NIF") %>:</td>
+    <%= edit_unless_client(@contract, :co_nif) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("address") %>:</td>
+    <%= edit_unless_client(@contract, :co_street) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("zip_code") %>:</td>
+    <%= edit_unless_client(@contract, :co_cp, :style => "text-align: left;", :maxlength => 5) %> 
+  </tr>
+  <tr>
+    <td class="label"><%= t("city") %>:</td>
+    <%= edit_unless_client(@contract, :co_town) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("province") %>:</td>
+    <%= edit_unless_client(@contract, :co_province) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("country") %>:</td>
+    <% if ! session[:user].group.client? %>
+      <td class="value"><%= country_select :contract, :co_country, {t("countries.spain") => "spain"}, {}, {:style => "width: 215px;"} %></td>
+    <% else %>
+      <td class="value"><%= t("countries.#{@contract.co_country}") %></td>
+    <% end %>  
+  </tr>
+
+  <%= contr_sep(t("contract_contact_data")) %>
+  <tr>
+    <td class="label"><%= t("name") %>:</td>
+    <%= edit_unless_client(@contract, :contact_name) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("department") %>:</td>
+    <%= edit_unless_client(@contract, :department) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("email") %>:</td>
+    <%= edit_unless_client(@contract, :mail) %>
+  </tr>
+  <tr>
+    <td class="label"><%= t("phone") %>:</td>
+    <%= edit_unless_client(@contract, :telf) %>
+  </tr>
+
+  <%= contr_sep(t("contract_limitations")) %>
+  <tr>
+    <td class="label">
+      *<%= t("concurrent_users") %>:<br/>
+    </td>
+    <td class="value"><%= text_field :contract, :concurrentusers, :maxlength => 3 %></td>
+  <tr> 
+  <tr>
+    <td colspan=2 class="value"><span class="contr_note">*
+    <%= t("whatis_concurrent_users") %><br/>
+    <%= t("contract_2_concurrent_users") %><br/>
+    <%= t("blank_means_unlimited") %></span></td>
+  </tr> 
+  </tr>
+
+</table>

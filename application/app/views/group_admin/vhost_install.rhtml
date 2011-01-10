@@ -1,0 +1,37 @@
+<div class="menudiv">
+  <%= render :partial => 'vhost_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <%= info_tag flash[:vhost] %>
+  
+  <p><%= t("as_a_client_you_may_install_a_vhost") %></p>
+  <p><%= t("use_simulator_please") %></p>
+  
+  <p>
+  <% form_tag( {:action => 'vhost_install', :id => @group.id} ) do -%>
+    <table width="100%" border="1px solid black">
+      <th></th>
+      <th><%= t("vhost_type") %></th>
+      <th><%= t("vhost_cpu")  %> (MHz)</th>
+      <th><%= t("vhost_ram")  %> (MB)</th>
+      <th><%= t("vhost_disk") %> (MB)</th>
+      <% @host_types.sort.each do |ht| -%>
+        <tr align="center">
+          <td><%= radio_button_tag("host_type_id", ht.id) %></td>
+          <td><%= ht.name %></td>
+          <td><%= ht.cpu %></td>
+          <td><%= ht.ram %></td>
+          <td><%= ht.disk %></td>
+        </tr>
+      <% end -%>
+      <tr align="right">
+        <td colspan="5"><%= submit_tag t("install") %></td>
+      </tr>
+    </table>
+  <% end -%>
+  </p>
+
+</div>
+

@@ -1,0 +1,38 @@
+<div class="menudiv">
+  <%= render :partial => 'vhost_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <% if flash[:vhost] %>
+    <div class="ok">
+      <%= flash[:vhost] %>
+    </div>
+  <% end %>
+  
+  <% if flash[:error] %>
+    <div class="warn">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+  
+  <p><%= t("you_have_this_vhost") %>:</p>
+  <p>
+  <table width="100%">
+    <th><%= t("vhost_type") %></th>
+    <th><%= t("vhost_cpu")  %></th>
+    <th><%= t("vhost_ram")  %></th>
+    <th><%= t("vhost_disk") %></th>
+    <th><%= t("vhost_state")%></th>
+    <tr align="center">
+      <td><%= @vhost.host_type.name %></td>
+      <td><%= @vhost.host_type.cpu %></td>
+      <td><%= @vhost.host_type.ram %></td>
+      <td><%= @vhost.host_type.disk %></td>
+      <td><%= t(@vhost.status) %></td>
+    </tr>
+  </table>
+  </p>
+  <p align="right"><%= t("you_can_see_your_vhost_stats") %> <%= link_to(t("here"), "https://" + @vhost.hostname + "/munin/localhost/localhost/index.html", :popup => true) %></p>
+
+</div>

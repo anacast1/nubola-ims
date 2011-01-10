@@ -1,0 +1,27 @@
+<div class="menudiv">
+  <%= header_tag(:image => "user.png",
+                 :title => t("welcome").upcase,
+                 :top_buttons => [{:content => continuar}]) %>
+</div>
+
+<div class="normaldiv">
+
+  <div class="info">
+    <div class="info_content">
+
+      <p>
+        <%= t("welcome") + " " +h(session[:user].name) + " " + h(session[:user].surname) %>.
+      </p>
+
+      <% if !session[:user].group.client? %>
+        <% date = Date.strptime(session[:user].group.demo_ends.strftime("%d-%m-%Y"), "%d-%m-%Y") %>
+        <%= t("your_group_is_in_demo_user", 
+              :group => session[:user].group.name,
+              :days => (date - Date.today) )
+        %>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>

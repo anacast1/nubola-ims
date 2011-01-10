@@ -1,0 +1,43 @@
+<div class="centered">
+    <% if can_manage? %>
+        <div>
+            &nbsp;
+        </div>
+        <% form_tag({ :action => 'user_images' }, :multipart => true) do -%>
+            <div>
+                <%= t("selected_image") %>:&nbsp;<%= file_column_field("uploadedimage", "image")%>
+                <%= submit_tag t("upload_image"), :name => 'add_image' %>
+            </div>
+        <% end -%>
+        <%= error_messages_for "uploadedimage" %>
+    <% end %>
+    <div>
+        &nbsp;
+    </div>
+    <table class="centered" cellspacing="5">
+        <% counter = 0 %>
+        <% @uploadedimagelist.each do |uploadedimage| %>
+            <% unless uploadedimage.image.nil? %>
+                <% if counter % 7 == 0 %>
+                    <tr>
+                <% end %>
+                <td class="label" style="text-align: center;">
+                    <%= link_to("<img src=\"http://saas.nubola-saas.com/ims#{url_for_file_column(uploadedimage, "image", "thumb")}\">",
+                                "http://saas.nubola-saas.com/ims#{url_for_file_column(uploadedimage, "image")}", {:popup => true}) %>
+                    <br />
+                    <% if can_manage? %>
+                        <%= link_to(t("delete"), {:action => "remove_image", :id => @user.id, :image_id => uploadedimage.id},
+                                    {:confirm => t("sure_to_delete")} ) %>
+                    <% else %>
+                        &nbsp;
+                    <% end %>
+                </td>
+                <% if counter % 7 == 6 %>
+                    </tr>
+                <% end %>
+                <% counter = counter + 1 %>
+            <% end %>
+        <% end %>
+    </table>
+</div>
+

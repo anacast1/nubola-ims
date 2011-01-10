@@ -1,0 +1,52 @@
+<% if session[:user].groupadmin? %>
+  <%= help_tag t("groupadmin_control_panel_help") %>
+<% end %>
+
+<table class="normaltable">
+ 
+
+  <% rows = @control_panel_menu.length / 3
+     last_row_apps = @control_panel_menu.length % 3
+     if last_row_apps != 0
+       rows = rows + 1
+     end
+     row = 0   %>
+
+  <% rows.times do  %>
+
+    <%
+      if row != (rows - 1)
+        row_apps = @control_panel_menu[(3*row)..((3*row) + 2)]
+        row = row + 1
+      else
+        if last_row_apps == 0
+          row_apps = @control_panel_menu[(3*row)..((3*row) + 2)]
+        else
+          row_apps = @control_panel_menu[(@control_panel_menu.length - last_row_apps)..(@control_panel_menu.length - 1)]
+        end
+      end
+    %>
+
+    <tr>
+      <% for app in row_apps %>
+        <td width="33%">
+          <table class="normaltable">
+            <tr>
+              <td class="centered">
+                <% separator = (app['url'].include?('?') ? '&' : '?') %>
+                <%= link_to(image_tag(app["image"], :border => "0", :title => t(app["title"])), app['url']+"#{separator}locale=#{I18n.locale}") %>
+              </td>
+            </tr>
+            <tr>
+              <td class="centered">
+                <%= t(app["name"]).upcase %>
+              </td>
+            </tr>
+          </table>
+        </td>
+      <% end %>
+    </tr>
+
+  <% end %>
+
+</table>

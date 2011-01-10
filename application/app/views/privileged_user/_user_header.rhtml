@@ -1,0 +1,8 @@
+<%= header_tag(:image => user_image(@user),
+               :title => (@user.name + " " + @user.surname).upcase,
+               :top_buttons => [{:content => volver}],
+               :bottom_buttons => [{:content =>  (@user.status == "active" ? link_to(t("edit_user"), {:action => "user_settings", :id => @user},  :title => t("edit_user_info") + h(@user.name) + " " + h(@user.surname)) : t("edit_user")),
+                                    :active  => (params[:action] == "user_settings")},
+                                   {:content => link_to(t("start"), {:action => "user_index", :id => @user}, :title => "#{h(@user.name)} #{h(@user.surname)}"),
+                                    :active  => (params[:action] == "user_index")} 
+                                  ]) %>

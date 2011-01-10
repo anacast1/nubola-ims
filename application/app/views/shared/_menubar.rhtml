@@ -1,0 +1,51 @@
+<div id="menu_zone">
+
+  <div class="menu_element menu_element_menu_link" id="appmenu">
+     <%= link_to_remote( t("apps"), :url => {:action => :update_menu}, :update => "menu1", :complete => "toggleMenu('menu1');") %> 
+     <%= start_menu('menu1') %>
+       <%= render :partial => 'shared/applications_menu' %>
+     <%= end_menu %>
+  </div>
+
+  <div class="menu_element" onclick="if(document.getElementById('buttonims')==null){addLayer('ims?locale=<%= I18n.locale %>', 'ims'); addButton('<%= h(t("control_panel")) %>', 'ims'); showApp('ims');} else{showApp('ims');}"><%= t("control_panel") %></div>
+
+  <div class="menu_element menu_element_separator"></div>
+
+  <div class="menu_element menu_element_button_right" onclick="storeUrls(); return confirmExit();">
+    <a href="sso/logout"><%= image_tag "exit.png", :title => t("exit") %></a>
+  </div>
+
+  <div class="menu_element menu_element_button_right" onclick="showApp('desktop');">
+    <%= image_tag "clean.png", :title  => t("minimize_all") %>
+  </div>
+
+  <div class="menu_element menu_element_button_right" onclick="printActiveLayer();">
+    <%= image_tag "printer.png", :title  => t("print_layer") %>
+  </div>
+
+  <div class="menu_element menu_element_button_right menu_element_menu_link" id="langmenu">
+    <%= link_to_function I18n.locale.to_s.upcase, "toggleMenu('menu2');", :title  => t("select_language") %>  
+    <%= start_menu('menu2') %>
+      <ul class="menu">
+        <li><%= link_to t("spanish"), "desktop?locale=es" %></li>
+        <li><%= link_to t("catalan"), "desktop?locale=ca" %></li>
+        <li style="border-bottom: 0px;"><%= link_to t("english"), "desktop?locale=en" %></li>
+      </ul>
+    <%= end_menu %>
+  </div>
+  
+
+  <div class="menu_element menu_element_button_right menu_element_separator"></div>
+
+  <div class="menu_element menu_element_button_right menu_element_button_right_name menu_element_menu_link">
+    <%= link_to_function(truncate(session[:user].group.name, {:length => 12, :omission => "..."}), "toggleMenu('menu3');", :title => t("show_online_users")) %>
+    <%= start_menu('menu3') %>
+      <%= show_user_list %>
+    <%= end_menu %>
+  </div>
+
+  <div class="menu_element menu_element_button_right menu_element_separator"></div>
+
+  <div id="taskbar"></div>
+  
+</div>

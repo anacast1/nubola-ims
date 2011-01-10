@@ -1,0 +1,8 @@
+<%= header_tag(:image => (@group.logo_image.nil? ? "group.png" : url_for_file_column(@group, "logo_image")),
+               :title => h(@group.name.upcase),
+               :top_buttons    => [{:content => volver}],
+               :bottom_buttons => [{:content => link_to(t("edit_group"), {:action => "group_settings"}, :title => "#{t("edit_info_of_group")}#{@group.name}"),
+                                    :active => (params[:action] == "group_settings")},
+                                   {:content => link_to(t("start"), {:action => "group_index"}, :title => "#{@group.name}"),
+                                    :active => (params[:action] == "group_index")}]
+              ) %>

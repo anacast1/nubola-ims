@@ -1,0 +1,13 @@
+<%=
+  bottom_buttons = [{:content => t("group_settings")}]
+  unless @app.is_academy
+    bottom_buttons << {:content => (Group.find(session[:user].group_id).apps.include?(@app) ? t("management") : t("install"))}
+  end
+  bottom_buttons << {:content => t("start")}
+  bottom_buttons.insert(1, {:content => t("assign_users")}) if @app.has_users
+                                     
+  header_tag(:image => (@app.logo_image.nil? ? "default_app_logo.png" : url_for_file_column(@app, "logo_image")),
+             :title => @app.name,
+             :top_buttons    => [{:content => t("back")}],
+             :bottom_buttons => bottom_buttons)
+%>

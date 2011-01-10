@@ -1,0 +1,12 @@
+<div class="menudiv">
+  <%= render :partial => 'vhost_header' %>
+</div>
+
+<div class="normaldiv">
+
+  <%= ok_tag flash[:vhost] %>
+  <%= warn_tag flash[:error] %>
+
+  #TODO: delete <%= @vhost.hostname %>
+
+</div>

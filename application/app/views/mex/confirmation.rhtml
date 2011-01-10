@@ -1,0 +1,8 @@
+<% if @user.confirmed %>
+  <p><%= t("your account") %><%= h(@user.group.name) %><%= t("has_been_activated") %>.</p>
+<% else %>
+  <div style="font-family: Arial Narrow; color: grey;">
+    <p><%= t("an_email_has_been_sent_to") %><b><%= @user.email %></b>, <%= t("to_verify_email") %>.</p>
+    <p><%= t("follow_instructions_in_the_email") %>.</p>
+  </div>
+<% end %>

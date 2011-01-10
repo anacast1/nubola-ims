@@ -1,0 +1,50 @@
+<%=
+  image_path = (@app.logo_image.nil? ? "default_app_logo.png" : url_for_file_column(@app, "logo_image"))
+  bottom_buttons = []
+   
+  # group settings button 
+  group_settings_button = {}
+  if (Group.find(session[:user].group_id).apps.include?(@app) and @install.ready?)
+    group_settings_button[:content] = link_to(t("group_settings"), {:action => "app_settings", :id => @app}, :title => t("group_settings_for_app") + @app.name)
+  else
+    group_settings_button[:content] = t("group_settings")
+  end  
+  group_settings_button[:active] = (params[:action] == "app_settings")
+  bottom_buttons << group_settings_button
+
+  unless @app.is_academy
+    # install/manage app button
+    install_button = {}
+    if Group.find(session[:user].group_id).apps.include?(@app)
+      install_button[:content] = link_to(t("management"), {:action => "app_edit", :id => @app}, :title => t("management") + " " + @app.name)
+    else
+      install_button[:content] = link_to(t("install"), {:action => "app_install", :id => @app}, :title => t("install") + " " + @app.name)
+    end
+    install_button[:active] = ["app_install", "app_edit"].include?(params[:action])
+    bottom_buttons << install_button
+  end
+
+  # assign users to app button                 
+  if @app.has_users                 
+    assign_users_button = {}
+    if (Group.find(session[:user].group_id).apps.include?(@app) and @install.ready?)
+      assign_users_button[:content] = link_to(t("assign_users"), {:action => "app_bind_users", :id => @app}, :title => t("assign_users_to_app") + @app.name)
+    else
+      assign_users_button[:content] = t("assign_users")
+    end
+    assign_users_button[:active] = (params[:action] == "app_bind_users")
+    bottom_buttons.insert(1, assign_users_button)
+  end
+   
+  # index button
+  index_button = {}
+  index_button[:content] = link_to(t("start"), {:action => "app_index", :id => @app }, :title => @app.name)
+  index_button[:active] = (params[:action] == "app_index")
+  bottom_buttons << index_button
+   
+  header_tag(:image => image_path,
+             :title => @app.name,
+             :top_buttons => [{:content => link_to(t("back"), {:action => "app_list"}, :title => t("back_to_app_list"))}],
+             :bottom_buttons => bottom_buttons
+            )                 
+%>

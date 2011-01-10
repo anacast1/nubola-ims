@@ -1,0 +1,104 @@
+<table width="100%" class="register">
+      <tr>
+        <td style="width: 194px;"><%= t("phone") %>:</td>
+        <td style="width: 194px;"><%= t("mobile") %>:</td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%=text_field("user","telephone")%></td>
+        <td style="width: 194px;"><%=text_field("user","mobile")%></td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%= t("name") %>: *</td>
+	<td style="width: 194px;"><%= t("surname") %>: *</td>
+      </tr>
+      <% user_errors = error_messages_for_user %>
+      <tr>
+        <td style="width: 194px;"><%=text_field("user","name")%></td>
+        <td style="width: 194px;"><%=text_field("user","surname")%></td>
+      </tr>
+      <% unless user_errors.nil? %>
+        <% unless user_errors[:name].nil? && user_errors[:surname].nil? %>
+          <tr>
+            <% unless user_errors[:name].nil? %>  
+              <td class="error" style="width: 194px;">
+                <% user_errors[:name].each do |error| %>
+                  <%= error %><br>
+                <% end %>
+              </td>
+            <% end %>
+            <% unless user_errors[:surname].nil? %>  
+              <td class="error" style="width: 194px;">
+                <% user_errors[:surname].each do |error| %>
+                  <%= error %><br>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr>
+        <td style="width: 194px;">Login: *</td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%=text_field("user", "login")%></td>
+      </tr>
+      <% unless user_errors.nil? %>
+        <% unless user_errors[:login].nil? %>
+          <tr>  
+            <td class="error" style="width: 194px;">
+              <% user_errors[:login].each do |error| %>
+                <%= error %><br>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr>
+        <td style="width: 194px;"><%= t("password") %>: *</td>
+        <td style="width: 194px;"><%= t("password_confirmation") %>: *</td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%= password_field("user","password")%></td>
+        <td style="width: 194px;"><%= password_field("user","password_confirmation")%></td>
+      </tr>
+      <% unless user_errors.nil? %>
+        <% unless user_errors[:password].nil? && user_errors[:password_confirmation].nil? %> 
+          <tr>
+            <% unless user_errors[:password].nil? %>
+              <td class="error" style="width: 194px;">
+                <% user_errors[:password].each do |error| %>
+                  <%= error %><br>
+                <% end %>
+              </td>
+            <% end %>
+            <% unless user_errors[:password_confirmation].nil? %>
+              <td class="error" style="width: 194px;">
+                <% user_errors[:password_confirmation].each do |error| %>
+                  <%= error %><br>
+                <% end %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr>
+        <td style="width: 194px;"><%= t("email") %>: *</td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%=text_field("user","email")%></td>
+      </tr>
+      <% unless user_errors.nil? %>
+        <% unless user_errors[:email].nil? %>
+          <tr>  
+            <td class="error" style="width: 194px;">
+              <% user_errors[:email].each do |error| %>
+                <%= error %><br>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+</table>
+
+
+

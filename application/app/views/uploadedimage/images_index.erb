@@ -1,0 +1,21 @@
+<div class="centered">
+    <div>
+        &nbsp;
+    </div>
+    <table class="centered" cellspacing="5">
+        <% counter = 0 %>
+        <% @userslist.each do |user| %>
+            <% if counter % 7 == 0 %>
+                <tr>
+            <% end %>
+            <td class="label" style="text-align: center;">
+                <%= link_to(user.name + " " + user.surname, {:action => "user_images", :id => user.id} ) %>
+            </td>
+            <% if counter % 7 == 6 %>
+                </tr>
+            <% end %>
+            <% counter = counter + 1 %>
+        <% end %>
+    </table>
+</div>
+

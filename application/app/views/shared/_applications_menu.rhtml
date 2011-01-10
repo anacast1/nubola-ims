@@ -1,0 +1,56 @@
+<% 
+  applications = session[:user].binds.reject{|b1| !b1.ready?}.map{|b2| b2.app} 
+  applications = applications.reject{|a| a.is_academy? || !a.installs.find_by_group_id(session[:user].group.id).ready?}
+%>
+<ul  class="menu" id="applications_menu">
+  <% if applications.length == 0 %>
+    <li style="font-weight:normal;"><%= t("no_apps") %></li> 
+  <% else %>  
+    <% i = 0 %>                                                                                       
+    <% applications.each do |a| %>                                                                   
+      <% if a.end_user_available %>                                                                 
+        <%
+          if a.url =~ /^http/                                                                   
+            a.url.include?("?") ? separator = "&" : separator = "?"
+            url  = a.url + separator + "sid=" + session.session_id  
+          else                                                                                   
+            host = Install.find_by_app_id_and_group_id(a.id, session[:user].group_id).host.hostname 
+            url  = "http://#{host}/#{a.url}/#{a.instance_basename}_#{session[:user].group.id}/"
+          end
+        %>  
+        <% if i == applications.length - 1 %>
+          <li style="border-bottom: 0px;"><%= link_to_app(a.name, url, a.unique_app_id.downcase) %></li>
+        <% else %>                                                              
+          <li><%= link_to_app(a.name, url, a.unique_app_id.downcase) %></li>
+        <% end %>
+      <% end %>
+      <% i = i + 1 %>
+    <% end %>
+  <% end %>
+  <% 
+    academies = session[:user].binds.reject{|b1| !b1.ready?}.map{|b2| b2.app} 
+    academies = academies.reject{|a| !a.is_academy? || !a.installs.find_by_group_id(session[:user].group.id).ready?}
+  %>
+  <% help_url = Setting.help_url rescue nil %>
+  <% unless help_url.nil? %>
+    <% if academies.length == 0 %>
+       <li style="border-top: 8px double; border-bottom: 0px;"><%= link_to_app(t("training"), help_url, 'moodle') %></li>
+    <% else %>
+       <li style="border-top: 8px double;"><%= link_to_app(t("training"), help_url, 'moodle') %></li>
+    <% end %>
+  <% end %>
+  <% i = 0 %>
+  <% academies.each do |a| %>                                                                 
+    <% if a.end_user_available && a.url =~ /^http/ %>                                                        
+      <% a.url.include?("?") ? separator = "&" : separator = "?" %>
+      <% url  = a.url + separator + "sid=" + session.session_id %>
+      <% if i == academies.length - 1 %>
+        <li style="border-bottom: 0px;"><%= link_to_app(a.name, url, a.unique_app_id.downcase) %></li>
+      <% else %>
+        <li><%= link_to_app(a.name, url, a.unique_app_id.downcase) %></li>
+      <% end %>
+    <% end %>
+    <% i = i + 1 %>
+  <% end %>
+
+</ul>

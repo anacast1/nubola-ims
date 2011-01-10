@@ -1,0 +1,31 @@
+<div class="menudiv">
+  <%= header_tag(:image => "user.png",
+                 :title => h(session[:user].group.name).upcase + ": <b>#{t("new_user").upcase}</b>",
+                 :top_buttons    => [{:content => volver, :active => true}],
+:bottom_buttons => [{:content => link_to(t("new_user"), {:action => "user_new"}, :title => "#{t("add_new_user_to_group")} #{h(session[:user].group.name)}"),
+                                      :active => (params[:action] == "user_new")},
+                                     {:content => link_to(t("users"), {:action => "user_list"}, :title => "#{t("group_user_list")} #{h(session[:user].group.name)}"),
+                                      :active => (params[:action] == "user_list")}]
+                ) %>
+</div>
+
+<div class="normaldiv">
+    <% form_tag( {:action => :user_new}, :multipart => true ) do -%>
+    <table class="normaltable">
+      <tr>
+        <td>
+          <%= render :partial => 'shared/user', :locals => {:origin => "new"} %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="right">
+          <%= submit_tag t("cancel"), :name => 'cancel', :id => 'button' %>
+          <%= submit_tag t("add_user"), :name => 'new_user', :id => 'button' %>
+        </td>
+      </tr>
+    </table>
+  <% end -%>
+  
+  <%= error_messages_for 'user' %>
+  
+</div>

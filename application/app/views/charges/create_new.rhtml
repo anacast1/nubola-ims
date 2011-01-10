@@ -1,0 +1,17 @@
+<h1>Creación de nuevos albaranes</h1>
+
+<h2>De <%= @from.to_time %> a <%= @to.to_time %></h2>
+
+<ul>
+<% @charges.each do |c| -%>
+<li>
+<%= c.group.name %> : <%= c.concept %> <%= c.quantity %> * <%= c.price %>
+<% if c.valid? -%>
+<span class="green">OK</span>
+<% else -%>
+<span class="red">ERROR</span>
+<%= c.errors.each_full{|e| e}.join(". ") %>
+<% end -%>
+</li>
+<% end -%>
+</ul>

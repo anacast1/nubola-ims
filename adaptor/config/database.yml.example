@@ -1,0 +1,7 @@
+development:
+  adapter:  mysql
+  database: ims_production
+  username: user
+  password: password
+  socket:   /var/lib/mysql/mysql.sock
+  encoding: utf8

@@ -1,0 +1,45 @@
+<div class="menudiv">
+  <%= render :partial => 'user_header' %>
+</div>
+
+<div class="normaldiv" align="center">
+
+  <%= ok_tag flash[:user_modified] %>
+
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td>Login:</td>
+            <td><%= h(@user.login) %></td>
+          </tr>
+          <tr>
+            <td>Nombre:</td>
+            <td><%= h(@user.name) %></td>
+          </tr>
+          <tr>
+            <td>Apellido:</td>
+            <td><%= h(@user.surname) %></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <table>
+          <tr>
+            <td >Teléfono:</td>
+            <td><%= h(@user.telephone) %></td>
+          </tr>
+          <tr>
+            <td>Movil:</td>
+            <td><%= h(@user.mobile) %></td>
+          </tr>
+          <tr>
+            <td>Correo electrónico:</td>
+            <td><%= h(@user.email) %></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>

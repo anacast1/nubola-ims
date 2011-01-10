@@ -1,0 +1,57 @@
+/* 
+ This is a kind of code we should incorporate to allow the menu
+ have more levels. Its is based on:
+   http://www.brightsoftsolutions.com/article-prototype-js-based-dhtml-menu.php
+*/
+Event.observe($('appmenu'),"click",function(event){
+
+  /* Get the element from where event is generated*/
+  var elt = $(Event.element(event)); 
+  
+  /*Be sure that it under our unordered list*/
+  if (elt && elt.descendantOf($('my_menu')) && elt.nodeName=='LI'){
+  	
+    /*Stop the bubling of the event */
+    Event.stop(event);
+    
+    /*	Get the child elements of the already expanded menu,
+    	which is not parent of currently selected menu or a child of it */
+    var its=$$('.selected_item').findAll(function(e){
+    	return !elt.descendantOf(e) && !e.descendantOf(elt) && e!=elt
+    });
+    
+    /*Add this special tracking class name*/
+    elt.addClassName("selected_item"); 							
+    
+    /*Hide them all*/
+    its.each(function(e){e.select("ul").invoke('hide')});
+    
+    /*remove the tracker class off them  them all*/
+    its.invoke("removeClassName","selected_item");
+    
+    /*Collect the UL i.e child menu container  and display them*/
+    var ul=elt.childElements().find(function(e){return e.nodeName=='UL';});
+    if (ul) {
+      if (ul.id == 'applications_menu' && ul.style.display && ul.style.display != 'none'){
+        /* if the top level is clicked and the menu was visible, hide it */
+        ul.setStyle({"display":"none"});
+      }else{
+        ul.setStyle({"display":"block"});					
+      }
+    }	
+  }		
+});
+
+function hideMenus(){
+  $('menu1').setStyle({'display':'none'});
+}
+
+function toggleMenu(menuid){
+  if ($(menuid).style.display && $(menuid).style.display != 'block'){
+    var p = $(menuid).parentNode;
+    $(menuid).setStyle({'left':p.offsetLeft});
+    $(menuid).setStyle({'display':'block'});
+  }else{
+    $(menuid).setStyle({'display':'none'});
+  }
+}

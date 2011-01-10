@@ -1,0 +1,9 @@
+<%= 
+ texts = {"edit_contract" => t("modify_contract"), "new_contract" => t("new_contract"), "contract" => t("contract")}
+ bottom_buttons = [{:content => link_to(t("contract_terms"), {:action => "pdf_contract_terms"}, :title => t("contract_terms"))}]
+ bottom_buttons << {:content => link_to(t("modify_contract"), {:action => "edit_contract", :id => @contract }, :title => t("modify_contract"))} if params[:action] == "contract"
+ header_tag(:image => "contrato.png",
+            :title => h(session[:user].group.name.upcase) + ": <b>#{texts[params[:action]].upcase}</b>",
+            :top_buttons => [{:content => volver}],
+            :bottom_buttons => bottom_buttons)
+%>

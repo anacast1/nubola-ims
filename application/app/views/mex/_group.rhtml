@@ -1,0 +1,40 @@
+<table width="100%" class="register">
+      <tr>
+        <td style="width: 194px;">Empresa: *</td>
+      </tr>
+      <% group_errors = error_messages_for_group %>
+      <tr style="width: 194px;">
+        <td><%=text_field("group", "name")%></td><td>&nbsp;</td>
+      </tr>
+      <% unless group_errors.nil? %>
+        <% unless group_errors[:name].nil? %>
+          <% group_errors[:name].each do |error| %>
+            <tr>  
+              <td class="error" style="width: 194px;">
+                <%= error %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+      <tr>
+        <td style="width: 194px;">NIF: *</td>
+      </tr>
+      <tr>
+        <td style="width: 194px;"><%=text_field("group", "nif", :size => "9" )%></td><td>&nbsp;</td>
+      </tr>
+      <% unless group_errors.nil? %>
+        <% unless group_errors[:nif].nil? %>
+          <% group_errors[:nif].each do |error| %>
+            <tr>  
+              <td class="error" style="width: 194px;">
+                <%= error %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+</table>
+
+
+
