@@ -1,5 +1,5 @@
-adaptor/log/development.log
-application/log/production.log
+adaptor/log/*.log
+application/log/*.log
 adaptor/config/database.yml
 adaptor/config/settings.yml
 application/config/database.yml
