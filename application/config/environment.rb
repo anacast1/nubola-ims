@@ -52,16 +52,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.i18n.default_locale = :es
 
-  # Your secret key for verifying cookie session data integrity.
-  # If you change this key, all old sessions will become invalid!
-  # Make sure the secret is at least 30 characters and all random, 
-  # no regular words or you'll be exposed to dictionary attacks.
-  config.action_controller.session = {
-    :session_key => 'OApSSO',
-    :secret      => '040b2c4132670c39c4d3b4eb2be0fc555bc996be8af492e6a1ea49c52244d72bc8e67b45df498952b4528a90ffc17a2a25b635dc3dfe939cefe1da8abfc92d1c',
-    :session_domain => 'nubola-saas.com'
-  }
-
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
   # (create the session table with "rake db:sessions:create")
@@ -76,6 +66,11 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
+  # Load any local configuration that is kept out of source control
+  # (e.g. gems, patches).
+  if File.exists?(File.join(File.dirname(__FILE__), 'additional_environment.rb'))
+    instance_eval File.read(File.join(File.dirname(__FILE__), 'additional_environment.rb'))
+  end
 end
 
 

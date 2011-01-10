@@ -4,7 +4,8 @@ adaptor/config/database.yml
 adaptor/config/settings.yml
 application/config/database.yml
 application/config/settings.yml
+application/config/email.yml
+application/config/additional_environment.rb
 application/public/Uploadedimage/image
 application/public/User/user_image
 application/public/User/wallpaper
-application/config/email.yml
