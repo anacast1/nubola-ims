@@ -260,64 +260,80 @@ class GroupAdminController < ApplicationController
 
       end
 
-      apps_to_install = Array.new
-      if params[:group_parameters] != nil
-        apps_to_install << {:application => @app, :parameters => params[:group_parameters]}
+      if @app.clickgest?
+
+        # clickgest no s'instala: https://www.ingent.net/issues/2357
+        @install = Install.new
+        @install.app = @app
+        @install.group = @group
+        @install.host = Host.compartido
+        @install.status = "OK"
+        @install.save
+        bind = Bind.create!(:user_id => session[:user].id, :app_id => @app.id, :status => 'OK')
+        session[:user].apps.reload
+        redirect_to :action => 'app_edit', :id => @app
+
       else
-        apps_to_install << {:application => @app, :parameters => {}}
-      end
 
-      # save this install before sending the message, because
-      # we need it to process the response
-      @install.host = Host.find_by_hostname params[:host_id]
-      @install.status = "INSTALLING"
-      @install.save!
+        apps_to_install = Array.new
+        if params[:group_parameters] != nil
+          apps_to_install << {:application => @app, :parameters => params[:group_parameters]}
+        else
+          apps_to_install << {:application => @app, :parameters => {}}
+        end
 
-      message = session[:user].group.install_message(apps_to_install, params[:host_id], params[:original_host])
-      unless system("#{Setting.oappublish} 'IMS' '#{message}'")
-        logger.info("Problem publishing install message")
-      end
-     
-      # ens esperem uns segons perque amb una mica de sort la
-      # resposta haurà arribat i ja podrem assignar usuaris
-      # a la app (si no mostrarem un missatge de que la app
-      # s'està instal.lant)
-      may_sleep 8
+        # save this install before sending the message, because
+        # we need it to process the response
+        @install.host = Host.find_by_hostname params[:host_id]
+        @install.status = "INSTALLING"
+        @install.save!
 
-      unless params[:group_parameters] == nil
-        params[:group_parameters].each_pair do |pid, pvalue|
-          # find the group_setting corresponding to the parameter for this group
-          group_setting = GroupSetting.find_by_group_id_and_parameter_id(session[:user].group.id, pid)
-          default_value = Parameter.find_by_id(pid).default_value
-          if default_value.include?("Group.")
-            # the parameter is a calculated one, so each time it can be modified. we don't store the result, we store the function name
-            # if the group has the group_setting
-            # (this should never happen here, since this is a first time installation)
-            if group_setting
-              # update that setting
-              group_setting.update_attributes(:value => default_value)
-            # else if the group hasn't a group_setting for the parameter
+        message = session[:user].group.install_message(apps_to_install, params[:host_id], params[:original_host])
+        unless system("#{Setting.oappublish} 'IMS' '#{message}'")
+          logger.info("Problem publishing install message")
+        end
+
+        # ens esperem uns segons perque amb una mica de sort la
+        # resposta haurà arribat i ja podrem assignar usuaris
+        # a la app (si no mostrarem un missatge de que la app
+        # s'està instal.lant)
+        may_sleep 8
+
+        unless params[:group_parameters] == nil
+          params[:group_parameters].each_pair do |pid, pvalue|
+            # find the group_setting corresponding to the parameter for this group
+            group_setting = GroupSetting.find_by_group_id_and_parameter_id(session[:user].group.id, pid)
+            default_value = Parameter.find_by_id(pid).default_value
+            if default_value.include?("Group.")
+              # the parameter is a calculated one, so each time it can be modified. we don't store the result, we store the function name
+              # if the group has the group_setting
+              # (this should never happen here, since this is a first time installation)
+              if group_setting
+                # update that setting
+                group_setting.update_attributes(:value => default_value)
+                # else if the group hasn't a group_setting for the parameter
+              else
+                # create that setting
+                group_setting = GroupSetting.new({:group_id => session[:user].group.id,
+                                                 :parameter_id => pid,
+                                                 :value => default_value})
+                group_setting.save!
+              end
             else
-              # create that setting
-              group_setting = GroupSetting.new({:group_id => session[:user].group.id,
-                                                :parameter_id => pid,
-                                                :value => default_value})
-              group_setting.save!
-            end
-          else
-            if group_setting
-              group_setting.update_attributes(:value => pvalue)
-            else
-              group_setting = GroupSetting.new({:group_id => session[:user].group.id,
-                                                :parameter_id => pid,
-                                                :value => pvalue})
-              group_setting.save!
+              if group_setting
+                group_setting.update_attributes(:value => pvalue)
+              else
+                group_setting = GroupSetting.new({:group_id => session[:user].group.id,
+                                                 :parameter_id => pid,
+                                                 :value => pvalue})
+                group_setting.save!
+              end
             end
           end
         end
+        session[:user].apps.reload
+        redirect_to :action => 'app_bind_users', :id => @app
       end
-      session[:user].apps.reload
-      redirect_to :action => 'app_bind_users', :id => @app
 
     end
   end
@@ -327,6 +343,11 @@ class GroupAdminController < ApplicationController
 
     unless @app.has_users and @install.ready?
       redirect_to :action => 'app_edit', :id => @app
+      return
+    end
+
+    if @app.clickgest?
+      render :template => 'group_admin/clickgest'
       return
     end
 
@@ -579,7 +600,7 @@ class GroupAdminController < ApplicationController
   def app_uninstall
 
     set_app_vars
-        
+
     if request.post?
       #check dependencies
       error=false;
@@ -631,20 +652,28 @@ class GroupAdminController < ApplicationController
         b.destroy
       end
 
-      # marquem l'install de la app com a "UNINSTALLING", xque no la puguin gestionar
-      # mentre es desinstal.la
-      @install.update_attributes!(:status => "UNINSTALLING")
+      if @app.clickgest?
 
-      # enviem missatge uninstall
-      apps_to_uninstall = Array.new
-      apps_to_uninstall <<  @app
-      message = session[:user].group.uninstall_message(apps_to_uninstall, @install.host.hostname)
-      unless system("#{Setting.oappublish} 'IMS' '#{message}'")
-        logger.info("Problem publishing uninstall message")
+        @install.destroy
+
+      else
+
+        # marquem l'install de la app com a "UNINSTALLING", xque no la puguin gestionar
+        # mentre es desinstal.la
+        @install.update_attributes!(:status => "UNINSTALLING")
+
+        # enviem missatge uninstall
+        apps_to_uninstall = Array.new
+        apps_to_uninstall <<  @app
+        message = session[:user].group.uninstall_message(apps_to_uninstall, @install.host.hostname)
+        unless system("#{Setting.oappublish} 'IMS' '#{message}'")
+          logger.info("Problem publishing uninstall message")
+        end
+
+        # amb sort la resposta ja haurà arribat
+        may_sleep 5
+
       end
-
-      # amb sort la resposta ja haurà arribat    
-      may_sleep 5 
 
       flash[:uninstalled] = "#{t("uninstalling")} #{@app.name}.<br />#{t("once_uninstalled_will_be_available")}."
       redirect_to :action => 'app_install', :id => @app
@@ -883,7 +912,7 @@ class GroupAdminController < ApplicationController
 
   def set_app_vars
     @app = App.find params[:id]
-    @group = Group.find session[:user].group.id
+    @group = session[:user].group
     @install = @app.installs.find_by_group_id(@group.id)
     if @install.nil?
       @install = Install.new

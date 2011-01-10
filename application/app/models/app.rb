@@ -119,6 +119,14 @@ class App < ActiveRecord::Base
     name
   end
 
+  def clickgest?
+    (self.unique_app_id.downcase =~ /clickgest/) == 0
+  end
+
+  def can_be_on_virtual?
+    !self.clickgest?
+  end
+
   protected
 
   def validate

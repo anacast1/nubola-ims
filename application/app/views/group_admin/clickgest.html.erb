@@ -1,0 +1,27 @@
+<div id="first_view">
+
+<div class="menudiv">
+  <%= render :partial => 'app_header' %>
+</div>
+
+<div class="normaldiv">
+  <div class="info">
+    La version basica de clickgest solo es valida para un usuario.<br />
+  Si desea cambiar a la versión "avanzada" pongase en contacto por e/mail con <%= link_to "soporte@nubola-saas.com", "mailto:soporte@nubola-saas.com" %>
+  </div>
+</div>
+
+</div>
+
+<div id="second_view" style="display: none">
+  <div class="menudiv">
+    <%= render :partial => 'app_header_inactive' %>
+  </div>
+  <br/>
+  <div id="flash">
+    <div id="javascript_filled">
+    </div>
+    <br/><br/>
+    <%= image_tag "Throbber.gif" %>
+  </div>
+</div>

@@ -97,7 +97,7 @@
           </tr>
         <% end %>
       <% end %>
-      <% if !@host.nil? && @host.ready? -%>
+      <% if !@host.nil? && @host.ready? && @app.can_be_on_virtual? -%>
         <tr>
           <td>
             <%= t("install_in") %>:

@@ -16,7 +16,7 @@
       <table>
         <tr>
           <td>
-            <% if !@host.nil? && @host.ready? -%>
+            <% if !@host.nil? && @host.ready? and @app.can_be_on_virtual? -%>
               <% form_tag({ :action => 'app_move', :id => @app.id }) do -%>
               <table class="edit">
                 <tr>
