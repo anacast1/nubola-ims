@@ -7,3 +7,4 @@ application/config/settings.yml
 application/public/Uploadedimage/image
 application/public/User/user_image
 application/public/User/wallpaper
+application/config/email.yml
