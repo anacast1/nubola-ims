@@ -1,0 +1,59 @@
+<% now = Time.now %>
+
+registre1:
+  user: clientadmin
+  group: client 
+  app:
+  action: login
+  text: '<login gid="26590265" sid="43504142b47777b1ab64fc9606dee33a" total="0" id="clientadmin"/>'
+  created_at: <%= (now - 1.hour).to_s(:db) %>
+  updated_at: <%= (now - 1.hour).to_s(:db) %>
+
+registre2:
+  user: clientadmin
+  group: client 
+  app:
+  action: logout
+  text: '<logout gid="26590265" sid="43504142b47777b1ab64fc9606dee33a" total="0" id="clientadmin"/>'
+  created_at: <%= (now - 1.minute).to_s(:db) %>
+  updated_at: <%= (now - 1.minute).to_s(:db) %>
+
+registre3:
+  user: clientadmin
+  group: demo 
+  app:
+  action: login
+  text: '<login gid="506897951" sid="43504142b47777b1ab64fc9606dee33a" total="0" id="clientadmin"/>'
+  created_at: <%= (now - 30.minutes).to_s(:db) %>
+  updated_at: <%= (now - 30.minutes).to_s(:db) %>
+
+registre4:
+  user: clientuser
+  group: client
+  app:
+  action: login
+  text: '<login gid="506897951" sid="43504142b47777b1ab64fc9606dee33a" total="0" id="clientuser"/>'
+  created_at: <%= (now - 30.minutes).to_s(:db) %>
+  updated_at: <%= (now - 30.minutes).to_s(:db) %>
+
+registre5:
+  user:
+  group: client 
+  app: prova
+  action: consum
+  text: '<consum gid="26590265" app_id="PROVA"><consumitem code="PROVA_STORAGE">5M</consumitem></consum>'
+  amount: 5 
+  created_at: <%= (now - 2.day).to_s(:db) %>
+  updated_at: <%= (now - 2.day).to_s(:db) %>
+  type: Consum
+
+registre6:
+  user:
+  group: client 
+  app: prova
+  action: consum
+  text: '<consum gid="26590265" app_id="PROVA"><consumitem code="PROVA_STORAGE">7M</consumitem></consum>' 
+  amount: 7
+  created_at: <%= (now - 1.day).to_s(:db) %>
+  updated_at: <%= (now - 1.day).to_s(:db) %>
+  type: Consum

@@ -1,0 +1,39 @@
+sugarcrm_spanish:
+  parameter: sugarcrm_language
+  value: es_es
+
+sugarcrm_english:
+  parameter: sugarcrm_language
+  value: en_us
+
+sugarcrm_admin:
+  parameter: sugarcrm_role
+  value: Admin
+
+sugarcrm_noadmin:
+  parameter: sugarcrm_role
+  value: NoAdmin
+
+orangehrm_admin:
+  parameter: orangehrm_role
+  value: Admin
+
+orangehrm_noadmin:
+  parameter: orangehrm_role
+  value: NoAdmin
+
+knowledgetree_spanish:
+  parameter: knowledgetree_language
+  value: es_es
+
+knowledgetree_english:
+  parameter: knowledgetree_language
+  value: en_us
+
+knowledgetree_admin:
+  parameter: knowledgetree_role
+  value: Admin
+
+knowledgetree_noadmin:
+  parameter: knowledgetree_role
+  value: NoAdmin

@@ -1,0 +1,25 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: user_settings
+#
+#  id           :integer(4)      not null, primary key
+#  user_id      :integer(4)      default(0), not null
+#  parameter_id :integer(4)      default(0), not null
+#  value        :string(100)     default(""), not null
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+root_crm_color:
+  user: root
+  parameter: color_crm
+  value: Azul oscuro
+root_crm_language:
+  user: root
+  parameter: language_crm
+  value: Inglés
+ingent_user_color_crm:
+  user: ingent_user
+  parameter: color_crm
+  value: Azul oscuro
+

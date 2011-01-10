@@ -1,0 +1,16 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: group_settings
+#
+#  id           :integer(4)      not null, primary key
+#  group_id     :integer(4)      default(0), not null
+#  parameter_id :integer(4)      default(0), not null
+#  value        :string(100)     default(""), not null
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+another:
+  id: 2

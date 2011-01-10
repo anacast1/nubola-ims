@@ -1,0 +1,48 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: parameters
+#
+#  id            :integer(4)      not null, primary key
+#  app_id        :integer(4)      default(0), not null
+#  name          :string(100)     default(""), not null
+#  input         :string(20)
+#  kind          :string(20)
+#  default_value :string(100)
+#  limited       :integer(4)      default(0), not null
+#
+
+# parametros de las aplicaciones
+color_crm:
+  app: crm
+  kind: user
+  name: Color de las letras de los contactos
+  input: dropdown
+language_crm:
+  app: crm
+  kind: group
+  name: Idioma en que te habla
+  input: dropdown
+titulo_reports:
+  app: reports
+  kind: user
+  name: Titulo a añadir a los reports
+  input: text
+one:
+  app: one
+  name: Theme
+  kind: user
+  default_value: Blue
+  input: text
+two:
+  app: one
+  name: Role
+  kind: user
+  default_value: Invited
+  input: dropdown
+three:
+  app: two
+  name: Role
+  kind: user
+  default_value: Invited
+  input: dropdown

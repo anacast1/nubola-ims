@@ -1,0 +1,148 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: users
+#
+#  id                  :integer(4)      not null, primary key
+#  login               :string(80)      default(""), not null
+#  password_hash       :string(40)      default(""), not null
+#  group_id            :integer(4)      default(0), not null
+#  role                :string(20)      default(""), not null
+#  name                :string(100)     default(""), not null
+#  surname             :string(100)     default(""), not null
+#  status              :string(20)      default("active"), not null
+#  telephone           :string(20)
+#  mobile              :string(20)
+#  email               :string(50)      default(""), not null
+#  user_image          :string(255)
+#  plain_password      :string(40)      default(""), not null
+#  confirmed           :boolean(1)      not null
+#  confirmation_string :string(255)
+#  wallpaper           :string(255)
+#  default_wallpaper   :string(255)     default("wallpaper_1.jpg")
+#  created_at          :datetime
+#
+
+root:
+  login: root
+  password_hash: 72921f3c9da8f15dac5025928e5be06a23e0ef47
+  role: platformadmin
+  name: Root
+  surname: Nubola
+  status: active
+  plain_password: oaroot
+  confirmed: true
+  group: administration
+  email: root@asd.com
+admin:
+  login: admin
+  password_hash: b98466d43a22e759aabffe156a60795b22687900
+  role: privilegeduser
+  name: Administrador
+  surname: Nubola
+  status: active
+  plain_password: oaadmin
+  confirmed: true
+  group: administration
+  email: admin@asd.com
+groupadmin:
+  login: groupadmin
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: groupadmin
+  name: Group
+  surname: Admin
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: ingent
+  email: groupadmin@asd.com
+ingent_user:
+  login: user
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: user
+  name: Usuario
+  surname: Normal
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: ingent
+  email: ingent_user@asd.com
+xavi:
+  login: xavi
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: ingent
+  role: user
+  name: Xavi
+  surname: Vila
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: ingent
+  email: xavi@asd.com 
+grupclient_user:
+  login: usuari
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: grupclient
+  role: user
+  name: Xavi
+  surname: Vila
+  status: active
+  plain_password: ingent
+  confirmed: true
+  email: info@nubola-saas.com
+grupclient2_user:
+  login: usuari2
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: grupclient2
+  role: user
+  name: Pep
+  surname: Castany
+  status: active
+  plain_password: ingent
+  confirmed: true
+  email: info2@nubola-saas.com
+grupclient2_admin:
+  login: groupadmin2
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: grupclient2
+  role: groupadmin
+  name: Pep
+  surname: Castany
+  status: active
+  plain_password: ingent
+  confirmed: true
+  email: info2@nubola-saas.com
+noconfirmat:
+  login: noconfirmat
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: ingent
+  role: groupadmin
+  name: No
+  surname: Confirmat
+  status: active
+  plain_password: ingent
+  confirmed: false
+  group: ingent
+  email: noconfirmat@nubola-saas.com
+endemo_admin:
+  login: noclient
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: en_demo
+  role: groupadmin
+  name: Xavi
+  surname: Vila
+  status: active
+  plain_password: ingent
+  confirmed: true
+  email: info@nubola-saas.com 
+suspended_client:
+  login: suspended_client
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  group: suspended_group
+  role: groupadmin
+  name: Xavi
+  surname: Vila
+  status: active
+  plain_password: ingent
+  confirmed: true
+  email: info@nubola-saas.com 

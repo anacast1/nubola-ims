@@ -1,0 +1,21 @@
+first:
+  code: 20071130001
+  name: Client Group Contract
+  group: client
+  date: 20081215
+  contract_type: Normal
+  contact_name: contr name
+  department: department
+  mail: info@nubola-saas.com
+  telf: 938920909
+  concurrentusers: 10
+  concurrentuserslimit: false
+  state: 1
+  co_street: Melió, 113
+  co_cp: 08720
+  co_town: Barcelona
+  co_province: Barcelona
+  co_country: spain
+  co_nif: B77123456
+  created_at: 2007-11-10 18:41:05
+  updated_at: 2007-12-17 18:41:05

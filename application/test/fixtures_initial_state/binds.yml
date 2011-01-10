@@ -1,0 +1,4 @@
+clientadmin_prova:
+  app: prova
+  user: clientadmin
+  status: "OK"

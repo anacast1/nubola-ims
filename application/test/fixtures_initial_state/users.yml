@@ -1,0 +1,71 @@
+root:
+  login: root
+  password_hash: 72921f3c9da8f15dac5025928e5be06a23e0ef47
+  role: platformadmin
+  name: Root
+  surname: Nubola
+  status: active
+  plain_password: oaroot
+  confirmed: true
+  group: administration
+  email: info@nubola-saas.com
+
+admin:
+  login: admin
+  password_hash: b98466d43a22e759aabffe156a60795b22687900
+  role: privilegeduser
+  name: Administrador
+  surname: Nubola
+  status: active
+  plain_password: oaadmin
+  confirmed: true
+  group: administration
+  email: info@nubola-saas.com
+
+demoadmin:
+  login: demoadmin
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: groupadmin
+  name: Demo
+  surname: Admin
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: demo
+  email: info@nubola-saas.com
+
+demouser:
+  login: demouser
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: user
+  name: Demo
+  surname: User
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: demo
+  email: info@nubola-saas.com
+
+clientadmin:
+  login: clientadmin
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: groupadmin
+  name: Client
+  surname: Admin
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: client
+  email: info@nubola-saas.com
+
+clientuser:
+  login: clientuser
+  password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
+  role: user
+  name: Client
+  surname: User
+  status: active
+  plain_password: ingent
+  confirmed: true
+  group: client
+  email: info@nubola-saas.com

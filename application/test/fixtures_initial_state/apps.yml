@@ -1,0 +1,47 @@
+sugarcrm:
+  name: OAcrm
+  unique_app_id: SUGARCRM
+  url: oap/sugarcrm
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 33
+  ram: 256
+  cpu: 100
+
+orangehrm:
+  name: OAhhrr
+  unique_app_id: ORANGEHRM
+  url: oap/orangehrm
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 33
+  ram: 256
+  cpu: 100
+
+knowledgetree:
+  name: OAdocuments
+  unique_app_id: KNOWLEDGETREE
+  url: oap/knowledgetree
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 33
+  ram: 256
+  cpu: 100
+
+prova:
+  name: OAprova
+  unique_app_id: PROVA
+  url: oap/prova
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 33
+  ram: 256
+  cpu: 100

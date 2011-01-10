@@ -1,0 +1,6 @@
+client_prova:
+  app: prova
+  group: client
+  host: shared
+  status: "OK"
+  created_at: <%= (Time.now - 2.months).to_s(:db) %>

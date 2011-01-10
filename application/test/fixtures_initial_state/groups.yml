@@ -1,0 +1,20 @@
+administration:
+  name: Open Alliance Software Libre
+  address: Atenes, 8
+  city: Barcelona
+  zipcode: 08006
+  nif: A63420228
+
+demo:
+  name: Demo Group
+  address: Melió, 113
+  city: Vilafranca
+  zipcode: 08720
+  nif: B77123456
+
+client:
+  name: Client Group
+  address: Melió, 113
+  city: Vilafranca
+  zipcode: 08720
+  nif: X34123498

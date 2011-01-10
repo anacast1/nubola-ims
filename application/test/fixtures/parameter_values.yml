@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: parameter_values
+#
+#  id           :integer(4)      not null, primary key
+#  parameter_id :integer(4)      default(0), not null
+#  value        :string(100)     default(""), not null
+#
+
+# valores de los parametros de las aplicaciones
+blue:
+  parameter: color_crm
+  value: Azul oscuro
+red:
+  parameter: color_crm
+  value: Rojo malboro
+spanish:
+  parameter: language_crm
+  value: Inglés
+english:
+  parameter: language_crm
+  value: Español
+

@@ -1,0 +1,24 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: consum_params
+#
+#  id     :integer(4)      not null, primary key
+#  app_id :integer(4)      default(0), not null
+#  code   :string(255)     not null
+#  value  :string(255)     not null
+#  name   :string(255)
+#
+
+mailing:
+  code: Mailing
+  value: 0
+  name: Cantidad de campañas
+  app: crm
+
+account:
+  code: Account
+  value: 0
+  name: Cantidad de cuentas
+  app: reports
+

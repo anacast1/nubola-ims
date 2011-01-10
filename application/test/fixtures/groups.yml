@@ -1,0 +1,64 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: groups
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(100)     default(""), not null
+#  address     :string(100)     default(""), not null
+#  city        :string(100)     default(""), not null
+#  zipcode     :string(5)       default(""), not null
+#  country     :string(100)     default(""), not null
+#  nif         :string(9)
+#  created_at  :datetime
+#  logo_image  :string(255)
+#  numusers    :integer(4)      default(0), not null
+#  loginusers  :integer(4)      default(0), not null
+#  contract_id :integer(4)
+#  demo_ends   :datetime
+#  province    :string(255)
+#  size        :string(255)
+#  sector      :string(255)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+administration:
+  name: Open Alliance Software Libre
+  address: Atenes
+  city: Barcelona
+  zipcode: 08000
+  nif: B98765432
+
+ingent:  
+  name: Ingent Grup Systems
+  address: Melió, 113
+  city: Vilafranca
+  zipcode: 08720
+  nif: B77123456
+
+en_demo:
+  name: Grup sense contracte
+  address: St Pere, 9
+  city: Vilafranca
+  zipcode: 08720
+  nif: B77123457
+
+grupclient:
+  name: Grup client
+  address: Avd Barcelona 123
+  city: Vilafranca
+  nif: B77123437
+
+grupclient2:
+  name: Grup client2
+  address: Avd Tarragona 321
+  city: Vilafranca
+  nif: B723244234
+  created_at: <%= (Time.now - 8.months).to_s(:db) %>
+
+suspended_group:
+  name: Suspended Grup
+  address: Avd Tarragona 321
+  city: Vilafranca
+  nif: B723244234
+  created_at: <%= (Time.now - 1.weeks).to_s(:db) %>

@@ -1,0 +1,40 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: host_types
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  cpu        :integer(4)
+#  ram        :integer(4)
+#  disk       :integer(4)
+#  price      :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+compartido:
+  name: Host compartido
+  cpu: 100
+  ram: 256
+  disk: 400
+  price: 15
+petit:
+  name: small
+  cpu: 100
+  ram: 256
+  disk: 400
+  price: 15
+mitja:
+  name: medium
+  cpu: 200
+  ram: 512
+  disk: 600
+  price: 30
+normal:
+  name: normal
+  cpu: 300
+  ram: 1024
+  disk: 800
+  price: 60

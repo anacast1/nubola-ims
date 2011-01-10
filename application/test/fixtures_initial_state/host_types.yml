@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+shared:
+  name: Host compartido
+  cpu: 1000
+  ram: 2000
+  disk: 80000
+  price: 15
+
+small:
+  name: A
+  cpu: 100
+  ram: 256
+  disk: 400
+  price: 15
+
+medium:
+  name: B
+  cpu: 200
+  ram: 512
+  disk: 800
+  price: 30

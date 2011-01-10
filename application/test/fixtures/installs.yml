@@ -1,0 +1,66 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: installs
+#
+#  id         :integer(4)      not null, primary key
+#  app_id     :integer(4)
+#  group_id   :integer(4)
+#  host_id    :integer(4)
+#  status     :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+ingent_crm:
+  app: crm
+  group: ingent
+  host: compartido
+  status: "OK"
+
+ingent_reports:
+  app: reports
+  group: ingent
+  host: compartido
+  status: "OK"
+
+administration_crm:
+  app: crm
+  group: administration
+  host: compartido
+  status: "OK"
+
+en_demo_crm:
+  app: crm
+  group: en_demo
+  host: compartido
+  status: "OK"
+
+grupclient_reports:
+  app: reports
+  group: grupclient
+  host: compartido
+  status: "OK"
+  created_at: <%=Time.now.to_s(:db)%>
+
+grupclient_crm:
+  app: crm
+  group: grupclient
+  host: compartido
+  status: "OK"
+  created_at: <%=(Time.now - 40.days).to_s(:db)%>
+
+grupclient2_crm:
+  app: crm
+  group: grupclient2
+  host: compartido
+  status: "OK"
+  created_at: <%=(Time.now - 40.days).to_s(:db)%>
+
+grupclient2_oacrm:
+  app: one
+  group: grupclient2
+  host: compartido
+  status: "OK"
+  created_at: <%=(Time.now - 40.days).to_s(:db)%>
+

@@ -1,0 +1,114 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: contracts
+#
+#  id                   :integer(4)      not null, primary key
+#  code                 :string(100)     default(""), not null
+#  name                 :string(255)
+#  group_id             :integer(4)
+#  date                 :date
+#  contract_type        :string(255)
+#  contact_name         :string(255)
+#  department           :string(255)
+#  mail                 :string(255)
+#  telf                 :string(255)
+#  concurrentusers      :integer(4)
+#  concurrentuserslimit :boolean(1)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  state                :integer(4)      default(0)
+#  co_street            :string(255)
+#  co_cp                :string(255)
+#  co_town              :string(255)
+#  co_province          :string(255)
+#  co_country           :string(255)
+#  co_nif               :string(255)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ingent:
+  code: 20071130001
+  name: name
+  group: ingent
+  date: 20081215
+  contract_type: Cuota fija
+  contact_name: contr name
+  department: department
+  mail: mail
+  telf: 938920909
+  concurrentusers: 10
+  concurrentuserslimit: false
+  state: 1
+  co_street: street
+  co_cp: 08720
+  co_town: town
+  co_province: province
+  co_country: country
+  co_nif: nif
+  created_at: 2007-11-10 18:41:05
+  updated_at: 2007-12-17 18:41:05
+administration:
+  code: 20071130002
+  name: name
+  group: administration
+  date: 20081215
+  contract_type: Cuota fija
+  contact_name: contr name
+  department: department
+  mail: mail
+  telf: 938920909
+  concurrentusers: 10
+  concurrentuserslimit: false
+  state: 1
+  co_street: street
+  co_cp: 08720
+  co_town: town
+  co_province: province
+  co_country: country
+  co_nif: nif
+  created_at: 2007-11-30 18:41:05
+  updated_at: 2007-12-17 18:41:05 
+grupclient2:
+  code: 20071130003
+  name: name
+  group: grupclient2
+  date: 20081215
+  contract_type: Cuota fija
+  contact_name: contr name
+  department: department
+  mail: mail
+  telf: 938920909
+  concurrentusers: 10
+  concurrentuserslimit: false
+  state: 1
+  co_street: street
+  co_cp: 08720
+  co_town: town
+  co_province: province
+  co_country: country
+  co_nif: nif
+  created_at: 2007-11-30 18:41:05
+  updated_at: 2007-12-17 18:41:05 
+suspended_crontract:
+  code: 20071130003
+  name: name
+  group: suspended_group
+  date: 20081215
+  contract_type: Cuota fija
+  contact_name: contr name
+  department: department
+  mail: mail
+  telf: 938920909
+  concurrentusers: 10
+  concurrentuserslimit: false
+  state: 0
+  co_street: street
+  co_cp: 08720
+  co_town: town
+  co_province: province
+  co_country: country
+  co_nif: nif
+  created_at: 2007-11-30 18:41:05
+  updated_at: 2007-12-17 18:41:05 

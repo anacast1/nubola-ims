@@ -1,0 +1,41 @@
+sugarcrm_role:
+  app: sugarcrm
+  kind: user
+  name: role
+  input: dropdown
+  default_value: NoAdmin
+
+sugarcrm_language:
+  app: sugarcrm
+  kind: group
+  name: language
+  input: dropdown
+  default_value: es_es
+
+orangehrm_role:
+  app: orangehrm
+  kind: user
+  name: role
+  input: dropdown
+  default_value: NoAdmin
+
+knowledgetree_role:
+  app: knowledgetree
+  kind: user
+  name: role
+  input: dropdown
+  default_value: NoAdmin
+
+knowledgetree_language:
+  app: knowledgetree
+  kind: group
+  name: language
+  input: dropdown
+  default_value: es_es
+
+knowledgetree_password:
+  app: knowledgetree
+  kind: user
+  name: password
+  input: hidden
+  default_value: MD5_password

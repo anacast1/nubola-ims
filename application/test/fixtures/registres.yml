@@ -1,0 +1,252 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: registres
+#
+#  id         :integer(4)      not null, primary key
+#  user_id    :integer(4)
+#  group_id   :integer(4)
+#  app_id     :integer(4)
+#  action     :string(255)
+#  text       :text
+#  created_at :datetime
+#  updated_at :datetime
+#  type       :string(255)
+#  amount     :integer(4)
+#
+
+login:
+  user: grupclient_user
+  group: grupclient
+  action: login
+  created_at: <%=(Time.now - 60).to_s(:db)%>
+
+logout:
+  user: grupclient_user
+  group: grupclient
+  action: logout
+  app: crm
+  created_at: <%=(Time.now - 30).to_s(:db)%>
+
+consum1:
+  user: ingent_user
+  group: ingent
+  action: "consum"
+  type: Consum
+  amount: 1
+  app: crm
+  text: "<consum id='bla' type='imprimir'/>"
+
+space_no_demo:
+  user: grupclient_user
+  group: grupclient
+  action: consum
+  text: "STORAGE"
+  type: Consum
+  amount: 1000
+  app: crm
+  created_at: <%=(Time.now - 1.hour).to_s(:db)%>
+
+space_no_demo_ignored:
+  user: grupclient_user
+  group: grupclient
+  action: consum
+  text: "STORAGE"
+  type: Consum
+  amount: 900
+  app: crm
+  created_at: <%=(Time.now - 1.hour).to_s(:db)%>
+
+space_demo:
+  user: grupclient_user
+  group: grupclient
+  action: consum
+  text: "<consum STORAGE>"
+  type: Consum
+  amount: 2000
+  app: reports
+  created_at: <%=(Time.now - 1.hour).to_s(:db)%>
+
+login_nodemo:
+  user: grupclient2_user
+  group: grupclient2
+  action: login
+  created_at: <%=(Time.now - 2.hours).to_s(:db)%>
+
+logout_nodemo:
+  user: grupclient2_user
+  group: grupclient2
+  action: logout
+  created_at: <%=(Time.now - 1.hour).to_s(:db)%>
+
+login_nodemo2:
+  user: grupclient2_user
+  group: grupclient2
+  action: login
+  created_at: <%=(Time.now - 1.month - 2.hours).to_s(:db)%>
+
+logout_nodemo2:
+  user: grupclient2_user
+  group: grupclient2
+  action: logout
+  created_at: <%=(Time.now - 1.month - 1.hour).to_s(:db)%>
+
+space:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1000
+  app: one
+  created_at: <%=(Time.now - 2.month + 1.day).to_s(:db)%>
+
+space2:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1100
+  app: one
+  created_at: <%=(Time.now - 2.month + 2.day).to_s(:db)%>
+
+space3:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1200
+  app: one
+  created_at: <%=(Time.now - 2.month + 3.day).to_s(:db)%>
+
+space4:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1300
+  app: one
+  created_at: <%=(Time.now - 2.month + 4.day).to_s(:db)%>
+
+space5:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1500
+  app: one
+  created_at: <%=(Time.now - 2.month + 5.day).to_s(:db)%>
+
+space6:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1600
+  app: one
+  created_at: <%=(Time.now - 2.month + 6.day).to_s(:db)%>
+
+space7:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1700
+  app: one
+  created_at: <%=(Time.now - 2.month + 7.day).to_s(:db)%>
+
+space8:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1800
+  app: one
+  created_at: <%=(Time.now - 2.month + 8.day).to_s(:db)%>
+
+space_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1000
+  app: crm
+  created_at: <%=(Time.now - 2.month + 1.day).to_s(:db)%>
+
+space2_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1600
+  app: crm
+  created_at: <%=(Time.now - 2.month + 2.day).to_s(:db)%>
+
+space3_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1500
+  app: crm
+  created_at: <%=(Time.now - 2.month + 3.day).to_s(:db)%>
+
+space4_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1400
+  app: crm
+  created_at: <%=(Time.now - 2.month + 4.day).to_s(:db)%>
+
+space5_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1300
+  app: crm
+  created_at: <%=(Time.now - 2.month + 5.day).to_s(:db)%>
+
+space6_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1200
+  app: crm
+  created_at: <%=(Time.now - 2.month + 6.day).to_s(:db)%>
+
+space7_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1100
+  app: crm
+  created_at: <%=(Time.now - 2.month + 7.day).to_s(:db)%>
+
+space8_b:
+  type: Consum
+  user: grupclient2_user
+  group: grupclient2
+  action: consum
+  text: "APP STORAGE"
+  amount: 1000
+  app: crm
+  created_at: <%=(Time.now - 2.month + 8.day).to_s(:db)%>

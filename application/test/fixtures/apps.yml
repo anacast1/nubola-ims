@@ -1,0 +1,76 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: apps
+#
+#  id                   :integer(4)      not null, primary key
+#  unique_app_id        :string(100)     default(""), not null
+#  name                 :string(100)     default(""), not null
+#  url                  :string(100)
+#  homepage_url         :string(50)
+#  logo_image           :string(255)
+#  instance_basename    :string(100)
+#  end_user_available   :boolean(1)      not null
+#  admin_user_available :boolean(1)      not null
+#  has_users            :boolean(1)      default(TRUE)
+#  basesize             :integer(4)
+#  ram                  :integer(4)
+#  cpu                  :integer(4)
+#  description          :text
+#  short                :text
+#  fee                  :float
+#  host_id              :integer(4)      default(1)
+#  is_academy           :boolean(1)      not null
+#
+
+crm:
+  name: Sugar CRM
+  unique_app_id: SUGARCRM
+  url: crm
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 100
+  ram: 256
+  cpu: 100
+
+reports:
+  name: Módulo de reportes del CRM
+  unique_app_id: SUGARCRMREPORTS
+  url: reports
+  end_user_available: true
+  admin_user_available: true
+  has_users: true
+  host: compartido
+  basesize: 100
+  ram: 256
+  cpu: 100
+
+one:
+  name: Open Alliance CRM
+  unique_app_id: OACRM
+  url: oap/sugarcrm
+  host: compartido
+  basesize: 100
+  ram: 256
+  cpu: 100
+  short: Customer Relationship Management
+  description: Descripción larga
+  homepage_url: http://www.sugarcrm.com/
+  fee: 100
+  instance_basename: instance_prefix
+
+two:
+  unique_app_id: Aplicacion_requerida
+  name: MyString
+  url: MyString
+  host: compartido
+  basesize: 0
+  ram: 256
+  cpu: 100
+  short: MyText
+  description: MyText
+  homepage_url: MyString
+  fee: 1
+  instance_basename: MyString

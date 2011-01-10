@@ -1,0 +1,47 @@
+# == Schema Information
+# Schema version: 20090915080359
+#
+# Table name: binds
+#
+#  id         :integer(4)      not null, primary key
+#  app_id     :integer(4)
+#  user_id    :integer(4)
+#  status     :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+groupadmin_crm:
+  app: crm
+  user: groupadmin
+  status: "OK"
+
+groupadmin_reports:
+  app: reports
+  user: groupadmin
+  status: "OK"
+
+ingent_user_crm:
+  app: crm
+  user: ingent_user
+  status: "OK"
+
+xavi_reports:
+  app: reports
+  user: xavi
+  status: "OK"
+
+grupclient_user_reports:
+  app: reports
+  user: grupclient_user
+  status: "OK"
+
+grupclient2_user_crm:
+  app: crm
+  user: grupclient2_user
+  status: "OK"
+
+grupclient2_admin_crm:
+  app: crm
+  user: grupclient2_admin
+  status: "OK"
