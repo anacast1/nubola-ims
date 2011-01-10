@@ -209,9 +209,6 @@ class GroupAdminController < ApplicationController
       @apps =  User.find(session[:user].id).group.apps.find_all_by_admin_user_available(false)
     else
       @apps = App.find_all_by_admin_user_available_and_is_academy(true, false)
-      if session[:user].login == "lluis"
-        @apps << App.last
-      end
     end
 
   end
