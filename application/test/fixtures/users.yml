@@ -34,6 +34,7 @@ root:
   confirmed: true
   group: administration
   email: root@asd.com
+  telephone: 931234567
 admin:
   login: admin
   password_hash: b98466d43a22e759aabffe156a60795b22687900
@@ -45,6 +46,7 @@ admin:
   confirmed: true
   group: administration
   email: admin@asd.com
+  telephone: 931234567
 groupadmin:
   login: groupadmin
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -56,6 +58,7 @@ groupadmin:
   confirmed: true
   group: ingent
   email: groupadmin@asd.com
+  telephone: 931234567
 ingent_user:
   login: user
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -67,6 +70,7 @@ ingent_user:
   confirmed: true
   group: ingent
   email: ingent_user@asd.com
+  telephone: 931234567
 xavi:
   login: xavi
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -79,6 +83,7 @@ xavi:
   confirmed: true
   group: ingent
   email: xavi@asd.com 
+  telephone: 931234567
 grupclient_user:
   login: usuari
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -90,6 +95,7 @@ grupclient_user:
   plain_password: ingent
   confirmed: true
   email: info@nubola-saas.com
+  telephone: 931234567
 grupclient2_user:
   login: usuari2
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -101,6 +107,7 @@ grupclient2_user:
   plain_password: ingent
   confirmed: true
   email: info2@nubola-saas.com
+  telephone: 931234567
 grupclient2_admin:
   login: groupadmin2
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -112,6 +119,7 @@ grupclient2_admin:
   plain_password: ingent
   confirmed: true
   email: info2@nubola-saas.com
+  telephone: 931234567
 noconfirmat:
   login: noconfirmat
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -124,6 +132,7 @@ noconfirmat:
   confirmed: false
   group: ingent
   email: noconfirmat@nubola-saas.com
+  telephone: 931234567
 endemo_admin:
   login: noclient
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -135,6 +144,7 @@ endemo_admin:
   plain_password: ingent
   confirmed: true
   email: info@nubola-saas.com 
+  telephone: 931234567
 suspended_client:
   login: suspended_client
   password_hash: d0cabca608b02c2665ec1d24979abf8facb47f8d
@@ -146,3 +156,4 @@ suspended_client:
   plain_password: ingent
   confirmed: true
   email: info@nubola-saas.com 
+  telephone: 931234567
