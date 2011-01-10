@@ -11,7 +11,7 @@
     <% unless app_to_show.nil? %>  
 
       <div class="sso_image">
-        <%= image_tag "#{app_to_show.unique_app_id.downcase}.png", :border => 0 %>
+        <%= image_tag("#{app_to_show.unique_app_id.downcase}.png", :border => 0) unless Setting.standalone %>
       </div>
 
       <div class="sso_image_text">
