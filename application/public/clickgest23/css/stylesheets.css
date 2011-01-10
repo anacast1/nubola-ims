@@ -1,0 +1,87 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+	width: 95%;
+	margin-top: 20px;
+	margin-left: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #00CCFF;
+}
+#logoClickgest {
+	margin-bottom: 40px;
+}
+
+#wrapper h2 {
+	color: #00CCFF;
+	font-size: 20px;
+	margin-bottom: 20px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #00CCFF;
+	padding-bottom: 3px;
+	font-variant: small-caps;
+}
+
+#wrapper p, #wrapper ul {
+	font-size: 14px;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+#wrapper ul {
+	list-style-type: none;
+}
+#wrapper li {
+	background-image: url(../images/bullet.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	padding-left: 14px;
+}
+
+#wrapper ul ul {
+	margin-bottom: 4px;
+	width: 200px;
+	border: 1px solid #EAEAEA;
+	padding-top: 0px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+	margin-top: 4px;
+	margin-left: -14px;
+}
+#wrapper ul ul li {
+	background-image: url(../images/puntejat.gif);
+	background-position: left bottom;
+	position: relative;
+	height: 20px;
+}
+#wrapper em {
+	font-style: normal;
+	background-color: #FFFFFF;
+	margin-left: -14px;
+	margin-bottom: -10px;
+	position: absolute;
+	top: 4px;
+	padding-right: 3px;
+}
+
+#wrapper strong {
+	color: #00CCFF;
+	position: absolute;
+	right: 0px;
+	top: 4px;
+	background-color: #fff;
+	padding-left: 3px;
+}
+#wrapper a {
+	color: #000;
+}
+#wrapper a:hover {
+	color: #00CCFF;
+}
