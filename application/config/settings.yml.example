@@ -10,6 +10,7 @@ help_url: https://help.example.com
 
 unchecked_mail_address: system@example.com
 admin_email_address: system@example.com
+clickgest_email_destination: something@example.com
 
 ## PRICES ##
 fee_price: 5

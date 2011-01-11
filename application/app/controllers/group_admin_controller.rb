@@ -271,6 +271,7 @@ class GroupAdminController < ApplicationController
         @install.save
         bind = Bind.create!(:user_id => session[:user].id, :app_id => @app.id, :status => 'OK')
         session[:user].apps.reload
+        ClickgestMailer.deliver_install(Group.first)
         redirect_to :action => 'app_edit', :id => @app
 
       else
@@ -654,6 +655,7 @@ class GroupAdminController < ApplicationController
 
       if @app.clickgest?
 
+        ClickgestMailer.deliver_uninstall(Group.first)
         @install.destroy
 
       else
