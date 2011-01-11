@@ -74,3 +74,27 @@ two:
   homepage_url: MyString
   fee: 1
   instance_basename: MyString
+
+clickgest: 
+  logo_image: 
+  name: Clickgest
+  has_users: "1"
+  url: http://localhost:3000/clickgest23/
+  is_academy: "0"
+  id: "1022253143"
+  fee: "0"
+  instance_basename: clickgest23
+  admin_user_available: "1"
+  end_user_available: "1"
+  short: "<p><b>Clickgest</b> es un sistema integral de gesti\xC3\xB3n (ERP - Enterprise Resource Planning) que permite a las empresas controlar de forma ordenada e integrada diferentes funciones esenciales de la compa\xC3\xB1\xC3\xADa.</p>\r\n\
+    <p>Su estructura modular permite que cada empresa dise\xC3\xB1e su soluci\xC3\xB3n a medida seg\xC3\xBAn las necesidades del momento.</p>"
+  description: "<div style=\"text-align: left\">\r\n\
+    <p><b>Clickgest</b> es un sistema integral de gesti\xC3\xB3n (ERP - Enterprise Resource Planning) que permite a las empresas controlar de forma ordenada e integrada diferentes funciones esenciales de la compa\xC3\xB1\xC3\xADa.</p>\r\n\
+    <p>Su estructura modular permite que cada empresa dise\xC3\xB1e su soluci\xC3\xB3n a medida seg\xC3\xBAn las necesidades del momento.</p>\r\n\
+    </div>"
+  cpu: "256"
+  ram: "256"
+  host_id: "783550515"
+  basesize: "40"
+  unique_app_id: CLICKGEST23
+  homepage_url: http://www.clickgest.com

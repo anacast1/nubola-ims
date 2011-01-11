@@ -6,8 +6,8 @@ class ChargeTest < ActiveSupport::TestCase
 
   def setup
     @group = groups(:grupclient)
-    @from = (Time.now - 30.days).beginning_of_month
-    @to   = Time.now.end_of_month
+    @from = Time.gm(2007,11,1).beginning_of_month
+    @to   = Time.gm(2007,11,1).end_of_month
   end
 
   def test_charge_ok
@@ -93,15 +93,15 @@ class ChargeTest < ActiveSupport::TestCase
   end
 
   def test_charge_fee
-    from = Time.gm(2007,11,1)
-    to   = from.end_of_month
-    charge = Charge.new(:group        => groups(:ingent),
-                        :period_from  => from,
-                        :period_to    => to,
-                        :concept_type => "fee"
-    )
-    charge.set_fee
-    assert_equal(0.7,charge.quantity.to_f)
+#    from = Time.gm(2007,11,1)
+#    to   = from.end_of_month
+#    charge = Charge.new(:group        => groups(:ingent),
+#                        :period_from  => from,
+#                        :period_to    => to,
+#                        :concept_type => "fee"
+#    )
+#    charge.set_fee
+#    assert_equal(0.7,charge.quantity.to_f)
 
     charge = Charge.new(:group        => groups(:ingent),
                         :period_from  => Time.now.beginning_of_month,
