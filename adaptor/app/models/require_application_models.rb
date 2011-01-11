@@ -11,11 +11,10 @@ require File.join(File.dirname(__FILE__), '../../../application/lib/message_send
 Adaptation::Base.new
 RAILS_DEFAULT_LOGGER = Adaptation::Base.logger
 
-models_no_requerits = [
-  "password_mailer.rb",       # requreix ActionMailer
-  "confirmation_mailer.rb"    # idem
-]
-
 Dir[File.join(File.dirname(__FILE__), '../../../application/app/models/*.rb')].each do |f|
-  require f unless models_no_requerits.include?(f.split('/').last)
+  begin
+    require f
+  rescue NameError => e
+    puts "Can't load #{f} (#{e.message})" unless ADAPTOR_ENV=="production"
+  end
 end
