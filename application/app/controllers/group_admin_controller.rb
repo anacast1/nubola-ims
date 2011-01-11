@@ -260,6 +260,13 @@ class GroupAdminController < ApplicationController
 
       end
 
+      apps_to_install = Array.new
+      if params[:group_parameters] != nil
+        apps_to_install << {:application => @app, :parameters => params[:group_parameters]}
+      else
+        apps_to_install << {:application => @app, :parameters => {}}
+      end
+
       if @app.clickgest?
 
         # clickgest no s'instala: https://www.ingent.net/issues/2357
@@ -271,17 +278,16 @@ class GroupAdminController < ApplicationController
         @install.save
         bind = Bind.create!(:user_id => session[:user].id, :app_id => @app.id, :status => 'OK')
         session[:user].apps.reload
+
+        message = @group.install_message(apps_to_install, params[:host_id], params[:original_host])
+        unless system("#{Setting.oappublish} 'IMS' '#{message}'")
+          logger.info("Problem publishing install message")
+        end
+
         ClickgestMailer.deliver_install(@group)
         redirect_to :action => 'app_edit', :id => @app
 
       else
-
-        apps_to_install = Array.new
-        if params[:group_parameters] != nil
-          apps_to_install << {:application => @app, :parameters => params[:group_parameters]}
-        else
-          apps_to_install << {:application => @app, :parameters => {}}
-        end
 
         # save this install before sending the message, because
         # we need it to process the response
@@ -289,7 +295,7 @@ class GroupAdminController < ApplicationController
         @install.status = "INSTALLING"
         @install.save!
 
-        message = session[:user].group.install_message(apps_to_install, params[:host_id], params[:original_host])
+        message = @group.install_message(apps_to_install, params[:host_id], params[:original_host])
         unless system("#{Setting.oappublish} 'IMS' '#{message}'")
           logger.info("Problem publishing install message")
         end
@@ -653,24 +659,24 @@ class GroupAdminController < ApplicationController
         b.destroy
       end
 
+      # marquem l'install de la app com a "UNINSTALLING", xque no la puguin gestionar
+      # mentre es desinstal.la
+      @install.update_attributes!(:status => "UNINSTALLING")
+
+      # enviem missatge uninstall
+      apps_to_uninstall = Array.new
+      apps_to_uninstall <<  @app
+      message = session[:user].group.uninstall_message(apps_to_uninstall, @install.host.hostname)
+      unless system("#{Setting.oappublish} 'IMS' '#{message}'")
+        logger.info("Problem publishing uninstall message")
+      end
+
       if @app.clickgest?
 
         ClickgestMailer.deliver_uninstall(@group)
         @install.destroy
 
       else
-
-        # marquem l'install de la app com a "UNINSTALLING", xque no la puguin gestionar
-        # mentre es desinstal.la
-        @install.update_attributes!(:status => "UNINSTALLING")
-
-        # enviem missatge uninstall
-        apps_to_uninstall = Array.new
-        apps_to_uninstall <<  @app
-        message = session[:user].group.uninstall_message(apps_to_uninstall, @install.host.hostname)
-        unless system("#{Setting.oappublish} 'IMS' '#{message}'")
-          logger.info("Problem publishing uninstall message")
-        end
 
         # amb sort la resposta ja haurà arribat
         may_sleep 5
