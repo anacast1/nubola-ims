@@ -1,3 +1,9 @@
 Hello,
 group <%=@group.name%>, with id <%=@group.id%>, just uninstalled Clickgest23.
 
+About <%=@group.name%> administrator:
+
+* <%= @group.admin.name %> <%= @group.admin.surname %>
+* <%= @group.admin.email %>
+<%= "* #{@group.admin.telephone}" unless @group.admin.telephone.blank? %>
+<%= "* #{@group.admin.mobile}" unless @group.admin.mobile.blank? %>
