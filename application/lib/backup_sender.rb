@@ -10,6 +10,10 @@ class BackupSender
       unless c.group.installs.nil?
         c.group.installs.each do |i|
           message = c.group.backup_message([i.app], i.host.hostname)
+          # TODO millorar això
+          # els missatges de petició de backup es fan cada minut
+          # per intentar espaiar els backups
+          sleep 60
           unless system("#{Setting.oappublish} 'IMS' '#{message}'")
             logger.error("Problem publishing backup message")
           end
