@@ -13,9 +13,11 @@ class BackupSender
           # TODO millorar això
           # els missatges de petició de backup es fan cada minut
           # per intentar espaiar els backups
-          sleep 60
-          unless system("#{Setting.oappublish} 'IMS' '#{message}'")
-            logger.error("Problem publishing backup message")
+          if system("#{Setting.oappublish} 'IMS' '#{message}'")
+            logger.info("BackupSender. Publish <backup id='#{c.group.id}' host='#{i.host.hostname}'>") 
+            sleep 120 unless Setting.standalone
+          else
+            logger.error("BackupSender. Can not publish <backup id='#{c.group.id}' host='#{i.host.hostname}'>")
           end
         end
       end
