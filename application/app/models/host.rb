@@ -22,6 +22,7 @@ class Host < ActiveRecord::Base
   validates_presence_of :host_type, :hostname
   validate :validate_groups
   validate :group_cant_have_two_hosts
+  validates_format_of :hostname, :with => /^[\w.]+$/
 
   def validate_groups
     return if compartido?
