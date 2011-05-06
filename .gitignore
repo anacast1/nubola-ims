@@ -9,3 +9,5 @@ application/config/additional_environment.rb
 application/public/Uploadedimage/image
 application/public/User/user_image
 application/public/User/wallpaper
+application/public/App/logo_image
+application/public/Group/logo_image
