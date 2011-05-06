@@ -22,7 +22,7 @@ class Period
       oldregs = Registre.find :all, :conditions => ["group_id=? AND action IN ('login','logout') AND created_at BETWEEN ? AND ?",@group.id,from.to_s(:db),@from], :order => "created_at"
     end
     oldregs.sort.each do |registre|
-      if (registre.action == "login" and registre.amount and !(@connected_users.include? registre.user_id) )
+      if (registre.action == "login" and !(@connected_users.include? registre.user_id) )
         @connected_users << registre.user_id
       elsif (registre.action == "logout" and @connected_users.include? registre.user_id )
         @connected_users.delete registre.user_id
@@ -35,9 +35,9 @@ class Period
       # comprovem si l'usuari esta en demo
       u = User.find registre.user_id
       next if u.demo?
-      if (registre.action == "login" and registre.amount and !(@connected_users.include? registre.user_id) )
+      if (registre.action == "login" and !(@connected_users.include? registre.user_id) )
         @connected_users << registre.user_id
-        @concurrency = registre.amount if registre.amount > @concurrency
+        @concurrency = @connected_users.size if @connected_users.size > @concurrency
       elsif (registre.action == "logout" and @connected_users.include? registre.user_id )
         @connected_users.delete registre.user_id
       end
