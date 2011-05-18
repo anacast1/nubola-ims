@@ -1,4 +1,5 @@
 class SsoController < ApplicationController
+
   layout  'sso' #, :except => [:login, :redirect_javascript]
   before_filter :login_required, :except =>  [:login, :index, :forgot_password]
 
@@ -8,71 +9,14 @@ class SsoController < ApplicationController
 
   def login
     case request.method
-    when :post
-      user = User.authenticate(params[:user_login], params[:user_password])
-      case user
-      when "group inactive"
-        flash[:notice]  = I18n.t("group_is_not_active")
-        flash[:login]  = params[:user_login]
-        redirect_to_login and return
-      when "user inactive"
-        flash[:notice]  = I18n.t("user_is_not_active")
-        flash[:login]  = params[:user_login]
-        redirect_to_login and return
-      when "login error"
-        flash[:notice]  = I18n.t("invalid_login")
-        flash[:login]  = params[:user_login]
-        redirect_to_login and return
-      when "user not confirmed"
-        flash[:notice]  = I18n.t("user_is_not_confirmed")
-        flash[:login]  = params[:user_login]
-        redirect_to_login and return
+    when :post      
+      if using_open_id?
+        open_id_authentication(params[:openid_url])
       else
-        # user succesfully authenticated
-        sesss = Session.find_all_by_login(user.login)
-        if(!sesss.nil?)
-          sesss.each do |sess|
-            if(!sess.nil?)
-              user.send_logout_message(sess.sessid)
-              logger.info("Logged out '#{user.login}' with '#{sess.sessid}'");
-              numlogins=user.group.loginusers-1
-              user.group.update_attributes(:loginusers => numlogins)
-
-              # delete session 
-              # (this asserts that the next time the user logs in he/she will be using a a different sid/cookie)
-              if sess.sessid != session.session_id
-                sess.destroy
-              end
-            end
-          end
-        end
-        numlogins=user.group.loginusers+1
-        if(user.group.numusers!=0 && numlogins>user.group.numusers && session[:user].nil?)
-          flash[:notice]  = I18n.t("max_num_users_reached")
-          redirect_to_login and return
-        end
-        user.send_login_message(session.session_id)
-        user.group.update_attributes(:loginusers => numlogins)
-        if session.respond_to?("model")
-          session.model.login = user.login
-        end
-        session[:user] = user
-        session.update
-        flash[:notice] = I18n.t("login_failed")
-        logger.info("Logged in '#{user.login}' with '#{session.session_id}'");
-
-        # wait to let the login message arrive to the applications
-        may_sleep 8
-
-        if session[:user].group.contract.nil? || (session[:user].role == "groupadmin" && Group.find(session[:user].group_id).apps.length == 0)
-          cookies[:OApcurrent] = {:value => "ims"} 
-          cookies[:OApims] = {:value => "welcome_page"}
-        end
-        redirect_to_desktop
+        password_authentication
       end
 
     else
-
       # it's a GET
       if session[:user]
         redirect_to_desktop
@@ -128,6 +72,61 @@ class SsoController < ApplicationController
     end
   end
 
+
+  protected
+
+    def password_authentication
+    user = User.authenticate(params[:user_login], params[:user_password])
+      case user
+      when "group inactive"
+        flash[:notice]  = I18n.t("group_is_not_active")
+        flash[:login]  = params[:user_login]
+        redirect_to_login and return
+      when "user inactive"
+        flash[:notice]  = I18n.t("user_is_not_active")
+        flash[:login]  = params[:user_login]
+        redirect_to_login and return
+      when "login error"
+        flash[:notice]  = I18n.t("invalid_login")
+        flash[:login]  = params[:user_login]
+        redirect_to_login and return
+      when "user not confirmed"
+        flash[:notice]  = I18n.t("user_is_not_confirmed")
+        flash[:login]  = params[:user_login]
+        redirect_to_login and return
+      else
+        successful_login(user)
+      end
+  end
+
+
+  def open_id_authentication(openid_url)
+    authenticate_with_open_id(openid_url, :return_to => signin_url) do |result, identity_url|
+      case result.status          
+          when :missing
+            failed_login("openid_server_not_found")
+          when :canceled
+            failed_login("openid_verification_canceled")
+          when :failed
+            failed_login("openid_verificacion_failed")
+          when :invalid
+            failed_login("openid_invalid") 
+          when :setup_needed
+            failed_login("openid_needs_setup") 
+          when :successful
+           @user = User.find_by_identity_url(identity_url)
+           unless(@user.nil?)
+                successful_login(@user)
+           else
+              failed_login("a_user_with_openid_url_doesnt_exist")
+           end
+          else
+            failed_login("openid_problems")
+          end
+        end
+   end
+
+ 
   private
 
   def redirect_to_login
@@ -141,5 +140,56 @@ class SsoController < ApplicationController
       redirect_to :controller => 'desktop'
     end
   end
-  
+
+  def successful_login (user)
+    # user succesfully authenticated
+        sesss = Session.find_all_by_login(user.login)
+        if(!sesss.nil?)
+          sesss.each do |sess|
+            if(!sess.nil?)
+              user.send_logout_message(sess.sessid)
+              logger.info("Logged out '#{user.login}' with '#{sess.sessid}'");
+              numlogins=user.group.loginusers-1
+              user.group.update_attributes(:loginusers => numlogins)
+
+              # delete session
+              # (this asserts that the next time the user logs in he/she will be using a a different sid/cookie)
+              if sess.sessid != session.session_id
+                sess.destroy
+              end
+            end
+          end
+        end
+        numlogins=user.group.loginusers+1
+        if(user.group.numusers!=0 && numlogins>user.group.numusers && session[:user].nil?)
+          flash[:notice]  = I18n.t("max_num_users_reached")
+          redirect_to_login and return
+        end
+        user.send_login_message(session.session_id)
+        user.group.update_attributes(:loginusers => numlogins)
+        if session.respond_to?("model")
+          session.model.login = user.login
+        end
+        session[:user] = user
+        session.update
+        flash[:notice] = I18n.t("login_failed")
+        logger.info("Logged in '#{user.login}' with '#{session.session_id}'");
+
+        # wait to let the login message arrive to the applications
+        may_sleep 8
+
+        if session[:user].group.contract.nil? || (session[:user].role == "groupadmin" && Group.find(session[:user].group_id).apps.length == 0)
+          cookies[:OApcurrent] = {:value => "ims"}
+          cookies[:OApims] = {:value => "welcome_page"}
+        end
+        redirect_to_desktop
+  end
+
+  def failed_login (mess)
+    flash[:notice]  = I18n.t(mess)
+    flash[:login]  = params[:user_login]
+    redirect_to_login and return
+  end
+
+
 end

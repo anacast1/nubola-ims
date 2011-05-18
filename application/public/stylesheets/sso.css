@@ -105,6 +105,12 @@
     white-space: nowrap;
   }
 
+  .sso_url_input{
+    width: 300px;
+    border: 2px solid white;
+    padding: 1px;
+  }
+
   .sso_login_button{
     border: 0px solid #33CCDA;
     margin-top: 10px;

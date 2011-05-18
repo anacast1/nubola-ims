@@ -2,11 +2,11 @@
 
   <%= render :partial => 'shared/sso_left' %>
 
-  <div class="sso_right">
+  <div class="sso_right">    
 
     <div class="sso_login_box" title="<%= t("start_session") %>">
     
-      <div class="bl"><div class="br"><div class="tr"><div class="tl" style="height: 220px;">
+      <div class="bl"><div class="br"><div class="tr"><div class="tl" style="height: 280px;">
 
         <% form_tag(:action=> "login") do -%>
       
@@ -20,9 +20,22 @@
               <label for="user_password" class="sso_login_label"><%= t("password") %>:</label>
               <input type="password" name="user_password" id="user_password" class="sso_login_input" />
             </div>
-
-            <input type="submit" name="loginBtn" id="loginBtn" class="sso_login_button" onclick="Element.hide('first_view'); Element.show('second_view')" value="<%= t("start_session") %>" />
           </div>
+
+            
+         <div class="sso_image"><%= image_tag "OpenID64x64.png", :html => { :title => "OpenID", :alt => "OpenID"} %></div>
+
+         <div class='sso_login_form'>
+            <!--<div class="sso_pair">-->
+              <label for="url_login" class="sso_login_label">OpenID URL:</label>
+              <input type="text" name="openid_url" id="openid_url" value="<%= flash[:login] %>" class="sso_url_input"  />
+            <!--</div>-->
+    <!--<a href=""><%#= image_tag "OpenID32x32.png",:html => { :title => "OpenID" } , :action=> "login", :alt => "OpenID"%>
+</a>-->
+            <%#= image_tag "OpenID64x64.png", :html => { :title => "OpenID", :align => "middle"  , :float => "left", :alt => "OpenID"}%>
+          </div>
+
+         <input type="submit" name="loginBtn" id="loginBtn" class="sso_login_button" onclick="Element.hide('first_view'); Element.show('second_view')" value="<%= t("start_session") %>" />
 
           <div class='sso_login_links'>
             <div>
@@ -35,13 +48,16 @@
 
         <% end -%>
 
+
+
       </div></div></div></div>
 
       <% if flash[:notice] -%>
         <div id="notice"><%= flash[:notice] %></div>
       <% end -%>
 
-    </div>
+    </div>   
+    
 
   </div>
 

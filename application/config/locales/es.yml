@@ -872,3 +872,13 @@ quedarán fijos y solo se podrá cambiar:</br>
 
   are_you_sure_to_delete: "¿Está seguro de que desea eliminar"
   move: "Mover"
+
+
+  a_user_with_openid_url_doesnt_exist: "No existe un usuario con la dirección url proporcionada.\n
+                                             Registrese como nuevo usuario"
+  openid_server_not_found: "No se encuentra el servidor de OpenID"
+  openid_verification_canceled: "La verificación en OpenID ha sido cancelada"
+  openid_verificacion_failed: "La verificación en OpenID no ha sido correcta"
+  openid_invalid: "No es un OpenID válido"
+  openid_needs_setup: "La verificación OpenID necessita instalación"
+  openid_problems: "Ha habido problemas con OpenID"

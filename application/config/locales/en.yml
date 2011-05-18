@@ -870,3 +870,12 @@ en:
 
   are_you_sure_to_delete: "Are you sure you want to remove"
   move: "Move"
+  
+  a_user_with_openid_url_doesnt_exist: "There isn't a user with this url.\n
+                                    Register as a new user"
+  openid_server_not_found: "The OpenID server couldn't be found"
+  openid_verification_canceled: "OpenID verification was canceled"
+  openid_verificacion_failed: "The OpenID verification failed"
+  openid_invalid: "This does not appear to be a valid OpenID"
+  openid_needs_setup: "OpenID verification needs setup"
+  openid_problems: "There were problems with OpenID"

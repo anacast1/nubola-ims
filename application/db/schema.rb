@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100126122547) do
+ActiveRecord::Schema.define(:version => 20110511085238) do
 
   create_table "apps", :force => true do |t|
     t.string  "unique_app_id",        :limit => 100, :default => "",    :null => false
@@ -146,6 +146,21 @@ ActiveRecord::Schema.define(:version => 20100126122547) do
     t.datetime "updated_at"
   end
 
+  create_table "open_id_authentication_associations", :force => true do |t|
+    t.integer "issued"
+    t.integer "lifetime"
+    t.string  "handle"
+    t.string  "assoc_type"
+    t.binary  "server_url"
+    t.binary  "secret"
+  end
+
+  create_table "open_id_authentication_nonces", :force => true do |t|
+    t.integer "timestamp",  :null => false
+    t.string  "server_url"
+    t.string  "salt",       :null => false
+  end
+
   create_table "parameter_values", :force => true do |t|
     t.integer "parameter_id", :default => 0, :null => false
     t.text    "value",                       :null => false
@@ -223,6 +238,7 @@ ActiveRecord::Schema.define(:version => 20100126122547) do
     t.string   "wallpaper"
     t.string   "default_wallpaper",                  :default => "wallpaper_1.jpg"
     t.datetime "created_at"
+    t.string   "identity_url"
   end
 
 end
